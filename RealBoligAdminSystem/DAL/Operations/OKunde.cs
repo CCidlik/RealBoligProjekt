@@ -13,7 +13,7 @@ namespace RealBolig.DAL.Operations
     public class OKunde
     {
 
-        string strconn = @"Data Source=mssql2.unoeuro.com;Initial Catalog=kaspermark_dk_db_realbolig;Persist Security Info=True;User ID=kaspermark_dk;Password=69qom3u9PW; Encrypt=False";
+        
 
         //CRUD
         public void Insert(EKunde kdInsert)
@@ -35,7 +35,7 @@ namespace RealBolig.DAL.Operations
             if (FuldeNavn_ok && Tlf_ok && Mail_ok && Adresse_ok)
             {
                 // database med bolig tabel:
-                SqlConnection conn = new SqlConnection(strconn);
+                SqlConnection conn = new SqlConnection(ConnString.getConnStr());
 
                 //C(RUD):
                 string sqlCom = "INSERT INTO Kunde VALUES (@FuldeNavn, @Tlf, @Mail, @Adresse);";

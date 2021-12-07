@@ -184,6 +184,7 @@
     <Compile Include="AdminMægler.Designer.cs">
       <DependentUpon>AdminMægler.cs</DependentUpon>
     </Compile>
+    <Compile Include="DAL\ConnString.cs" />
     <Compile Include="CreateBolig.cs">
       <SubType>Form</SubType>
     </Compile>

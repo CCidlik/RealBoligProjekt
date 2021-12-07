@@ -36,9 +36,9 @@ namespace RealBolig
 
         public void DisplayDataKiD()
         {
-            string strconn = @"Data Source=mssql2.unoeuro.com;Initial Catalog=kaspermark_dk_db_realbolig;Persist Security Info=True;User ID=kaspermark_dk;Password=69qom3u9PW; Encrypt = False";
+            
 
-            SqlConnection conn = new SqlConnection(strconn);
+            SqlConnection conn = new SqlConnection(ConnString.getConnStr());
 
 
             conn.Open();
@@ -51,9 +51,9 @@ namespace RealBolig
 
         public void DisplayDataNummer()
         {
-            string strconn = @"Data Source=mssql2.unoeuro.com;Initial Catalog=kaspermark_dk_db_realbolig;Persist Security Info=True;User ID=kaspermark_dk;Password=69qom3u9PW; Encrypt = False";
+            
 
-            SqlConnection conn = new SqlConnection(strconn);
+            SqlConnection conn = new SqlConnection(ConnString.getConnStr());
 
 
             conn.Open();

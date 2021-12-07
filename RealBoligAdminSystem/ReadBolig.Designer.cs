@@ -46,6 +46,8 @@ namespace RealBolig
             this.tbOmråde = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.boligTableAdapter = new RealBolig.kaspermark_dk_db_realboligDataSetTableAdapters.BoligTableAdapter();
+            this.Postnummer = new System.Windows.Forms.Label();
+            this.tbPostnummer = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.boligBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.boligBindingSource1)).BeginInit();
@@ -71,11 +73,10 @@ namespace RealBolig
             this.salgsDatoDataGridViewTextBoxColumn,
             this.kvmDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.boligBindingSource1;
-            this.dataGridView1.Location = new System.Drawing.Point(1176, 27);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.dataGridView1.Location = new System.Drawing.Point(504, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 92;
-            this.dataGridView1.Size = new System.Drawing.Size(2016, 1617);
+            this.dataGridView1.Size = new System.Drawing.Size(864, 725);
             this.dataGridView1.TabIndex = 55;
             // 
             // biDDataGridViewTextBoxColumn
@@ -155,11 +156,10 @@ namespace RealBolig
             // 
             // btnIndlæsBolig
             // 
-            this.btnIndlæsBolig.Font = new System.Drawing.Font("Montserrat Medium", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIndlæsBolig.Location = new System.Drawing.Point(389, 311);
-            this.btnIndlæsBolig.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.btnIndlæsBolig.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIndlæsBolig.Location = new System.Drawing.Point(167, 139);
             this.btnIndlæsBolig.Name = "btnIndlæsBolig";
-            this.btnIndlæsBolig.Size = new System.Drawing.Size(355, 89);
+            this.btnIndlæsBolig.Size = new System.Drawing.Size(152, 40);
             this.btnIndlæsBolig.TabIndex = 54;
             this.btnIndlæsBolig.Text = "Indlæs Bolig";
             this.btnIndlæsBolig.UseVisualStyleBackColor = true;
@@ -167,21 +167,19 @@ namespace RealBolig
             // 
             // tbOmråde
             // 
-            this.tbOmråde.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbOmråde.Location = new System.Drawing.Point(389, 27);
-            this.tbOmråde.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.tbOmråde.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbOmråde.Location = new System.Drawing.Point(167, 12);
             this.tbOmråde.Name = "tbOmråde";
-            this.tbOmråde.Size = new System.Drawing.Size(765, 59);
+            this.tbOmråde.Size = new System.Drawing.Size(330, 29);
             this.tbOmråde.TabIndex = 39;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Montserrat Medium", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(19, 27);
-            this.label1.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(8, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(356, 58);
+            this.label1.Size = new System.Drawing.Size(133, 24);
             this.label1.TabIndex = 38;
             this.label1.Text = "Indtast område";
             // 
@@ -189,16 +187,35 @@ namespace RealBolig
             // 
             this.boligTableAdapter.ClearBeforeFill = true;
             // 
+            // Postnummer
+            // 
+            this.Postnummer.AutoSize = true;
+            this.Postnummer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Postnummer.Location = new System.Drawing.Point(12, 70);
+            this.Postnummer.Name = "Postnummer";
+            this.Postnummer.Size = new System.Drawing.Size(117, 24);
+            this.Postnummer.TabIndex = 56;
+            this.Postnummer.Text = "Postnummer";
+            // 
+            // tbPostnummer
+            // 
+            this.tbPostnummer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPostnummer.Location = new System.Drawing.Point(167, 70);
+            this.tbPostnummer.Name = "tbPostnummer";
+            this.tbPostnummer.Size = new System.Drawing.Size(138, 29);
+            this.tbPostnummer.TabIndex = 57;
+            // 
             // ReadBolig
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(3004, 1953);
+            this.ClientSize = new System.Drawing.Size(1287, 637);
+            this.Controls.Add(this.tbPostnummer);
+            this.Controls.Add(this.Postnummer);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnIndlæsBolig);
             this.Controls.Add(this.tbOmråde);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.Name = "ReadBolig";
             this.Text = "ReadBolig";
             this.Load += new System.EventHandler(this.ReadBolig_Load);
@@ -229,5 +246,7 @@ namespace RealBolig
         private System.Windows.Forms.DataGridViewTextBoxColumn salgsPrisDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn salgsDatoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn kvmDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label Postnummer;
+        private System.Windows.Forms.TextBox tbPostnummer;
     }
 }

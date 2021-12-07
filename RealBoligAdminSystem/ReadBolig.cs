@@ -16,6 +16,7 @@ namespace RealBolig
 {
     public partial class ReadBolig : Form
     {
+
         public ReadBolig()
         {
             InitializeComponent();
@@ -30,19 +31,41 @@ namespace RealBolig
 
         private void btnIndlæsBolig_Click(object sender, EventArgs e)
         {
-           DisplayData();
+
+            if (tbPostnummer.Text == "") {
+                DisplayDataOmråde();
+            }
+            else if (tbOmråde.Text == "") {
+                DisplayDataPostnummer();
+            }
+            
 
         }
-        public void DisplayData()
+        public void DisplayDataOmråde()
         {
-            string strconn = @"Data Source=mssql2.unoeuro.com;Initial Catalog=kaspermark_dk_db_realbolig;Persist Security Info=True;User ID=kaspermark_dk;Password=69qom3u9PW; Encrypt = False";
+            
 
-            SqlConnection conn = new SqlConnection(strconn);
+            SqlConnection conn = new SqlConnection(ConnString.getConnStr());
             
             
             conn.Open();
             DataTable dt = new DataTable();
             SqlDataAdapter adapt = new SqlDataAdapter("SELECT * FROM Bolig where Område = '" + tbOmråde.Text + "'", conn);
+            adapt.Fill(dt);
+            dataGridView1.DataSource = dt;
+            conn.Close();
+        }
+
+        public void DisplayDataPostnummer()
+        {
+            
+
+            SqlConnection conn = new SqlConnection(ConnString.getConnStr());
+
+
+            conn.Open();
+            DataTable dt = new DataTable();
+            SqlDataAdapter adapt = new SqlDataAdapter("SELECT * FROM Bolig where PostNR = '" + tbPostnummer.Text + "'", conn);
             adapt.Fill(dt);
             dataGridView1.DataSource = dt;
             conn.Close();

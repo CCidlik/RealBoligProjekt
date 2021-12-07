@@ -14,7 +14,7 @@ namespace RealBolig
 {
     public partial class UpdateBolig : Form
     {
-        string strconn = @"Data Source=mssql2.unoeuro.com;Initial Catalog=kaspermark_dk_db_realbolig;Persist Security Info=True;User ID=kaspermark_dk;Password=69qom3u9PW; Encrypt = False";
+        
         public UpdateBolig()
         {
             InitializeComponent();
@@ -64,7 +64,7 @@ namespace RealBolig
                 if (BiD_ok && Salgspris_ok && KøbersID_ok && KøbsPris_ok && Købsdato_ok)
                 {
                     // database med kundetabel:
-                    SqlConnection conn = new SqlConnection(strconn);
+                    SqlConnection conn = new SqlConnection(ConnString.getConnStr());
 
                     //(CR)U(D):
                     string sqlCom = "UPDATE Bolig SET Salgspris = @SalgsPris WHERE BiD = @BiD;";
@@ -135,7 +135,7 @@ namespace RealBolig
                 if (BiD_ok && Salgspris_ok && KøbersID_ok && KøbsPris_ok && Købsdato_ok)
                 {
                     // database med kundetabel:
-                    SqlConnection conn = new SqlConnection(strconn);
+                    SqlConnection conn = new SqlConnection(ConnString.getConnStr());
 
                     //(CR)U(D):
                     string sqlCom = "UPDATE Bolig SET Salgspris = @SalgsPris, Solgt = @Solgt WHERE BiD = @BiD;";

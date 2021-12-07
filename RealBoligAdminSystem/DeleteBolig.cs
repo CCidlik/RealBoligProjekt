@@ -14,7 +14,7 @@ namespace RealBolig
 {
     public partial class DeleteBolig : Form
     {
-        string strconn = @"Data Source=mssql2.unoeuro.com;Initial Catalog=kaspermark_dk_db_realbolig;Persist Security Info=True;User ID=kaspermark_dk;Password=69qom3u9PW"; //Connection string to a local SQL DB
+        
         private const bool test = false;
 
         public DeleteBolig()
@@ -40,7 +40,7 @@ namespace RealBolig
             if (BiD_ok)
             {
                 // database med kundetabel:
-                SqlConnection conn = new SqlConnection(strconn);
+                SqlConnection conn = new SqlConnection(ConnString.getConnStr());
 
                 //(CRU)D:
                 string sqlCom = "DELETE FROM Bolig WHERE (BiD = @BiD);";

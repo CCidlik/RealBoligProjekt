@@ -8,6 +8,7 @@ using RealBolig.DAL.Entities;
 using Microsoft.Data.SqlClient;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using RealBolig;
 
 namespace RealBolig.DAL.Operations
 {
@@ -42,8 +43,8 @@ namespace RealBolig.DAL.Operations
             if (KundeID_ok && PostNR_ok && Adresse_ok && Område_ok && Kvm_ok && SalgsPris_ok)
             {
                 // database med bolig tabel:
-                string strconn = @"Data Source=mssql2.unoeuro.com;Initial Catalog=kaspermark_dk_db_realbolig;Persist Security Info=True;User ID=kaspermark_dk;Password=69qom3u9PW; Encrypt = False";
-                SqlConnection conn = new SqlConnection(strconn);
+                
+                SqlConnection conn = new SqlConnection(ConnString.getConnStr());
 
                 //C(RUD):
                 string sqlCom = "INSERT INTO Bolig VALUES (@KiD, @PostNR, @Adresse, @Område, @SalgsPris, @SalgsDato, @Kvm, "+bInsert.Solgt+");";
@@ -90,7 +91,7 @@ namespace RealBolig.DAL.Operations
                                     cmd.Parameters["@Kvm"].Value +
                                     ")");   
 
-                    SqlConnection conn2 = new SqlConnection(strconn);
+                    SqlConnection conn2 = new SqlConnection(ConnString.getConnStr());
                     string sqlCom2 = "INSERT INTO Bolig_Status VALUES (null, null, " + getbid() + ", null);";
                     SqlCommand cmd2 = new SqlCommand(sqlCom2, conn2);
                     conn2.Open();
@@ -174,11 +175,11 @@ namespace RealBolig.DAL.Operations
 
         public static int getbid () {
 
-                string strconn = @"Data Source=mssql2.unoeuro.com;Initial Catalog=kaspermark_dk_db_realbolig;Persist Security Info=True;User ID=kaspermark_dk;Password=69qom3u9PW; Encrypt = False";
+                //string strconn = @"Data Source=mssql2.unoeuro.com;Initial Catalog=kaspermark_dk_db_realbolig;Persist Security Info=True;User ID=kaspermark_dk;Password=69qom3u9PW; Encrypt = False";
 
 
 
-                SqlConnection conn = new SqlConnection(strconn);
+                SqlConnection conn = new SqlConnection(ConnString.getConnStr());
                 string sqltest = "SELECT MAX(BiD) FROM Bolig";
                 SqlCommand cmd = new SqlCommand(sqltest, conn);
 
@@ -223,11 +224,11 @@ namespace RealBolig.DAL.Operations
 
         public static int getpris (EBolig bgetpris) {
 
-                string strconn = @"Data Source=mssql2.unoeuro.com;Initial Catalog=kaspermark_dk_db_realbolig;Persist Security Info=True;User ID=kaspermark_dk;Password=69qom3u9PW; Encrypt = False";
+                
 
 
 
-                SqlConnection conn = new SqlConnection(strconn);
+                SqlConnection conn = new SqlConnection(ConnString.getConnStr());
                 string sqltest = "SELECT SalgsPris FROM Bolig where Bid = "+bgetpris.BiD+"";
                 SqlCommand cmd = new SqlCommand(sqltest, conn);
 
