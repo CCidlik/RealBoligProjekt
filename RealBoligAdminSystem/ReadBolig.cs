@@ -32,22 +32,24 @@ namespace RealBolig
         private void btnIndlæsBolig_Click(object sender, EventArgs e)
         {
 
-            if (tbPostnummer.Text == "") {
+            if (tbPostnummer.Text == "")
+            {
                 DisplayDataOmråde();
             }
-            else if (tbOmråde.Text == "") {
+            else if (tbOmråde.Text == "")
+            {
                 DisplayDataPostnummer();
             }
-            
+
 
         }
         public void DisplayDataOmråde()
         {
-            
+
 
             SqlConnection conn = new SqlConnection(ConnString.getConnStr());
-            
-            
+
+
             conn.Open();
             DataTable dt = new DataTable();
             SqlDataAdapter adapt = new SqlDataAdapter("SELECT * FROM Bolig where Område = '" + tbOmråde.Text + "'", conn);
@@ -58,7 +60,7 @@ namespace RealBolig
 
         public void DisplayDataPostnummer()
         {
-            
+
 
             SqlConnection conn = new SqlConnection(ConnString.getConnStr());
 

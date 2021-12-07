@@ -17,7 +17,7 @@ namespace RealBolig.DAL.Entities
         public string Område { get; set; }
         public string SalgsPris { get; set; }
         public string Kvm { get; set; }
-        public int Solgt { get; set;}
+        public int Solgt { get; set; }
 
 
 

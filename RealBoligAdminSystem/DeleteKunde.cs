@@ -50,7 +50,7 @@ namespace RealBolig
                 }
 
                 //(CRU)D:
-                string sqlCom = "DELETE FROM Kunde WHERE KiD = "+KiD+";";
+                string sqlCom = "DELETE FROM Kunde WHERE KiD = " + KiD + ";";
                 SqlCommand cmd = new SqlCommand(sqlCom, conn);
                 cmd.Parameters.Add("@BiD", System.Data.SqlDbType.Int);
                 cmd.Parameters["@BiD"].Value = Convert.ToInt32(KiD);

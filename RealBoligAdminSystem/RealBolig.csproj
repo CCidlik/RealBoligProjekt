@@ -243,6 +243,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>kaspermark_dk_db_realboligDataSet3.xsd</DependentUpon>
     </Compile>
+    <Compile Include="kaspermark_dk_db_realboligDataSet4.cs">
+      <DependentUpon>kaspermark_dk_db_realboligDataSet4.xsd</DependentUpon>
+    </Compile>
     <Compile Include="kaspermark_dk_db_realboligDataSet4.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -17,7 +17,7 @@ namespace RealBolig.DAL.Operations
         public void Insert(EBolig_Status bsInsert)
         {
             conn.Open();
-            string query = "INSERT INTO Bolig_Status VALUES ('" + bsInsert.handelsPris + "', " + bsInsert.handelsDato + ", '" + bsInsert.købt + "', '" + bsInsert.BiD + "', '"+ bsInsert.KiD+"');";
+            string query = "INSERT INTO Bolig_Status VALUES ('" + bsInsert.handelsPris + "', " + bsInsert.handelsDato + ", '" + bsInsert.købt + "', '" + bsInsert.BiD + "', '" + bsInsert.KiD + "');";
 
             SqlCommand cmd = new SqlCommand(query, conn);
             conn.Close();

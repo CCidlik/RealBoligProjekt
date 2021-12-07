@@ -27,16 +27,19 @@ namespace RealBolig
 
         private void SearchKunde_Click(object sender, EventArgs e)
         {
-            if (tbKiD.Text == "") {
+            if (tbKiD.Text == "")
+            {
                 DisplayDataNummer();
-            } else if (tbNummer.Text == "") {
+            }
+            else if (tbNummer.Text == "")
+            {
                 DisplayDataKiD();
             }
         }
 
         public void DisplayDataKiD()
         {
-            
+
 
             SqlConnection conn = new SqlConnection(ConnString.getConnStr());
 
@@ -51,7 +54,7 @@ namespace RealBolig
 
         public void DisplayDataNummer()
         {
-            
+
 
             SqlConnection conn = new SqlConnection(ConnString.getConnStr());
 

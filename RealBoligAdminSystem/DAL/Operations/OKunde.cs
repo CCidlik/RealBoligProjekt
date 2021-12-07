@@ -13,7 +13,7 @@ namespace RealBolig.DAL.Operations
     public class OKunde
     {
 
-        
+
 
         //CRUD
         public void Insert(EKunde kdInsert)
@@ -65,36 +65,36 @@ namespace RealBolig.DAL.Operations
                                     cmd.Parameters["@Mail"].Value + ", " +
                                     cmd.Parameters["@Adresse"].Value +
                                     ")");
-                   
+
                 }
                 catch (Exception exc)
                 {
                     MessageBox.Show("ERROR: \n\n" + exc.ToString());
-                    
+
                 }
             }
             else if (!FuldeNavn_ok)
             {
                 MessageBox.Show("Der må maks være 50 tegn i Fulde Navn feltet.");
-                
+
             }
 
             else if (!Tlf_ok)
             {
                 MessageBox.Show("Der må kun indtastes tal i Tlf. feltet, samt maks 8 tegn.");
-                
+
             }
 
             else if (!Mail_ok)
             {
                 MessageBox.Show("Der må maks være 50 tegn i E-Mail feltet.");
-                
+
             }
 
             else if (!Adresse_ok)
             {
                 MessageBox.Show("Der må maks være 75 tegn i Adresse feltet.");
-                
+
             }
         }
 

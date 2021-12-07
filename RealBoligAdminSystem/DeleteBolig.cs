@@ -14,7 +14,7 @@ namespace RealBolig
 {
     public partial class DeleteBolig : Form
     {
-        
+
         private const bool test = false;
 
         public DeleteBolig()
@@ -45,12 +45,12 @@ namespace RealBolig
             if (success == true)
             {
                 intBiD = Convert.ToInt32(BiD);
-                
+
                 // database med kundetabel:
                 SqlConnection conn = new SqlConnection(ConnString.getConnStr());
 
                 //(CRU)D:
-                string sqlCom = "DELETE FROM Bolig WHERE BiD = '"+intBiD+"'";
+                string sqlCom = "DELETE FROM Bolig WHERE BiD = '" + intBiD + "'";
 
                 /*
                     Hvis man siger       string sqlCom = "DELETE FROM Bolig_Status WHERE BiD = '"+intBiD+"'";
@@ -66,26 +66,26 @@ namespace RealBolig
                 cmd.Parameters["@BiD"].Value = Convert.ToInt32(BiD);
 
                 // Attempt to execute query
-                
-                
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
-                    conn.Close();
-                    MessageBox.Show("SUCCESS :\n" + sqlCom + "\nmed værdierne: (" +
-                                    cmd.Parameters["@BiD"].Value + ")");
-                    mBoligIDTextBox.Text = "";
-                    this.boligTableAdapter.Fill(this.kaspermark_dk_db_realboligDataSet.Bolig);
-                
-                
-                
-                 
-                
+
+
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                MessageBox.Show("SUCCESS :\n" + sqlCom + "\nmed værdierne: (" +
+                                cmd.Parameters["@BiD"].Value + ")");
+                mBoligIDTextBox.Text = "";
+                this.boligTableAdapter.Fill(this.kaspermark_dk_db_realboligDataSet.Bolig);
+
+
+
+
+
             }
             else
                 MessageBox.Show("Indtast kun heltal.");
-                mBoligIDTextBox.Text = "";
+            mBoligIDTextBox.Text = "";
         }
     }
 
-    
+
 }

@@ -17,7 +17,7 @@ namespace RealBolig
 {
     public partial class CreateKunde : Form
     {
-        
+
         public CreateKunde()
         {
             InitializeComponent();

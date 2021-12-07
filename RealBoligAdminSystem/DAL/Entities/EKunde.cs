@@ -16,7 +16,8 @@ namespace RealBolig.DAL.Entities
         public string Adresse { get; set; }
 
 
-        public EKunde(string FuldeNavn, string Tlf, string Mail, string Adresse) {
+        public EKunde(string FuldeNavn, string Tlf, string Mail, string Adresse)
+        {
 
             this.FuldeNavn = FuldeNavn;
             this.Tlf = Tlf;

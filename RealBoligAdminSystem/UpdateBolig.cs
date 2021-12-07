@@ -14,7 +14,7 @@ namespace RealBolig
 {
     public partial class UpdateBolig : Form
     {
-        
+
         public UpdateBolig()
         {
             InitializeComponent();
@@ -40,7 +40,7 @@ namespace RealBolig
 
             if (CbBoligSolgt.Checked != true)
             {
-                
+
 
                 // length check:
                 if (Salgspris.Length > 23) Salgspris_ok = false;

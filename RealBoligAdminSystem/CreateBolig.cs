@@ -16,7 +16,7 @@ namespace RealBolig
 {
     public partial class CreateBolig : Form
     {
-        
+
         private const bool test = false;
 
         public CreateBolig()
@@ -48,13 +48,13 @@ namespace RealBolig
 
             boligOP.Insert(bolig);
 
-                mKiDTextbox.Text = "";
-                mPostNRTextbox.Text = "";
-                mAdresseTextbox.Text = "";
-                mOmrådeTextbox.Text = "";
-                mKvmTextbox.Text = "";
-                mSalgsPrisTextbox.Text = "";
-           
+            mKiDTextbox.Text = "";
+            mPostNRTextbox.Text = "";
+            mAdresseTextbox.Text = "";
+            mOmrådeTextbox.Text = "";
+            mKvmTextbox.Text = "";
+            mSalgsPrisTextbox.Text = "";
+
         }
     }
 }
