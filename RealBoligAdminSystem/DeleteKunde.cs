@@ -38,8 +38,19 @@ namespace RealBolig
                 // database med kundetabel:
                 SqlConnection conn = new SqlConnection(ConnString.getConnStr());
 
+
+                try
+                {
+                    Convert.ToInt32(KiD);
+                }
+                catch (Exception exc)
+                {
+                    MessageBox.Show("ERROR: \n\n" + exc.ToString());
+                    tbKiD.Text = "";
+                }
+
                 //(CRU)D:
-                string sqlCom = "DELETE FROM Bolig WHERE (BiD = @BiD);";
+                string sqlCom = "DELETE FROM Kunde WHERE KiD = "+KiD+";";
                 SqlCommand cmd = new SqlCommand(sqlCom, conn);
                 cmd.Parameters.Add("@BiD", System.Data.SqlDbType.Int);
                 cmd.Parameters["@BiD"].Value = Convert.ToInt32(KiD);

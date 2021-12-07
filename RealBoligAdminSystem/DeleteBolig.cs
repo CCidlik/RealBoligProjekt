@@ -24,6 +24,8 @@ namespace RealBolig
 
         private void DeleteBolig_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'kaspermark_dk_db_realboligDataSet4.Bolig' table. You can move, or remove it, as needed.
+            this.boligTableAdapter1.Fill(this.kaspermark_dk_db_realboligDataSet4.Bolig);
             // TODO: This line of code loads data into the 'kaspermark_dk_db_realboligDataSet.Bolig' table. You can move, or remove it, as needed.
             this.boligTableAdapter.Fill(this.kaspermark_dk_db_realboligDataSet.Bolig);
 
@@ -32,25 +34,40 @@ namespace RealBolig
         private void btnSletBolig_Click(object sender, EventArgs e)
         {
             string BiD = mBoligIDTextBox.Text;
+            int intBiD;
 
             // assumption:
             bool BiD_ok = true;
 
+            bool success = int.TryParse(BiD, out intBiD);
+
             // action
-            if (BiD_ok)
+            if (success == true)
             {
+                intBiD = Convert.ToInt32(BiD);
+                
                 // database med kundetabel:
                 SqlConnection conn = new SqlConnection(ConnString.getConnStr());
 
                 //(CRU)D:
-                string sqlCom = "DELETE FROM Bolig WHERE (BiD = @BiD);";
+                string sqlCom = "DELETE FROM Bolig WHERE BiD = '"+intBiD+"'";
+
+                /*
+                    Hvis man siger       string sqlCom = "DELETE FROM Bolig_Status WHERE BiD = '"+intBiD+"'";
+                køre programmet og sletter fx 15, så siger den success men den er ikke slettet...
+
+                Hvis man så efter køre dette:      string sqlCom = "DELETE FROM Bolig WHERE BiD = '"+intBiD+"'";
+                og indtaster samme BiD, så bliver den slette. Jeg fatter hat. 
+                
+                 */
+
                 SqlCommand cmd = new SqlCommand(sqlCom, conn);
                 cmd.Parameters.Add("@BiD", System.Data.SqlDbType.Int);
                 cmd.Parameters["@BiD"].Value = Convert.ToInt32(BiD);
 
                 // Attempt to execute query
-                try
-                {
+                
+                
                     conn.Open();
                     cmd.ExecuteNonQuery();
                     conn.Close();
@@ -58,16 +75,17 @@ namespace RealBolig
                                     cmd.Parameters["@BiD"].Value + ")");
                     mBoligIDTextBox.Text = "";
                     this.boligTableAdapter.Fill(this.kaspermark_dk_db_realboligDataSet.Bolig);
-                }
-                catch (Exception exc)
-                {
-                    MessageBox.Show("ERROR: \n\n" + exc.ToString());
-                    mBoligIDTextBox.Text = "";
-                }
+                
+                
+                
+                 
+                
             }
             else
                 MessageBox.Show("Indtast kun heltal.");
                 mBoligIDTextBox.Text = "";
         }
     }
+
+    
 }
