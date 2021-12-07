@@ -71,9 +71,9 @@ namespace RealBolig
             this.salgsDatoDataGridViewTextBoxColumn,
             this.kvmDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.boligBindingSource1;
-            this.dataGridView1.Location = new System.Drawing.Point(498, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 112);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(864, 725);
+            this.dataGridView1.Size = new System.Drawing.Size(864, 338);
             this.dataGridView1.TabIndex = 72;
             // 
             // biDDataGridViewTextBoxColumn
@@ -137,7 +137,7 @@ namespace RealBolig
             // 
             // btnSletBolig
             // 
-            this.btnSletBolig.Font = new System.Drawing.Font("Montserrat Medium", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSletBolig.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSletBolig.Location = new System.Drawing.Point(209, 48);
             this.btnSletBolig.Name = "btnSletBolig";
             this.btnSletBolig.Size = new System.Drawing.Size(152, 40);
@@ -148,19 +148,19 @@ namespace RealBolig
             // 
             // mBoligIDTextBox
             // 
-            this.mBoligIDTextBox.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mBoligIDTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mBoligIDTextBox.Location = new System.Drawing.Point(127, 12);
             this.mBoligIDTextBox.Name = "mBoligIDTextBox";
-            this.mBoligIDTextBox.Size = new System.Drawing.Size(330, 30);
+            this.mBoligIDTextBox.Size = new System.Drawing.Size(330, 29);
             this.mBoligIDTextBox.TabIndex = 56;
             // 
             // labelBiD
             // 
             this.labelBiD.AutoSize = true;
-            this.labelBiD.Font = new System.Drawing.Font("Montserrat Medium", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBiD.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelBiD.Location = new System.Drawing.Point(31, 12);
             this.labelBiD.Name = "labelBiD";
-            this.labelBiD.Size = new System.Drawing.Size(88, 26);
+            this.labelBiD.Size = new System.Drawing.Size(74, 24);
             this.labelBiD.TabIndex = 55;
             this.labelBiD.Text = "Bolig ID";
             // 
