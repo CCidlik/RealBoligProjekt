@@ -208,6 +208,7 @@ namespace RealBolig
                     mSalgsPrisTextBox.Text = "";
                 }
             }
+            UpdateData.updateGridView("select * from Bolig" ,dataGridView1);
         }
     }
 }
