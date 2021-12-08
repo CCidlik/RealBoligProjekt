@@ -19,7 +19,7 @@ namespace RealBolig.DAL.Operations
         public void Insert(EMælger mInsert)
         {
             // assumption:
-            bool FuldeNavn_ok = true, Tlf_ok = true, Mail_ok = true, Adresse_ok = true;
+            bool FuldeNavn_ok = true, Tlf_ok = true, Mail_ok = true;
 
             // length check:
             if (mInsert.FuldeNavn.Length > 51) FuldeNavn_ok = false;

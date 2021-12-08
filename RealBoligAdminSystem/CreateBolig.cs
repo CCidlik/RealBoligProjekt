@@ -55,6 +55,13 @@ namespace RealBolig
             mKvmTextbox.Text = "";
             mSalgsPrisTextbox.Text = "";
 
+            UpdateData.updateGridView("select * from Bolig", dataGridView1);
+
+        }
+
+        private void btnForslåPris_Click(object sender, EventArgs e)
+        {
+            //UpdateData.updateGridView("select * from Bolig order by PostNR", dataGridView1);
         }
     }
 }
