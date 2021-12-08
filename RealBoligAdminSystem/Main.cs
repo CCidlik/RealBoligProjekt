@@ -156,9 +156,9 @@ namespace RealBolig
         }
 
         #region MæglerSubMenu
-        private void button12_Click_1(object sender, EventArgs e)
+        private void btnSubMenuOpretMægler_Click_1(object sender, EventArgs e)
         {
-            //Indtast kode
+            openFormsLoader(new CreateMægler());
 
             /* Hvis submenuen ønskes at hides når der trykkes
             hideSubMenu();
@@ -166,9 +166,9 @@ namespace RealBolig
         }
 
 
-        private void button11_Click_1(object sender, EventArgs e)
+        private void btnSubMenuIndlæsMægler_Click_1(object sender, EventArgs e)
         {
-            //Indtast kode
+            openFormsLoader(new ReadMægler());
 
             /* Hvis submenuen ønskes at hides når der trykkes
             hideSubMenu();
@@ -176,9 +176,9 @@ namespace RealBolig
         }
 
 
-        private void button10_Click(object sender, EventArgs e)
+        private void btnSubMenuOpdaterMægler_Click(object sender, EventArgs e)
         {
-            //Indtast kode
+            openFormsLoader(new UpdateMægler());
 
             /* Hvis submenuen ønskes at hides når der trykkes
             hideSubMenu();
@@ -186,9 +186,9 @@ namespace RealBolig
         }
 
 
-        private void button9_Click(object sender, EventArgs e)
+        private void btnSubMenuSletMægler_Click(object sender, EventArgs e)
         {
-            //Indtast kode
+            openFormsLoader(new DeleteMægler());
 
             /* Hvis submenuen ønskes at hides når der trykkes
             hideSubMenu();
@@ -204,6 +204,7 @@ namespace RealBolig
             hideSubMenu();
         }
 
+        #region FormLoader Funktion
         private Form activeForm = null;
         private void openFormsLoader(Form loadedForm)
         {
@@ -219,7 +220,7 @@ namespace RealBolig
             loadedForm.Show();
 
         }
-
+        #endregion
         private void button1_Click(object sender, EventArgs e)
         {
 
