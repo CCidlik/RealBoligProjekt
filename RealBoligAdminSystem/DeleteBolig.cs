@@ -37,7 +37,6 @@ namespace RealBolig
             int intBiD;
 
             // assumption:
-            bool BiD_ok = true;
 
             bool success = int.TryParse(BiD, out intBiD);
 
@@ -51,22 +50,17 @@ namespace RealBolig
 
                 //(CRU)D:
                 string sqlCom = "DELETE FROM Bolig WHERE BiD = '" + intBiD + "'";
-
-                /*
-                    Hvis man siger       string sqlCom = "DELETE FROM Bolig_Status WHERE BiD = '"+intBiD+"'";
-                køre programmet og sletter fx 15, så siger den success men den er ikke slettet...
-
-                Hvis man så efter køre dette:      string sqlCom = "DELETE FROM Bolig WHERE BiD = '"+intBiD+"'";
-                og indtaster samme BiD, så bliver den slette. Jeg fatter hat. 
-                
-                 */
+                string sqlCom2 = "DELETE FROM Bolig_Status WHERE BiD = '" + intBiD + "'";
 
                 SqlCommand cmd = new SqlCommand(sqlCom, conn);
+                SqlCommand cmd2 = new SqlCommand(sqlCom2, conn);
                 cmd.Parameters.Add("@BiD", System.Data.SqlDbType.Int);
                 cmd.Parameters["@BiD"].Value = Convert.ToInt32(BiD);
 
                 // Attempt to execute query
-
+                conn.Open();
+                cmd2.ExecuteNonQuery();
+                conn.Close();
 
                 conn.Open();
                 cmd.ExecuteNonQuery();
@@ -74,17 +68,19 @@ namespace RealBolig
                 MessageBox.Show("SUCCESS :\n" + sqlCom + "\nmed værdierne: (" +
                                 cmd.Parameters["@BiD"].Value + ")");
                 mBoligIDTextBox.Text = "";
-                this.boligTableAdapter.Fill(this.kaspermark_dk_db_realboligDataSet.Bolig);
-
-
-
-
+                UpdateData.updateGridView("SELECT * FROM Bolig", dataGridView1);
 
             }
             else
                 MessageBox.Show("Indtast kun heltal.");
             mBoligIDTextBox.Text = "";
+            
+            UpdateData.updateGridView("SELECT * FROM Bolig", dataGridView1);
+            
+
         }
+
+        
     }
 
 
