@@ -23,5 +23,17 @@ namespace RealBolig
             this.kundeTableAdapter.Fill(this.kaspermark_dk_db_realboligDataSet2.Kunde);
 
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void labelTlf_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }
