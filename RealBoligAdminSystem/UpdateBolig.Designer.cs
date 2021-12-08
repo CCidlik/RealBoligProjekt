@@ -72,7 +72,7 @@ namespace RealBolig
             this.Solgt = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.kaspermark_dk_db_realboligDataSet5 = new RealBolig.kaspermark_dk_db_realboligDataSet5();
             this.boligStatusBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bolig_StatusTableAdapter = new RealBolig.kaspermark_dk_db_realboligDataSet5TableAdapters.Bolig_StatusTableAdapter();
+            this.bolig_StatusTableAdapter = new RealBolig.kaspermark_dk_db_realboligDataSetTableAdapters.Bolig_StatusTableAdapter();
             this.biDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kiDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.handelsPrisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -560,7 +560,7 @@ namespace RealBolig
             ((System.ComponentModel.ISupportInitialize)(this.kaspermark_dk_db_realboligDataSet4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.boligBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kaspermark_dk_db_realboligDataSet5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.boligStatusBindingSource)).EndInit();
+           // ((System.ComponentModel.ISupportInitialize)(this.boligStatusBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -610,7 +610,7 @@ namespace RealBolig
         private System.Windows.Forms.DataGridViewCheckBoxColumn Solgt;
         private kaspermark_dk_db_realboligDataSet5 kaspermark_dk_db_realboligDataSet5;
         private System.Windows.Forms.BindingSource boligStatusBindingSource;
-        private kaspermark_dk_db_realboligDataSet5TableAdapters.Bolig_StatusTableAdapter bolig_StatusTableAdapter;
+        private kaspermark_dk_db_realboligDataSetTableAdapters.Bolig_StatusTableAdapter bolig_StatusTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn biDDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn kiDDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn handelsPrisDataGridViewTextBoxColumn;
