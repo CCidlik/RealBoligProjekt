@@ -12,11 +12,11 @@ namespace RealBolig.DAL.Entities
 
         public int KiD { get; set; }
         public string FuldeNavn { get; set; }
-        public int Tlf { get; set; }
+        public string Tlf { get; set; }
         public string Mail { get; set; }
 
 
-        public EMælger(string FuldeNavn, int Tlf, string Mail)
+        public EMælger(string FuldeNavn, string Tlf, string Mail)
         {
 
             this.FuldeNavn = FuldeNavn;

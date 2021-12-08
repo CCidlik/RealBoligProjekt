@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using RealBolig.DAL.Entities;
 using Microsoft.Data.SqlClient;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace RealBolig.DAL.Operations
 {
@@ -16,44 +18,76 @@ namespace RealBolig.DAL.Operations
         //CRUD
         public void Insert(EMælger mInsert)
         {
-            conn.Open();
-            string query = "INSERT INTO Ejendomsmælger VALUES ('" + mInsert.FuldeNavn + "', " + mInsert.Tlf + ", '" + mInsert.Mail + "');";
+            // assumption:
+            bool FuldeNavn_ok = true, Tlf_ok = true, Mail_ok = true, Adresse_ok = true;
 
-            SqlCommand cmd = new SqlCommand(query, conn);
-            conn.Close();
-        }
+            // length check:
+            if (mInsert.FuldeNavn.Length > 51) FuldeNavn_ok = false;
+            if (mInsert.Tlf.Length > 9) Tlf_ok = false;
+            if (mInsert.Mail.Length > 51) Mail_ok = false;
 
-        public void Delete(EMælger mDelete)
-        {
-            conn.Open();
-            string query = "DELETE FROM Ejendomsmælger WHERE " + mDelete.KiD + ";";
+            // Check for alphanumeric characters
+            Regex retal = new Regex(@"(^[0-9 ]*$)");
+            if (!retal.IsMatch(mInsert.Tlf)) Tlf_ok = false;
 
-            SqlCommand cmd = new SqlCommand(query, conn);
-            conn.Close();
-        }
+            // action
+            if (FuldeNavn_ok && Tlf_ok && Mail_ok)
+            {
+                // database med bolig tabel:
+                SqlConnection conn = new SqlConnection(ConnString.getConnStr());
 
-        public void Update(EMælger mUpdate)
-        {
+                //C(RUD):
+                string sqlCom = "INSERT INTO Ejendomsmægler VALUES (@FuldeNavn, @Tlf, @Mail);";
+                SqlCommand cmd = new SqlCommand(sqlCom, conn);
 
-            conn.Open();
+                cmd.Parameters.Add("@FuldeNavn", System.Data.SqlDbType.VarChar);
+                cmd.Parameters["@FuldeNavn"].Value = Convert.ToString(mInsert.FuldeNavn);
 
-            string query = "UPDATE Ejendomsmælger SET column1 = value1, column2 = value2, ... WHERE condition; "; //Hjælp
+                cmd.Parameters.Add("@Tlf", System.Data.SqlDbType.Int);
+                cmd.Parameters["@Tlf"].Value = Convert.ToInt32(mInsert.Tlf);
 
-            SqlCommand cmd = new SqlCommand(query, conn);
-            conn.Close();
+                cmd.Parameters.Add("@Mail", System.Data.SqlDbType.VarChar);
+                cmd.Parameters["@Mail"].Value = Convert.ToString(mInsert.Mail);
 
-        }
+                // Attempt to execute query
+                try
+                {
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                    MessageBox.Show("SUCCESS :\n" + sqlCom + "\nmed værdierne: (" +
+                                    cmd.Parameters["@FuldeNavn"].Value + ", " +
+                                    cmd.Parameters["@Tlf"].Value + ", " +
+                                    cmd.Parameters["@Mail"].Value + ", " +
+                                    ")");
 
-        public void Select(EMælger mSelect)
-        {
+                }
+                catch (Exception exc)
+                {
+                    MessageBox.Show("ERROR: \n\n" + exc.ToString());
 
-            conn.Open();
-            string query = "SELECT * FROM Ejendomsmælger WHERE " + mSelect.KiD + ";";
+                }
+            }
+            else if (!FuldeNavn_ok)
+            {
+                MessageBox.Show("Der må maks være 50 tegn i Fulde Navn feltet.");
 
-            SqlCommand cmd = new SqlCommand(query, conn);
-            conn.Close();
+            }
+
+            else if (!Tlf_ok)
+            {
+                MessageBox.Show("Der må kun indtastes tal i Tlf. feltet, samt maks 8 tegn.");
+
+            }
+
+            else if (!Mail_ok)
+            {
+                MessageBox.Show("Der må maks være 50 tegn i E-Mail feltet.");
+
+            }
 
         }
 
     }
+
 }
