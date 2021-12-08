@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Data.SqlClient;
 
 namespace RealBolig
 {
@@ -34,6 +35,123 @@ namespace RealBolig
 
         }
 
+        private void SearcgKunde_Click(object sender, EventArgs e)
+        {
+            string KiD = KiDTextBox.Text;
+            int intKiD = Convert.ToInt32(KiD);
+            
 
+            mFnavnTextBox.Text = getNavn(intKiD);
+            mTlfTextBox.Text = Convert.ToString(getTLF(intKiD));
+            mMailTextBox.Text = getMail(intKiD);
+            mAdresseTextBox.Text = getAdresse(intKiD);
+            
+            
+        }
+
+        private void updateOplysninger_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public void setNavn(int KiD) {
+            SqlConnection conn = new SqlConnection(ConnString.getConnStr());
+            string sqltest = "UPDATE Kunde SET FuldeNavn WHERE KiD = '" + KiD + "'";
+            SqlCommand cmd = new SqlCommand(sqltest, conn);
+
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
+
+        }
+
+        public string getNavn(int KiD) {
+            SqlConnection conn = new SqlConnection(ConnString.getConnStr());
+            string sqltest = "SELECT FuldeNavn FROM Kunde WHERE KiD = '"+KiD+"'";
+            SqlCommand cmd = new SqlCommand(sqltest, conn);
+
+            using (conn)
+            {
+                conn.Open();
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+
+                reader.Read();
+                string returned = reader.GetString(0);
+                return returned;
+
+
+            }
+
+        }
+
+        public int getTLF(int KiD)
+        {
+            SqlConnection conn = new SqlConnection(ConnString.getConnStr());
+            string sqltest = "SELECT Tlf FROM Kunde WHERE KiD = '" + KiD + "'";
+            SqlCommand cmd = new SqlCommand(sqltest, conn);
+
+            using (conn)
+            {
+                conn.Open();
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+
+                reader.Read();
+                int returned = reader.GetInt32(0);
+                return returned;
+
+
+            }
+
+        }
+
+        public string getMail(int KiD)
+        {
+            SqlConnection conn = new SqlConnection(ConnString.getConnStr());
+            string sqltest = "SELECT Mail FROM Kunde WHERE KiD = '" + KiD + "'";
+            SqlCommand cmd = new SqlCommand(sqltest, conn);
+
+            using (conn)
+            {
+                conn.Open();
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+
+                reader.Read();
+                string returned = reader.GetString(0);
+                return returned;
+
+
+            }
+
+        }
+
+        public string getAdresse(int KiD)
+        {
+            SqlConnection conn = new SqlConnection(ConnString.getConnStr());
+            string sqltest = "SELECT Adresse FROM Kunde WHERE KiD = '" + KiD + "'";
+            SqlCommand cmd = new SqlCommand(sqltest, conn);
+
+            using (conn)
+            {
+                conn.Open();
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+
+                reader.Read();
+                string returned = reader.GetString(0);
+                return returned;
+
+
+            }
+
+        }
+
+        
     }
 }
