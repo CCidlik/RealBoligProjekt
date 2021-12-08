@@ -325,6 +325,9 @@
     <EmbeddedResource Include="DeleteKunde.resx">
       <DependentUpon>DeleteKunde.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DeleteMægler.resx">
+      <DependentUpon>DeleteMægler.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
