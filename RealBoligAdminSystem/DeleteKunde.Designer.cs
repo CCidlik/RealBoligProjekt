@@ -32,54 +32,46 @@ namespace RealBolig
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.tbKiD = new System.Windows.Forms.TextBox();
-            this.kundeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.deleteKiD = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.kaspermark_dk_db_realboligDataSet2 = new RealBolig.kaspermark_dk_db_realboligDataSet2();
-            this.kundeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.kundeTableAdapter = new RealBolig.kaspermark_dk_db_realboligDataSet2TableAdapters.KundeTableAdapter();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.kundeBindingSource)).BeginInit();
+            this.kundeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.kaspermark_dk_db_realboligDataSet2 = new RealBolig.kaspermark_dk_db_realboligDataSet2();
+            this.kundeTableAdapter = new RealBolig.kaspermark_dk_db_realboligDataSet2TableAdapters.KundeTableAdapter();
+            this.kundeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.deleteKiD = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kaspermark_dk_db_realboligDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kundeBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kaspermark_dk_db_realboligDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kundeBindingSource)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.ControlDark;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(58, 48);
+            this.label1.Location = new System.Drawing.Point(25, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 24);
+            this.label1.Size = new System.Drawing.Size(88, 24);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Indtast KiD";
+            this.label1.Text = "Kunde ID";
             // 
             // tbKiD
             // 
             this.tbKiD.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbKiD.Location = new System.Drawing.Point(177, 51);
+            this.tbKiD.Location = new System.Drawing.Point(161, 29);
             this.tbKiD.Name = "tbKiD";
-            this.tbKiD.Size = new System.Drawing.Size(155, 29);
+            this.tbKiD.Size = new System.Drawing.Size(234, 29);
             this.tbKiD.TabIndex = 1;
-            // 
-            // kundeBindingSource
-            // 
-            this.kundeBindingSource.DataMember = "Kunde";
-            // 
-            // deleteKiD
-            // 
-            this.deleteKiD.Location = new System.Drawing.Point(381, 51);
-            this.deleteKiD.Name = "deleteKiD";
-            this.deleteKiD.Size = new System.Drawing.Size(192, 42);
-            this.deleteKiD.TabIndex = 3;
-            this.deleteKiD.Text = "Slet Kunde";
-            this.deleteKiD.UseVisualStyleBackColor = true;
-            this.deleteKiD.Click += new System.EventHandler(this.deleteKiD_Click);
             // 
             // dataGridView1
             // 
@@ -94,25 +86,12 @@ namespace RealBolig
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5});
             this.dataGridView1.DataSource = this.kundeBindingSource1;
-            this.dataGridView1.Location = new System.Drawing.Point(62, 159);
+            this.dataGridView1.Location = new System.Drawing.Point(63, 64);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(661, 265);
+            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dataGridView1.Size = new System.Drawing.Size(640, 200);
             this.dataGridView1.TabIndex = 4;
-            // 
-            // kaspermark_dk_db_realboligDataSet2
-            // 
-            this.kaspermark_dk_db_realboligDataSet2.DataSetName = "kaspermark_dk_db_realboligDataSet2";
-            this.kaspermark_dk_db_realboligDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // kundeBindingSource1
-            // 
-            this.kundeBindingSource1.DataMember = "Kunde";
-            this.kundeBindingSource1.DataSource = this.kaspermark_dk_db_realboligDataSet2;
-            // 
-            // kundeTableAdapter
-            // 
-            this.kundeTableAdapter.ClearBeforeFill = true;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -149,24 +128,88 @@ namespace RealBolig
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
+            // kundeBindingSource1
+            // 
+            this.kundeBindingSource1.DataMember = "Kunde";
+            this.kundeBindingSource1.DataSource = this.kaspermark_dk_db_realboligDataSet2;
+            // 
+            // kaspermark_dk_db_realboligDataSet2
+            // 
+            this.kaspermark_dk_db_realboligDataSet2.DataSetName = "kaspermark_dk_db_realboligDataSet2";
+            this.kaspermark_dk_db_realboligDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // kundeTableAdapter
+            // 
+            this.kundeTableAdapter.ClearBeforeFill = true;
+            // 
+            // kundeBindingSource
+            // 
+            this.kundeBindingSource.DataMember = "Kunde";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Location = new System.Drawing.Point(63, 29);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(640, 35);
+            this.panel1.TabIndex = 5;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.tbKiD);
+            this.panel2.Controls.Add(this.deleteKiD);
+            this.panel2.Location = new System.Drawing.Point(63, 266);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(640, 125);
+            this.panel2.TabIndex = 6;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label2.Location = new System.Drawing.Point(271, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(109, 20);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "SLET KUNDE";
+            // 
+            // deleteKiD
+            // 
+            this.deleteKiD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteKiD.Location = new System.Drawing.Point(409, 29);
+            this.deleteKiD.Name = "deleteKiD";
+            this.deleteKiD.Size = new System.Drawing.Size(120, 28);
+            this.deleteKiD.TabIndex = 3;
+            this.deleteKiD.Text = "Slet Kunde";
+            this.deleteKiD.UseVisualStyleBackColor = true;
+            this.deleteKiD.Click += new System.EventHandler(this.deleteKiD_Click);
+            // 
             // DeleteKunde
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(30)))), ((int)(((byte)(51)))));
+            this.ClientSize = new System.Drawing.Size(1029, 572);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.deleteKiD);
-            this.Controls.Add(this.tbKiD);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DeleteKunde";
             this.Text = "DeleteKunde";
             this.Load += new System.EventHandler(this.DeleteKunde_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.kundeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kaspermark_dk_db_realboligDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kundeBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kaspermark_dk_db_realboligDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kundeBindingSource)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -176,13 +219,6 @@ namespace RealBolig
         private System.Windows.Forms.TextBox tbKiD;
         //private kaspermark_dk_db_realboligDataSet3 kaspermark_dk_db_realboligDataSet3;
         private System.Windows.Forms.BindingSource kundeBindingSource;
-        //private kaspermark_dk_db_realboligDataSet3TableAdapters.KundeTableAdapter kundeTableAdapter;
-        /*private System.Windows.Forms.DataGridViewTextBoxColumn kiDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fuldeNavnDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tlfDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mailDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn adresseDataGridViewTextBoxColumn;*/
-        private System.Windows.Forms.Button deleteKiD;
         private System.Windows.Forms.DataGridView dataGridView1;
         private kaspermark_dk_db_realboligDataSet2 kaspermark_dk_db_realboligDataSet2;
         private System.Windows.Forms.BindingSource kundeBindingSource1;
@@ -192,5 +228,9 @@ namespace RealBolig
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button deleteKiD;
     }
 }

@@ -350,6 +350,9 @@
     <EmbeddedResource Include="ReadKunde.resx">
       <DependentUpon>ReadKunde.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReadMægler.resx">
+      <DependentUpon>ReadMægler.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UpdateBolig.resx">
       <DependentUpon>UpdateBolig.cs</DependentUpon>
     </EmbeddedResource>
