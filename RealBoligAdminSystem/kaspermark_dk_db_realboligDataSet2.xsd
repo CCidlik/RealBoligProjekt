@@ -74,29 +74,29 @@ SELECT KiD, FuldeNavn, Tlf, Mail, Adresse FROM Kunde WHERE (KiD = @KiD)</Command
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="kaspermark_dk_db_realboligDataSet2" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="kaspermark_dk_db_realboligDataSet2" msprop:Generator_UserDSName="kaspermark_dk_db_realboligDataSet2">
+  <xs:element name="kaspermark_dk_db_realboligDataSet2" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="kaspermark_dk_db_realboligDataSet2" msprop:Generator_DataSetName="kaspermark_dk_db_realboligDataSet2">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Kunde" msprop:Generator_TableClassName="KundeDataTable" msprop:Generator_TableVarName="tableKunde" msprop:Generator_TablePropName="Kunde" msprop:Generator_RowDeletingName="KundeRowDeleting" msprop:Generator_RowChangingName="KundeRowChanging" msprop:Generator_RowEvHandlerName="KundeRowChangeEventHandler" msprop:Generator_RowDeletedName="KundeRowDeleted" msprop:Generator_UserTableName="Kunde" msprop:Generator_RowChangedName="KundeRowChanged" msprop:Generator_RowEvArgName="KundeRowChangeEvent" msprop:Generator_RowClassName="KundeRow">
+        <xs:element name="Kunde" msprop:Generator_RowEvHandlerName="KundeRowChangeEventHandler" msprop:Generator_RowDeletedName="KundeRowDeleted" msprop:Generator_RowDeletingName="KundeRowDeleting" msprop:Generator_RowEvArgName="KundeRowChangeEvent" msprop:Generator_TablePropName="Kunde" msprop:Generator_RowChangedName="KundeRowChanged" msprop:Generator_RowChangingName="KundeRowChanging" msprop:Generator_TableClassName="KundeDataTable" msprop:Generator_RowClassName="KundeRow" msprop:Generator_TableVarName="tableKunde" msprop:Generator_UserTableName="Kunde">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="KiD" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnKiD" msprop:Generator_ColumnPropNameInRow="KiD" msprop:Generator_ColumnPropNameInTable="KiDColumn" msprop:Generator_UserColumnName="KiD" type="xs:int" />
-              <xs:element name="FuldeNavn" msprop:Generator_ColumnVarNameInTable="columnFuldeNavn" msprop:Generator_ColumnPropNameInRow="FuldeNavn" msprop:Generator_ColumnPropNameInTable="FuldeNavnColumn" msprop:Generator_UserColumnName="FuldeNavn">
+              <xs:element name="KiD" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="KiD" msprop:Generator_ColumnPropNameInTable="KiDColumn" msprop:Generator_ColumnVarNameInTable="columnKiD" msprop:Generator_UserColumnName="KiD" type="xs:int" />
+              <xs:element name="FuldeNavn" msprop:Generator_ColumnPropNameInRow="FuldeNavn" msprop:Generator_ColumnPropNameInTable="FuldeNavnColumn" msprop:Generator_ColumnVarNameInTable="columnFuldeNavn" msprop:Generator_UserColumnName="FuldeNavn">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Tlf" msprop:Generator_ColumnVarNameInTable="columnTlf" msprop:Generator_ColumnPropNameInRow="Tlf" msprop:Generator_ColumnPropNameInTable="TlfColumn" msprop:Generator_UserColumnName="Tlf" type="xs:int" />
-              <xs:element name="Mail" msprop:Generator_ColumnVarNameInTable="columnMail" msprop:Generator_ColumnPropNameInRow="Mail" msprop:Generator_ColumnPropNameInTable="MailColumn" msprop:Generator_UserColumnName="Mail">
+              <xs:element name="Tlf" msprop:Generator_ColumnPropNameInRow="Tlf" msprop:Generator_ColumnPropNameInTable="TlfColumn" msprop:Generator_ColumnVarNameInTable="columnTlf" msprop:Generator_UserColumnName="Tlf" type="xs:int" />
+              <xs:element name="Mail" msprop:Generator_ColumnPropNameInRow="Mail" msprop:Generator_ColumnPropNameInTable="MailColumn" msprop:Generator_ColumnVarNameInTable="columnMail" msprop:Generator_UserColumnName="Mail">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Adresse" msprop:Generator_ColumnVarNameInTable="columnAdresse" msprop:Generator_ColumnPropNameInRow="Adresse" msprop:Generator_ColumnPropNameInTable="AdresseColumn" msprop:Generator_UserColumnName="Adresse">
+              <xs:element name="Adresse" msprop:Generator_ColumnPropNameInRow="Adresse" msprop:Generator_ColumnPropNameInTable="AdresseColumn" msprop:Generator_ColumnVarNameInTable="columnAdresse" msprop:Generator_UserColumnName="Adresse">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="75" />

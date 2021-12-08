@@ -26,7 +26,7 @@ namespace RealBolig
         private void CreateKunde_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'kaspermark_dk_db_realboligDataSet2.Kunde' table. You can move, or remove it, as needed.
-            this.kundeTableAdapter.Fill(this.kaspermark_dk_db_realboligDataSet.Kunde);
+            this.kundeTableAdapter.Fill(this.kaspermark_dk_db_realboligDataSet2.Kunde);
 
         }
 
@@ -46,7 +46,7 @@ namespace RealBolig
             mTlfTextBox.Text = "";
             mMailTextBox.Text = "";
             mAdresseTextBox.Text = "";
-            this.kundeTableAdapter.Fill(this.kaspermark_dk_db_realboligDataSet.Kunde);
+            //this.kundeTableAdapter.Fill(this.kaspermark_dk_db_realboligDataSet.Kunde);
             /*
             // assumption:
             bool FuldeNavn_ok = true, Tlf_ok = true, Mail_ok = true, Adresse_ok = true;

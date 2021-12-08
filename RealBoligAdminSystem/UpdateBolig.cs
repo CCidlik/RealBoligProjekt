@@ -22,12 +22,11 @@ namespace RealBolig
 
         private void UpdateBolig_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'kaspermark_dk_db_realboligDataSet5.Bolig_Status' table. You can move, or remove it, as needed.
-            //this.bolig_StatusTableAdapter.Fill(this.kaspermark_dk_db_realboligDataSet.Bolig_Status);
-            // TODO: This line of code loads data into the 'kaspermark_dk_db_realboligDataSet4.Bolig' table. You can move, or remove it, as needed.
-            this.boligTableAdapter1.Fill(this.kaspermark_dk_db_realboligDataSet4.Bolig);
+            // TODO: This line of code loads data into the 'kaspermark_dk_db_realboligDataSet1.Bolig_Status' table. You can move, or remove it, as needed.
+            this.bolig_StatusTableAdapter.Fill(this.kaspermark_dk_db_realboligDataSet1.Bolig_Status);
             // TODO: This line of code loads data into the 'kaspermark_dk_db_realboligDataSet.Bolig' table. You can move, or remove it, as needed.
             this.boligTableAdapter.Fill(this.kaspermark_dk_db_realboligDataSet.Bolig);
+
 
         }
 
@@ -90,7 +89,7 @@ namespace RealBolig
                                         ")");
                         mBiDTextBox.Text = "";
                         mSalgsPrisTextBox.Text = "";
-                        this.boligTableAdapter1.Fill(this.kaspermark_dk_db_realboligDataSet4.Bolig);
+                        //this.boligTableAdapter1.Fill(this.kaspermark_dk_db_realboligDataSet4.Bolig);
                     }
 
                     catch (Exception exc)
@@ -183,8 +182,8 @@ namespace RealBolig
                         mKøberIDTextBox.Text = "";
                         mKøbsPrisTextBox.Text = "";
                         mKøbsDatoTextBox.Text = "";
-                        this.bolig_StatusTableAdapter.Fill(this.kaspermark_dk_db_realboligDataSet.Bolig_Status);
-                        this.boligTableAdapter1.Fill(this.kaspermark_dk_db_realboligDataSet4.Bolig);
+                        //this.bolig_StatusTableAdapter.Fill(this.kaspermark_dk_db_realboligDataSet.Bolig_Status);
+                        //this.boligTableAdapter1.Fill(this.kaspermark_dk_db_realboligDataSet4.Bolig);
                     }
 
                     catch (Exception exc)

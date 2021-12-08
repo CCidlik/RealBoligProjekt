@@ -19,8 +19,8 @@ namespace RealBolig
 
         private void CreateMægler_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'kaspermark_dk_db_realboligDataSet5.Ejendomsmægler' table. You can move, or remove it, as needed.
-            this.ejendomsmæglerTableAdapter.Fill(this.kaspermark_dk_db_realboligDataSet5.Ejendomsmægler);
+            // TODO: This line of code loads data into the 'kaspermark_dk_db_realboligDataSet3.Ejendomsmægler' table. You can move, or remove it, as needed.
+            this.ejendomsmæglerTableAdapter.Fill(this.kaspermark_dk_db_realboligDataSet3.Ejendomsmægler);
 
         }
     }

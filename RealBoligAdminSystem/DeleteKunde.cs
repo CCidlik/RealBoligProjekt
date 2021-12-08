@@ -20,8 +20,8 @@ namespace RealBolig
 
         private void DeleteKunde_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'kaspermark_dk_db_realboligDataSet3.Kunde' table. You can move, or remove it, as needed.
-            this.kundeTableAdapter.Fill(this.kaspermark_dk_db_realboligDataSet3.Kunde);
+            // TODO: This line of code loads data into the 'kaspermark_dk_db_realboligDataSet2.Kunde' table. You can move, or remove it, as needed.
+            this.kundeTableAdapter.Fill(this.kaspermark_dk_db_realboligDataSet2.Kunde);
 
         }
 
@@ -64,7 +64,7 @@ namespace RealBolig
                     MessageBox.Show("SUCCESS :\n" + sqlCom + "\nmed værdierne: (" +
                                     cmd.Parameters["@BiD"].Value + ")");
                     tbKiD.Text = "";
-                    this.kundeTableAdapter.Fill(this.kaspermark_dk_db_realboligDataSet3.Kunde);
+                    //this.kundeTableAdapter.Fill(this.kaspermark_dk_db_realboligDataSet3.Kunde);
                 }
                 catch (Exception exc)
                 {

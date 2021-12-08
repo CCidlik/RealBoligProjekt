@@ -26,11 +26,11 @@ namespace RealBolig
 
         private void CreateBolig_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'kaspermark_dk_db_realboligDataSet.Kunde' table. You can move, or remove it, as needed.
-            this.kundeTableAdapter.Fill(this.kaspermark_dk_db_realboligDataSet.Kunde);
+            // TODO: This line of code loads data into the 'kaspermark_dk_db_realboligDataSet2.Kunde' table. You can move, or remove it, as needed.
+            this.kundeTableAdapter.Fill(this.kaspermark_dk_db_realboligDataSet2.Kunde);
             // TODO: This line of code loads data into the 'kaspermark_dk_db_realboligDataSet.Bolig' table. You can move, or remove it, as needed.
             this.boligTableAdapter.Fill(this.kaspermark_dk_db_realboligDataSet.Bolig);
-
+            
         }
 
         private void btnOpretBolig_Click(object sender, EventArgs e)
