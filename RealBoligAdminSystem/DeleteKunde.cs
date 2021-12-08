@@ -28,53 +28,58 @@ namespace RealBolig
         private void deleteKiD_Click(object sender, EventArgs e)
         {
             string KiD = tbKiD.Text;
+            int intKiD;
 
             // assumption:
-            bool KiD_ok = true;
+
+            bool success = int.TryParse(KiD, out intKiD);
 
             // action
-            if (KiD_ok)
+            if (success == true)
             {
+                intKiD = Convert.ToInt32(KiD);
+
                 // database med kundetabel:
                 SqlConnection conn = new SqlConnection(ConnString.getConnStr());
 
-
-                try
-                {
-                    Convert.ToInt32(KiD);
-                }
-                catch (Exception exc)
-                {
-                    MessageBox.Show("ERROR: \n\n" + exc.ToString());
-                    tbKiD.Text = "";
-                }
-
                 //(CRU)D:
-                string sqlCom = "DELETE FROM Kunde WHERE KiD = " + KiD + ";";
+                string sqlCom = "DELETE FROM Kunde WHERE KiD = '" + intKiD + "'";
+                string sqlCom2 = "DELETE FROM Bolig WHERE KiD = '" + intKiD + "'";
+                string sqlCom3 = "DELETE FROM Bolig_Status WHERE KiD = '" + intKiD + "'";
+
+
                 SqlCommand cmd = new SqlCommand(sqlCom, conn);
-                cmd.Parameters.Add("@BiD", System.Data.SqlDbType.Int);
-                cmd.Parameters["@BiD"].Value = Convert.ToInt32(KiD);
+                SqlCommand cmd2 = new SqlCommand(sqlCom2, conn);
+                SqlCommand cmd3 = new SqlCommand(sqlCom3, conn);
+
+                //cmd.Parameters.Add("@KiD", System.Data.SqlDbType.Int);
+                //cmd.Parameters["@KiD"].Value = Convert.ToInt32(KiD);
 
                 // Attempt to execute query
-                try
-                {
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
-                    conn.Close();
-                    MessageBox.Show("SUCCESS :\n" + sqlCom + "\nmed værdierne: (" +
-                                    cmd.Parameters["@BiD"].Value + ")");
-                    tbKiD.Text = "";
-                    //this.kundeTableAdapter.Fill(this.kaspermark_dk_db_realboligDataSet3.Kunde);
-                }
-                catch (Exception exc)
-                {
-                    MessageBox.Show("ERROR: \n\n" + exc.ToString());
-                    tbKiD.Text = "";
-                }
+
+                conn.Open();
+                cmd3.ExecuteReader();
+                conn.Close();
+
+                conn.Open();
+                cmd2.ExecuteReader();
+                conn.Close();
+
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                //MessageBox.Show("SUCCESS :\n" + sqlCom + "\nmed værdierne: (" +
+                //                cmd.Parameters["@KiD"].Value + ")");
+                tbKiD.Text = "";
+                UpdateData.updateGridView("SELECT * FROM Kunde", dataGridView1);
+
             }
             else
                 MessageBox.Show("Indtast kun heltal.");
             tbKiD.Text = "";
+
+            UpdateData.updateGridView("SELECT * FROM Kunde", dataGridView1);
+
         }
     }
 }
