@@ -46,17 +46,7 @@ namespace RealBolig
             this.labelKiD = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabBoligTabel = new System.Windows.Forms.TabPage();
-            this.boligBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.tabKundeTabel = new System.Windows.Forms.TabPage();
-            this.kundeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.boligBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.kundeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.kaspermarkdkdbrealboligDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.kaspermark_dk_db_realboligDataSet = new RealBolig.kaspermark_dk_db_realboligDataSet();
-            this.kaspermarkdkdbrealboligDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.boligBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.boligTableAdapter = new RealBolig.kaspermark_dk_db_realboligDataSetTableAdapters.BoligTableAdapter();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,46 +56,58 @@ namespace RealBolig
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.solgtDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.boligBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.kaspermark_dk_db_realboligDataSet = new RealBolig.kaspermark_dk_db_realboligDataSet();
+            this.tabKundeTabel = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.kaspermark_dk_db_realboligDataSet2 = new RealBolig.kaspermark_dk_db_realboligDataSet2();
-            this.kundeBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.kundeTableAdapter = new RealBolig.kaspermark_dk_db_realboligDataSet2TableAdapters.KundeTableAdapter();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kundeBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.kaspermark_dk_db_realboligDataSet2 = new RealBolig.kaspermark_dk_db_realboligDataSet2();
+            this.boligBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.kundeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.boligBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.kundeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.kaspermarkdkdbrealboligDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.kaspermarkdkdbrealboligDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.boligTableAdapter = new RealBolig.kaspermark_dk_db_realboligDataSetTableAdapters.BoligTableAdapter();
+            this.kundeTableAdapter = new RealBolig.kaspermark_dk_db_realboligDataSet2TableAdapters.KundeTableAdapter();
             this.tabControl1.SuspendLayout();
             this.tabBoligTabel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.boligBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.boligBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kaspermark_dk_db_realboligDataSet)).BeginInit();
             this.tabKundeTabel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kundeBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kaspermark_dk_db_realboligDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.boligBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kundeBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.boligBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kundeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kaspermarkdkdbrealboligDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kaspermark_dk_db_realboligDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kaspermarkdkdbrealboligDataSetBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.boligBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kaspermark_dk_db_realboligDataSet2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kundeBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // mOmrådeTextbox
             // 
             this.mOmrådeTextbox.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mOmrådeTextbox.Location = new System.Drawing.Point(139, 198);
+            this.mOmrådeTextbox.Location = new System.Drawing.Point(324, 442);
+            this.mOmrådeTextbox.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.mOmrådeTextbox.Name = "mOmrådeTextbox";
-            this.mOmrådeTextbox.Size = new System.Drawing.Size(330, 30);
+            this.mOmrådeTextbox.Size = new System.Drawing.Size(765, 59);
             this.mOmrådeTextbox.TabIndex = 27;
             // 
             // btnOpretBolig
             // 
             this.btnOpretBolig.Font = new System.Drawing.Font("Montserrat Medium", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOpretBolig.Location = new System.Drawing.Point(217, 560);
+            this.btnOpretBolig.Location = new System.Drawing.Point(506, 1249);
+            this.btnOpretBolig.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.btnOpretBolig.Name = "btnOpretBolig";
-            this.btnOpretBolig.Size = new System.Drawing.Size(152, 40);
+            this.btnOpretBolig.Size = new System.Drawing.Size(355, 89);
             this.btnOpretBolig.TabIndex = 33;
             this.btnOpretBolig.Text = "Opret Bolig";
             this.btnOpretBolig.UseVisualStyleBackColor = true;
@@ -114,46 +116,52 @@ namespace RealBolig
             // btnForslåPris
             // 
             this.btnForslåPris.Font = new System.Drawing.Font("Montserrat Medium", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnForslåPris.Location = new System.Drawing.Point(222, 410);
+            this.btnForslåPris.Location = new System.Drawing.Point(518, 915);
+            this.btnForslåPris.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.btnForslåPris.Name = "btnForslåPris";
-            this.btnForslåPris.Size = new System.Drawing.Size(152, 40);
+            this.btnForslåPris.Size = new System.Drawing.Size(355, 89);
             this.btnForslåPris.TabIndex = 32;
             this.btnForslåPris.Text = "Forslå Pris";
             this.btnForslåPris.UseVisualStyleBackColor = true;
+            this.btnForslåPris.Click += new System.EventHandler(this.btnForslåPris_Click);
             // 
             // mSalgsPrisTextbox
             // 
             this.mSalgsPrisTextbox.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mSalgsPrisTextbox.Location = new System.Drawing.Point(139, 374);
+            this.mSalgsPrisTextbox.Location = new System.Drawing.Point(324, 834);
+            this.mSalgsPrisTextbox.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.mSalgsPrisTextbox.Name = "mSalgsPrisTextbox";
-            this.mSalgsPrisTextbox.Size = new System.Drawing.Size(330, 30);
+            this.mSalgsPrisTextbox.Size = new System.Drawing.Size(765, 59);
             this.mSalgsPrisTextbox.TabIndex = 31;
             // 
             // labelSalgsPris
             // 
             this.labelSalgsPris.AutoSize = true;
             this.labelSalgsPris.Font = new System.Drawing.Font("Montserrat Medium", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSalgsPris.Location = new System.Drawing.Point(24, 374);
+            this.labelSalgsPris.Location = new System.Drawing.Point(56, 834);
+            this.labelSalgsPris.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.labelSalgsPris.Name = "labelSalgsPris";
-            this.labelSalgsPris.Size = new System.Drawing.Size(105, 26);
+            this.labelSalgsPris.Size = new System.Drawing.Size(228, 58);
             this.labelSalgsPris.TabIndex = 30;
             this.labelSalgsPris.Text = "Salgs Pris";
             // 
             // mKvmTextbox
             // 
             this.mKvmTextbox.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mKvmTextbox.Location = new System.Drawing.Point(139, 257);
+            this.mKvmTextbox.Location = new System.Drawing.Point(324, 573);
+            this.mKvmTextbox.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.mKvmTextbox.Name = "mKvmTextbox";
-            this.mKvmTextbox.Size = new System.Drawing.Size(330, 30);
+            this.mKvmTextbox.Size = new System.Drawing.Size(765, 59);
             this.mKvmTextbox.TabIndex = 29;
             // 
             // labelKvm
             // 
             this.labelKvm.AutoSize = true;
             this.labelKvm.Font = new System.Drawing.Font("Montserrat Medium", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelKvm.Location = new System.Drawing.Point(73, 257);
+            this.labelKvm.Location = new System.Drawing.Point(170, 573);
+            this.labelKvm.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.labelKvm.Name = "labelKvm";
-            this.labelKvm.Size = new System.Drawing.Size(56, 26);
+            this.labelKvm.Size = new System.Drawing.Size(120, 58);
             this.labelKvm.TabIndex = 28;
             this.labelKvm.Text = "Kvm";
             // 
@@ -161,63 +169,70 @@ namespace RealBolig
             // 
             this.labelOmråde.AutoSize = true;
             this.labelOmråde.Font = new System.Drawing.Font("Montserrat Medium", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelOmråde.Location = new System.Drawing.Point(37, 198);
+            this.labelOmråde.Location = new System.Drawing.Point(86, 442);
+            this.labelOmråde.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.labelOmråde.Name = "labelOmråde";
-            this.labelOmråde.Size = new System.Drawing.Size(92, 26);
+            this.labelOmråde.Size = new System.Drawing.Size(201, 58);
             this.labelOmråde.TabIndex = 26;
             this.labelOmråde.Text = "Område";
             // 
             // mAdresseTextbox
             // 
             this.mAdresseTextbox.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mAdresseTextbox.Location = new System.Drawing.Point(139, 142);
+            this.mAdresseTextbox.Location = new System.Drawing.Point(324, 317);
+            this.mAdresseTextbox.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.mAdresseTextbox.Name = "mAdresseTextbox";
-            this.mAdresseTextbox.Size = new System.Drawing.Size(330, 30);
+            this.mAdresseTextbox.Size = new System.Drawing.Size(765, 59);
             this.mAdresseTextbox.TabIndex = 25;
             // 
             // labelAdresse
             // 
             this.labelAdresse.AutoSize = true;
             this.labelAdresse.Font = new System.Drawing.Font("Montserrat Medium", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAdresse.Location = new System.Drawing.Point(38, 142);
+            this.labelAdresse.Location = new System.Drawing.Point(89, 317);
+            this.labelAdresse.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.labelAdresse.Name = "labelAdresse";
-            this.labelAdresse.Size = new System.Drawing.Size(91, 26);
+            this.labelAdresse.Size = new System.Drawing.Size(195, 58);
             this.labelAdresse.TabIndex = 24;
             this.labelAdresse.Text = "Adresse";
             // 
             // mPostNRTextbox
             // 
             this.mPostNRTextbox.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mPostNRTextbox.Location = new System.Drawing.Point(139, 89);
+            this.mPostNRTextbox.Location = new System.Drawing.Point(324, 199);
+            this.mPostNRTextbox.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.mPostNRTextbox.Name = "mPostNRTextbox";
-            this.mPostNRTextbox.Size = new System.Drawing.Size(330, 30);
+            this.mPostNRTextbox.Size = new System.Drawing.Size(765, 59);
             this.mPostNRTextbox.TabIndex = 23;
             // 
             // labelPostNR
             // 
             this.labelPostNR.AutoSize = true;
             this.labelPostNR.Font = new System.Drawing.Font("Montserrat Medium", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPostNR.Location = new System.Drawing.Point(43, 89);
+            this.labelPostNR.Location = new System.Drawing.Point(100, 199);
+            this.labelPostNR.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.labelPostNR.Name = "labelPostNR";
-            this.labelPostNR.Size = new System.Drawing.Size(86, 26);
+            this.labelPostNR.Size = new System.Drawing.Size(186, 58);
             this.labelPostNR.TabIndex = 22;
             this.labelPostNR.Text = "Post nr.";
             // 
             // mKiDTextbox
             // 
             this.mKiDTextbox.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mKiDTextbox.Location = new System.Drawing.Point(139, 38);
+            this.mKiDTextbox.Location = new System.Drawing.Point(324, 85);
+            this.mKiDTextbox.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.mKiDTextbox.Name = "mKiDTextbox";
-            this.mKiDTextbox.Size = new System.Drawing.Size(330, 30);
+            this.mKiDTextbox.Size = new System.Drawing.Size(765, 59);
             this.mKiDTextbox.TabIndex = 21;
             // 
             // labelKiD
             // 
             this.labelKiD.AutoSize = true;
             this.labelKiD.Font = new System.Drawing.Font("Montserrat Medium", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelKiD.Location = new System.Drawing.Point(25, 38);
+            this.labelKiD.Location = new System.Drawing.Point(58, 85);
+            this.labelKiD.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.labelKiD.Name = "labelKiD";
-            this.labelKiD.Size = new System.Drawing.Size(104, 26);
+            this.labelKiD.Size = new System.Drawing.Size(225, 58);
             this.labelKiD.TabIndex = 20;
             this.labelKiD.Text = "Kunde ID";
             // 
@@ -225,59 +240,24 @@ namespace RealBolig
             // 
             this.tabControl1.Controls.Add(this.tabBoligTabel);
             this.tabControl1.Controls.Add(this.tabKundeTabel);
-            this.tabControl1.Location = new System.Drawing.Point(524, 13);
+            this.tabControl1.Location = new System.Drawing.Point(1223, 29);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(864, 630);
+            this.tabControl1.Size = new System.Drawing.Size(2016, 1405);
             this.tabControl1.TabIndex = 19;
             // 
             // tabBoligTabel
             // 
             this.tabBoligTabel.Controls.Add(this.dataGridView1);
-            this.tabBoligTabel.Location = new System.Drawing.Point(4, 22);
+            this.tabBoligTabel.Location = new System.Drawing.Point(10, 47);
+            this.tabBoligTabel.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.tabBoligTabel.Name = "tabBoligTabel";
-            this.tabBoligTabel.Padding = new System.Windows.Forms.Padding(3);
-            this.tabBoligTabel.Size = new System.Drawing.Size(856, 604);
+            this.tabBoligTabel.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.tabBoligTabel.Size = new System.Drawing.Size(1996, 1348);
             this.tabBoligTabel.TabIndex = 0;
             this.tabBoligTabel.Text = "Bolig Tabel";
             this.tabBoligTabel.UseVisualStyleBackColor = true;
-            // 
-            // boligBindingSource1
-            // 
-            this.boligBindingSource1.DataMember = "Bolig";
-            // 
-            // tabKundeTabel
-            // 
-            this.tabKundeTabel.Controls.Add(this.dataGridView2);
-            this.tabKundeTabel.Location = new System.Drawing.Point(4, 22);
-            this.tabKundeTabel.Name = "tabKundeTabel";
-            this.tabKundeTabel.Padding = new System.Windows.Forms.Padding(3);
-            this.tabKundeTabel.Size = new System.Drawing.Size(856, 604);
-            this.tabKundeTabel.TabIndex = 1;
-            this.tabKundeTabel.Text = "Kunde Tabel";
-            this.tabKundeTabel.UseVisualStyleBackColor = true;
-            // 
-            // kundeBindingSource1
-            // 
-            this.kundeBindingSource1.DataMember = "Kunde";
-            // 
-            // boligBindingSource
-            // 
-            this.boligBindingSource.DataMember = "Bolig";
-            // 
-            // kundeBindingSource
-            // 
-            this.kundeBindingSource.DataMember = "Kunde";
-            // 
-            // kaspermark_dk_db_realboligDataSet
-            // 
-            this.kaspermark_dk_db_realboligDataSet.DataSetName = "kaspermark_dk_db_realboligDataSet";
-            this.kaspermark_dk_db_realboligDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // kaspermarkdkdbrealboligDataSetBindingSource1
-            // 
-            this.kaspermarkdkdbrealboligDataSetBindingSource1.DataSource = this.kaspermark_dk_db_realboligDataSet;
-            this.kaspermarkdkdbrealboligDataSetBindingSource1.Position = 0;
             // 
             // dataGridView1
             // 
@@ -297,25 +277,19 @@ namespace RealBolig
             this.solgtDataGridViewCheckBoxColumn});
             this.dataGridView1.DataSource = this.boligBindingSource2;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView1.Location = new System.Drawing.Point(7, 7);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(850, 598);
+            this.dataGridView1.RowHeadersWidth = 92;
+            this.dataGridView1.Size = new System.Drawing.Size(1982, 1334);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // boligBindingSource2
-            // 
-            this.boligBindingSource2.DataMember = "Bolig";
-            this.boligBindingSource2.DataSource = this.kaspermark_dk_db_realboligDataSet;
-            // 
-            // boligTableAdapter
-            // 
-            this.boligTableAdapter.ClearBeforeFill = true;
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "BiD";
             this.dataGridViewTextBoxColumn1.HeaderText = "BiD";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 11;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
@@ -323,6 +297,7 @@ namespace RealBolig
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "KiD";
             this.dataGridViewTextBoxColumn2.HeaderText = "KiD";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 11;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
@@ -330,6 +305,7 @@ namespace RealBolig
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "PostNR";
             this.dataGridViewTextBoxColumn3.HeaderText = "PostNR";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 11;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
@@ -337,6 +313,7 @@ namespace RealBolig
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "Adresse";
             this.dataGridViewTextBoxColumn4.HeaderText = "Adresse";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 11;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
@@ -344,6 +321,7 @@ namespace RealBolig
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "Område";
             this.dataGridViewTextBoxColumn5.HeaderText = "Område";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 11;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
@@ -351,6 +329,7 @@ namespace RealBolig
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "SalgsPris";
             this.dataGridViewTextBoxColumn6.HeaderText = "SalgsPris";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 11;
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
@@ -358,6 +337,7 @@ namespace RealBolig
             // 
             this.dataGridViewTextBoxColumn7.DataPropertyName = "SalgsDato";
             this.dataGridViewTextBoxColumn7.HeaderText = "SalgsDato";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 11;
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
@@ -365,6 +345,7 @@ namespace RealBolig
             // 
             this.dataGridViewTextBoxColumn8.DataPropertyName = "Kvm";
             this.dataGridViewTextBoxColumn8.HeaderText = "Kvm";
+            this.dataGridViewTextBoxColumn8.MinimumWidth = 11;
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.ReadOnly = true;
             // 
@@ -372,8 +353,31 @@ namespace RealBolig
             // 
             this.solgtDataGridViewCheckBoxColumn.DataPropertyName = "Solgt";
             this.solgtDataGridViewCheckBoxColumn.HeaderText = "Solgt";
+            this.solgtDataGridViewCheckBoxColumn.MinimumWidth = 11;
             this.solgtDataGridViewCheckBoxColumn.Name = "solgtDataGridViewCheckBoxColumn";
             this.solgtDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // boligBindingSource2
+            // 
+            this.boligBindingSource2.DataMember = "Bolig";
+            this.boligBindingSource2.DataSource = this.kaspermark_dk_db_realboligDataSet;
+            // 
+            // kaspermark_dk_db_realboligDataSet
+            // 
+            this.kaspermark_dk_db_realboligDataSet.DataSetName = "kaspermark_dk_db_realboligDataSet";
+            this.kaspermark_dk_db_realboligDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tabKundeTabel
+            // 
+            this.tabKundeTabel.Controls.Add(this.dataGridView2);
+            this.tabKundeTabel.Location = new System.Drawing.Point(10, 47);
+            this.tabKundeTabel.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.tabKundeTabel.Name = "tabKundeTabel";
+            this.tabKundeTabel.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.tabKundeTabel.Size = new System.Drawing.Size(1996, 1348);
+            this.tabKundeTabel.TabIndex = 1;
+            this.tabKundeTabel.Text = "Kunde Tabel";
+            this.tabKundeTabel.UseVisualStyleBackColor = true;
             // 
             // dataGridView2
             // 
@@ -389,30 +393,19 @@ namespace RealBolig
             this.dataGridViewTextBoxColumn13});
             this.dataGridView2.DataSource = this.kundeBindingSource2;
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView2.Location = new System.Drawing.Point(7, 7);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(850, 598);
+            this.dataGridView2.RowHeadersWidth = 92;
+            this.dataGridView2.Size = new System.Drawing.Size(1982, 1334);
             this.dataGridView2.TabIndex = 0;
-            // 
-            // kaspermark_dk_db_realboligDataSet2
-            // 
-            this.kaspermark_dk_db_realboligDataSet2.DataSetName = "kaspermark_dk_db_realboligDataSet2";
-            this.kaspermark_dk_db_realboligDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // kundeBindingSource2
-            // 
-            this.kundeBindingSource2.DataMember = "Kunde";
-            this.kundeBindingSource2.DataSource = this.kaspermark_dk_db_realboligDataSet2;
-            // 
-            // kundeTableAdapter
-            // 
-            this.kundeTableAdapter.ClearBeforeFill = true;
             // 
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.DataPropertyName = "KiD";
             this.dataGridViewTextBoxColumn9.HeaderText = "KiD";
+            this.dataGridViewTextBoxColumn9.MinimumWidth = 11;
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.ReadOnly = true;
             // 
@@ -420,6 +413,7 @@ namespace RealBolig
             // 
             this.dataGridViewTextBoxColumn10.DataPropertyName = "FuldeNavn";
             this.dataGridViewTextBoxColumn10.HeaderText = "FuldeNavn";
+            this.dataGridViewTextBoxColumn10.MinimumWidth = 11;
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             this.dataGridViewTextBoxColumn10.ReadOnly = true;
             // 
@@ -427,6 +421,7 @@ namespace RealBolig
             // 
             this.dataGridViewTextBoxColumn11.DataPropertyName = "Tlf";
             this.dataGridViewTextBoxColumn11.HeaderText = "Tlf";
+            this.dataGridViewTextBoxColumn11.MinimumWidth = 11;
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             this.dataGridViewTextBoxColumn11.ReadOnly = true;
             // 
@@ -434,6 +429,7 @@ namespace RealBolig
             // 
             this.dataGridViewTextBoxColumn12.DataPropertyName = "Mail";
             this.dataGridViewTextBoxColumn12.HeaderText = "Mail";
+            this.dataGridViewTextBoxColumn12.MinimumWidth = 11;
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
             this.dataGridViewTextBoxColumn12.ReadOnly = true;
             // 
@@ -441,14 +437,54 @@ namespace RealBolig
             // 
             this.dataGridViewTextBoxColumn13.DataPropertyName = "Adresse";
             this.dataGridViewTextBoxColumn13.HeaderText = "Adresse";
+            this.dataGridViewTextBoxColumn13.MinimumWidth = 11;
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
             this.dataGridViewTextBoxColumn13.ReadOnly = true;
             // 
+            // kundeBindingSource2
+            // 
+            this.kundeBindingSource2.DataMember = "Kunde";
+            this.kundeBindingSource2.DataSource = this.kaspermark_dk_db_realboligDataSet2;
+            // 
+            // kaspermark_dk_db_realboligDataSet2
+            // 
+            this.kaspermark_dk_db_realboligDataSet2.DataSetName = "kaspermark_dk_db_realboligDataSet2";
+            this.kaspermark_dk_db_realboligDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // boligBindingSource1
+            // 
+            this.boligBindingSource1.DataMember = "Bolig";
+            // 
+            // kundeBindingSource1
+            // 
+            this.kundeBindingSource1.DataMember = "Kunde";
+            // 
+            // boligBindingSource
+            // 
+            this.boligBindingSource.DataMember = "Bolig";
+            // 
+            // kundeBindingSource
+            // 
+            this.kundeBindingSource.DataMember = "Kunde";
+            // 
+            // kaspermarkdkdbrealboligDataSetBindingSource1
+            // 
+            this.kaspermarkdkdbrealboligDataSetBindingSource1.DataSource = this.kaspermark_dk_db_realboligDataSet;
+            this.kaspermarkdkdbrealboligDataSetBindingSource1.Position = 0;
+            // 
+            // boligTableAdapter
+            // 
+            this.boligTableAdapter.ClearBeforeFill = true;
+            // 
+            // kundeTableAdapter
+            // 
+            this.kundeTableAdapter.ClearBeforeFill = true;
+            // 
             // CreateBolig
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1390, 780);
+            this.ClientSize = new System.Drawing.Size(3004, 1740);
             this.Controls.Add(this.mOmrådeTextbox);
             this.Controls.Add(this.btnOpretBolig);
             this.Controls.Add(this.btnForslåPris);
@@ -464,24 +500,25 @@ namespace RealBolig
             this.Controls.Add(this.mKiDTextbox);
             this.Controls.Add(this.labelKiD);
             this.Controls.Add(this.tabControl1);
+            this.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.Name = "CreateBolig";
             this.Text = "CreateBolig";
             this.Load += new System.EventHandler(this.CreateBolig_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabBoligTabel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.boligBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.boligBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kaspermark_dk_db_realboligDataSet)).EndInit();
             this.tabKundeTabel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kundeBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kaspermark_dk_db_realboligDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.boligBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kundeBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.boligBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kundeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kaspermarkdkdbrealboligDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kaspermark_dk_db_realboligDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kaspermarkdkdbrealboligDataSetBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.boligBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kaspermark_dk_db_realboligDataSet2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kundeBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
