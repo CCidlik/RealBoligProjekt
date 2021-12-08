@@ -184,6 +184,12 @@
     <Compile Include="AdminMægler.Designer.cs">
       <DependentUpon>AdminMægler.cs</DependentUpon>
     </Compile>
+    <Compile Include="CreateMægler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateMægler.Designer.cs">
+      <DependentUpon>CreateMægler.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAL\ConnString.cs" />
     <Compile Include="CreateBolig.cs">
       <SubType>Form</SubType>
@@ -216,6 +222,12 @@
     </Compile>
     <Compile Include="DeleteKunde.Designer.cs">
       <DependentUpon>DeleteKunde.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteMægler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteMægler.Designer.cs">
+      <DependentUpon>DeleteMægler.cs</DependentUpon>
     </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
@@ -251,6 +263,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>kaspermark_dk_db_realboligDataSet4.xsd</DependentUpon>
     </Compile>
+    <Compile Include="kaspermark_dk_db_realboligDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>kaspermark_dk_db_realboligDataSet5.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -271,6 +288,12 @@
     <Compile Include="ReadKunde.Designer.cs">
       <DependentUpon>ReadKunde.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReadMægler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReadMægler.Designer.cs">
+      <DependentUpon>ReadMægler.cs</DependentUpon>
+    </Compile>
     <Compile Include="ThemeColor.cs" />
     <Compile Include="UpdateBolig.cs">
       <SubType>Form</SubType>
@@ -283,6 +306,12 @@
     </Compile>
     <Compile Include="UpdateKunde.Designer.cs">
       <DependentUpon>UpdateKunde.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateMægler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateMægler.Designer.cs">
+      <DependentUpon>UpdateMægler.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AdminBolig.resx">
       <DependentUpon>AdminBolig.cs</DependentUpon>
@@ -298,6 +327,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CreateKunde.resx">
       <DependentUpon>CreateKunde.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateMægler.resx">
+      <DependentUpon>CreateMægler.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DeleteBolig.resx">
       <DependentUpon>DeleteBolig.cs</DependentUpon>
@@ -387,6 +419,17 @@
     </None>
     <None Include="kaspermark_dk_db_realboligDataSet4.xss">
       <DependentUpon>kaspermark_dk_db_realboligDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="kaspermark_dk_db_realboligDataSet5.xsc">
+      <DependentUpon>kaspermark_dk_db_realboligDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="kaspermark_dk_db_realboligDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>kaspermark_dk_db_realboligDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="kaspermark_dk_db_realboligDataSet5.xss">
+      <DependentUpon>kaspermark_dk_db_realboligDataSet5.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
