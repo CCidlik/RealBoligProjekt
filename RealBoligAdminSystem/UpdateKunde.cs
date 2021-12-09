@@ -54,7 +54,7 @@ namespace RealBolig
             setNavn(Convert.ToInt32(KiDTextBox.Text));
             setTLF(Convert.ToInt32(KiDTextBox.Text));
             setMail(Convert.ToInt32(KiDTextBox.Text));
-            setMail(Convert.ToInt32(KiDTextBox.Text));
+            setAdresse(Convert.ToInt32(KiDTextBox.Text));
 
 
             MessageBox.Show("success: Oplysninger rettet");
