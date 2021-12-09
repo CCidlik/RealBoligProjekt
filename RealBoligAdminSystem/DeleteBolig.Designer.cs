@@ -30,16 +30,10 @@ namespace RealBolig
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.boligBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.boligBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.btnSletBolig = new System.Windows.Forms.Button();
             this.mBoligIDTextBox = new System.Windows.Forms.MaskedTextBox();
             this.labelBiD = new System.Windows.Forms.Label();
-            this.boligBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.kaspermark_dk_db_realboligDataSet = new RealBolig.kaspermark_dk_db_realboligDataSet();
-            this.boligBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
-            this.boligTableAdapter = new RealBolig.kaspermark_dk_db_realboligDataSetTableAdapters.BoligTableAdapter();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,28 +43,32 @@ namespace RealBolig
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.boligBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.kaspermark_dk_db_realboligDataSet = new RealBolig.kaspermark_dk_db_realboligDataSet();
+            this.boligTableAdapter = new RealBolig.kaspermark_dk_db_realboligDataSetTableAdapters.BoligTableAdapter();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.boligBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.boligBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.boligBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.boligBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kaspermark_dk_db_realboligDataSet)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.boligBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.boligBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.boligBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kaspermark_dk_db_realboligDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.boligBindingSource3)).BeginInit();
             this.SuspendLayout();
-            // 
-            // boligBindingSource
-            // 
-            this.boligBindingSource.DataMember = "Bolig";
-            // 
-            // boligBindingSource1
-            // 
-            this.boligBindingSource1.DataMember = "Bolig";
             // 
             // btnSletBolig
             // 
-            this.btnSletBolig.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSletBolig.Location = new System.Drawing.Point(209, 48);
+            this.btnSletBolig.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSletBolig.Location = new System.Drawing.Point(399, 36);
+            this.btnSletBolig.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSletBolig.Name = "btnSletBolig";
-            this.btnSletBolig.Size = new System.Drawing.Size(152, 40);
+            this.btnSletBolig.Size = new System.Drawing.Size(204, 34);
             this.btnSletBolig.TabIndex = 71;
             this.btnSletBolig.Text = "Slet Bolig";
             this.btnSletBolig.UseVisualStyleBackColor = true;
@@ -79,29 +77,28 @@ namespace RealBolig
             // mBoligIDTextBox
             // 
             this.mBoligIDTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mBoligIDTextBox.Location = new System.Drawing.Point(127, 12);
+            this.mBoligIDTextBox.Location = new System.Drawing.Point(170, 36);
+            this.mBoligIDTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.mBoligIDTextBox.Name = "mBoligIDTextBox";
-            this.mBoligIDTextBox.Size = new System.Drawing.Size(330, 29);
+            this.mBoligIDTextBox.Size = new System.Drawing.Size(156, 34);
             this.mBoligIDTextBox.TabIndex = 56;
             // 
             // labelBiD
             // 
             this.labelBiD.AutoSize = true;
             this.labelBiD.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBiD.Location = new System.Drawing.Point(31, 12);
+            this.labelBiD.Location = new System.Drawing.Point(42, 36);
+            this.labelBiD.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelBiD.Name = "labelBiD";
-            this.labelBiD.Size = new System.Drawing.Size(74, 24);
+            this.labelBiD.Size = new System.Drawing.Size(98, 29);
             this.labelBiD.TabIndex = 55;
             this.labelBiD.Text = "Bolig ID";
-            // 
-            // boligBindingSource2
-            // 
-            this.boligBindingSource2.DataMember = "Bolig";
             // 
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlDark;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -114,29 +111,18 @@ namespace RealBolig
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewCheckBoxColumn1});
             this.dataGridView1.DataSource = this.boligBindingSource3;
-            this.dataGridView1.Location = new System.Drawing.Point(35, 212);
+            this.dataGridView1.Location = new System.Drawing.Point(84, 36);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1144, 346);
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.Size = new System.Drawing.Size(936, 290);
             this.dataGridView1.TabIndex = 72;
-            // 
-            // kaspermark_dk_db_realboligDataSet
-            // 
-            this.kaspermark_dk_db_realboligDataSet.DataSetName = "kaspermark_dk_db_realboligDataSet";
-            this.kaspermark_dk_db_realboligDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // boligBindingSource3
-            // 
-            this.boligBindingSource3.DataMember = "Bolig";
-            this.boligBindingSource3.DataSource = this.kaspermark_dk_db_realboligDataSet;
-            // 
-            // boligTableAdapter
-            // 
-            this.boligTableAdapter.ClearBeforeFill = true;
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "BiD";
             this.dataGridViewTextBoxColumn1.HeaderText = "BiD";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
@@ -144,70 +130,140 @@ namespace RealBolig
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "KiD";
             this.dataGridViewTextBoxColumn2.HeaderText = "KiD";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "PostNR";
             this.dataGridViewTextBoxColumn3.HeaderText = "PostNR";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "Adresse";
             this.dataGridViewTextBoxColumn4.HeaderText = "Adresse";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "Område";
             this.dataGridViewTextBoxColumn5.HeaderText = "Område";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "SalgsPris";
             this.dataGridViewTextBoxColumn6.HeaderText = "SalgsPris";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             // 
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.DataPropertyName = "SalgsDato";
             this.dataGridViewTextBoxColumn7.HeaderText = "SalgsDato";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             // 
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.DataPropertyName = "Kvm";
             this.dataGridViewTextBoxColumn8.HeaderText = "Kvm";
+            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             // 
             // dataGridViewCheckBoxColumn1
             // 
             this.dataGridViewCheckBoxColumn1.DataPropertyName = "Solgt";
             this.dataGridViewCheckBoxColumn1.HeaderText = "Solgt";
+            this.dataGridViewCheckBoxColumn1.MinimumWidth = 6;
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            // 
+            // boligBindingSource3
+            // 
+            this.boligBindingSource3.DataMember = "Bolig";
+            this.boligBindingSource3.DataSource = this.kaspermark_dk_db_realboligDataSet;
+            // 
+            // kaspermark_dk_db_realboligDataSet
+            // 
+            this.kaspermark_dk_db_realboligDataSet.DataSetName = "kaspermark_dk_db_realboligDataSet";
+            this.kaspermark_dk_db_realboligDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // boligTableAdapter
+            // 
+            this.boligTableAdapter.ClearBeforeFill = true;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(84, 333);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(936, 50);
+            this.panel1.TabIndex = 73;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panel2.Controls.Add(this.mBoligIDTextBox);
+            this.panel2.Controls.Add(this.labelBiD);
+            this.panel2.Controls.Add(this.btnSletBolig);
+            this.panel2.Location = new System.Drawing.Point(84, 383);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(936, 146);
+            this.panel2.TabIndex = 74;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(415, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(152, 29);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "SLET BOLIG";
+            // 
+            // boligBindingSource
+            // 
+            this.boligBindingSource.DataMember = "Bolig";
+            // 
+            // boligBindingSource1
+            // 
+            this.boligBindingSource1.DataMember = "Bolig";
+            // 
+            // boligBindingSource2
+            // 
+            this.boligBindingSource2.DataMember = "Bolig";
             // 
             // DeleteBolig
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1373, 960);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(30)))), ((int)(((byte)(51)))));
+            this.ClientSize = new System.Drawing.Size(1168, 916);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.btnSletBolig);
-            this.Controls.Add(this.mBoligIDTextBox);
-            this.Controls.Add(this.labelBiD);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "DeleteBolig";
             this.Text = "DeleteBolig";
             this.Load += new System.EventHandler(this.DeleteBolig_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.boligBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kaspermark_dk_db_realboligDataSet)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.boligBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.boligBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.boligBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kaspermark_dk_db_realboligDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.boligBindingSource3)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -244,5 +300,8 @@ namespace RealBolig
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label1;
     }
 }
