@@ -95,9 +95,9 @@ namespace RealBolig
             this.tabPageBoliger.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tabPageBoliger.Controls.Add(this.dataGridView1);
             this.tabPageBoliger.Location = new System.Drawing.Point(4, 25);
-            this.tabPageBoliger.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageBoliger.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageBoliger.Name = "tabPageBoliger";
-            this.tabPageBoliger.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageBoliger.Padding = new System.Windows.Forms.Padding(4);
             this.tabPageBoliger.Size = new System.Drawing.Size(928, 261);
             this.tabPageBoliger.TabIndex = 0;
             this.tabPageBoliger.Text = "Boliger";
@@ -121,7 +121,7 @@ namespace RealBolig
             this.dataGridView1.DataSource = this.boligBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(4, 4);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
@@ -215,7 +215,7 @@ namespace RealBolig
             this.tabControl1.Controls.Add(this.tabPageBoliger);
             this.tabControl1.Controls.Add(this.tabPageKøber);
             this.tabControl1.Location = new System.Drawing.Point(84, 36);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(936, 290);
@@ -225,9 +225,9 @@ namespace RealBolig
             // 
             this.tabPageKøber.Controls.Add(this.dataGridView2);
             this.tabPageKøber.Location = new System.Drawing.Point(4, 25);
-            this.tabPageKøber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageKøber.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageKøber.Name = "tabPageKøber";
-            this.tabPageKøber.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageKøber.Padding = new System.Windows.Forms.Padding(4);
             this.tabPageKøber.Size = new System.Drawing.Size(928, 261);
             this.tabPageKøber.TabIndex = 1;
             this.tabPageKøber.Text = "Køber";
@@ -247,7 +247,7 @@ namespace RealBolig
             this.dataGridView2.DataSource = this.boligStatusBindingSource;
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView2.Location = new System.Drawing.Point(4, 4);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersWidth = 51;
@@ -300,7 +300,7 @@ namespace RealBolig
             // 
             this.btnOpdaterBolig.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOpdaterBolig.Location = new System.Drawing.Point(557, 412);
-            this.btnOpdaterBolig.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOpdaterBolig.Margin = new System.Windows.Forms.Padding(4);
             this.btnOpdaterBolig.Name = "btnOpdaterBolig";
             this.btnOpdaterBolig.Size = new System.Drawing.Size(260, 96);
             this.btnOpdaterBolig.TabIndex = 71;
@@ -312,7 +312,7 @@ namespace RealBolig
             // 
             this.mSalgsPrisTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mSalgsPrisTextBox.Location = new System.Drawing.Point(283, 474);
-            this.mSalgsPrisTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mSalgsPrisTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.mSalgsPrisTextBox.Name = "mSalgsPrisTextBox";
             this.mSalgsPrisTextBox.Size = new System.Drawing.Size(183, 34);
             this.mSalgsPrisTextBox.TabIndex = 58;
@@ -334,7 +334,7 @@ namespace RealBolig
             this.mBiDTextBox.BackColor = System.Drawing.Color.White;
             this.mBiDTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mBiDTextBox.Location = new System.Drawing.Point(283, 412);
-            this.mBiDTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mBiDTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.mBiDTextBox.Name = "mBiDTextBox";
             this.mBiDTextBox.Size = new System.Drawing.Size(183, 34);
             this.mBiDTextBox.TabIndex = 56;
@@ -420,7 +420,7 @@ namespace RealBolig
             this.mKøbsDatoTextBox.BackColor = System.Drawing.Color.White;
             this.mKøbsDatoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mKøbsDatoTextBox.Location = new System.Drawing.Point(187, 185);
-            this.mKøbsDatoTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mKøbsDatoTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.mKøbsDatoTextBox.Name = "mKøbsDatoTextBox";
             this.mKøbsDatoTextBox.Size = new System.Drawing.Size(183, 34);
             this.mKøbsDatoTextBox.TabIndex = 83;
@@ -430,7 +430,7 @@ namespace RealBolig
             this.mKøbsPrisTextBox.BackColor = System.Drawing.Color.White;
             this.mKøbsPrisTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mKøbsPrisTextBox.Location = new System.Drawing.Point(187, 134);
-            this.mKøbsPrisTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mKøbsPrisTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.mKøbsPrisTextBox.Name = "mKøbsPrisTextBox";
             this.mKøbsPrisTextBox.Size = new System.Drawing.Size(183, 34);
             this.mKøbsPrisTextBox.TabIndex = 82;
@@ -440,7 +440,7 @@ namespace RealBolig
             this.mKøberIDTextBox.BackColor = System.Drawing.Color.White;
             this.mKøberIDTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mKøberIDTextBox.Location = new System.Drawing.Point(187, 78);
-            this.mKøberIDTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mKøberIDTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.mKøberIDTextBox.Name = "mKøberIDTextBox";
             this.mKøberIDTextBox.Size = new System.Drawing.Size(183, 34);
             this.mKøberIDTextBox.TabIndex = 81;
@@ -547,7 +547,7 @@ namespace RealBolig
             this.Controls.Add(this.mBiDTextBox);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UpdateBolig";
             this.Text = "UpdateBolig";
             this.Load += new System.EventHandler(this.UpdateBolig_Load);
