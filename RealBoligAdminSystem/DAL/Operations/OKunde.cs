@@ -98,34 +98,6 @@ namespace RealBolig.DAL.Operations
             }
         }
 
-        /*public void Delete(EKunde kdDelete) {
-            conn.Open();
-            string query = "DELETE FROM Kunde WHERE "+kdDelete.KiD+";";
-
-            SqlCommand cmd = new SqlCommand(query, conn);
-            conn.Close();
-        }
-
-        public void Update(EKunde kdUpdate) {
-
-            conn.Open();
-
-            string query = "UPDATE Kunde SET column1 = value1, column2 = value2, ... WHERE condition; "; //Hjælp
-
-            SqlCommand cmd = new SqlCommand(query, conn);
-            conn.Close();
-
-        }
-
-        public void Select(EKunde kdSelect) {
-
-            conn.Open();
-            string query = "SELECT * FROM Kunde WHERE " + kdSelect.KiD + ";";
-
-            SqlCommand cmd = new SqlCommand(query, conn);
-            conn.Close();
-
-        }*/
 
     }
 }
