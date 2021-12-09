@@ -47,8 +47,9 @@ namespace RealBolig
             this.kundeTableAdapter = new RealBolig.kaspermark_dk_db_realboligDataSet2TableAdapters.KundeTableAdapter();
             this.kundeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.SearchKundeRefresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kundeBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kaspermark_dk_db_realboligDataSet2)).BeginInit();
@@ -65,20 +66,21 @@ namespace RealBolig
             // 
             // tbKiD
             // 
+            this.tbKiD.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.tbKiD.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbKiD.Location = new System.Drawing.Point(143, 29);
+            this.tbKiD.Location = new System.Drawing.Point(191, 36);
             this.tbKiD.Margin = new System.Windows.Forms.Padding(1);
             this.tbKiD.Name = "tbKiD";
-            this.tbKiD.Size = new System.Drawing.Size(234, 29);
+            this.tbKiD.Size = new System.Drawing.Size(311, 34);
             this.tbKiD.TabIndex = 1;
             // 
             // tbNummer
             // 
             this.tbNummer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbNummer.Location = new System.Drawing.Point(143, 69);
+            this.tbNummer.Location = new System.Drawing.Point(191, 85);
             this.tbNummer.Margin = new System.Windows.Forms.Padding(1);
             this.tbNummer.Name = "tbNummer";
-            this.tbNummer.Size = new System.Drawing.Size(234, 29);
+            this.tbNummer.Size = new System.Drawing.Size(311, 34);
             this.tbNummer.TabIndex = 2;
             // 
             // LabelKiD
@@ -86,10 +88,10 @@ namespace RealBolig
             this.LabelKiD.AutoSize = true;
             this.LabelKiD.BackColor = System.Drawing.SystemColors.ControlDark;
             this.LabelKiD.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelKiD.Location = new System.Drawing.Point(26, 34);
+            this.LabelKiD.Location = new System.Drawing.Point(35, 42);
             this.LabelKiD.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.LabelKiD.Name = "LabelKiD";
-            this.LabelKiD.Size = new System.Drawing.Size(88, 24);
+            this.LabelKiD.Size = new System.Drawing.Size(112, 29);
             this.LabelKiD.TabIndex = 3;
             this.LabelKiD.Text = "Kunde ID";
             // 
@@ -98,20 +100,20 @@ namespace RealBolig
             this.TelefonNummer.AutoSize = true;
             this.TelefonNummer.BackColor = System.Drawing.SystemColors.ControlDark;
             this.TelefonNummer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TelefonNummer.Location = new System.Drawing.Point(26, 74);
+            this.TelefonNummer.Location = new System.Drawing.Point(35, 91);
             this.TelefonNummer.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.TelefonNummer.Name = "TelefonNummer";
-            this.TelefonNummer.Size = new System.Drawing.Size(96, 24);
+            this.TelefonNummer.Size = new System.Drawing.Size(123, 29);
             this.TelefonNummer.TabIndex = 4;
             this.TelefonNummer.Text = "Telefon nr";
             // 
             // SearchKunde
             // 
             this.SearchKunde.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchKunde.Location = new System.Drawing.Point(409, 29);
+            this.SearchKunde.Location = new System.Drawing.Point(545, 36);
             this.SearchKunde.Margin = new System.Windows.Forms.Padding(1);
             this.SearchKunde.Name = "SearchKunde";
-            this.SearchKunde.Size = new System.Drawing.Size(120, 69);
+            this.SearchKunde.Size = new System.Drawing.Size(113, 85);
             this.SearchKunde.TabIndex = 6;
             this.SearchKunde.Text = "Søg";
             this.SearchKunde.UseVisualStyleBackColor = true;
@@ -131,16 +133,19 @@ namespace RealBolig
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5});
             this.dataGridView1.DataSource = this.kundeBindingSource1;
-            this.dataGridView1.Location = new System.Drawing.Point(63, 64);
+            this.dataGridView1.Location = new System.Drawing.Point(84, 79);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(640, 200);
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.Size = new System.Drawing.Size(853, 246);
             this.dataGridView1.TabIndex = 7;
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "KiD";
             this.dataGridViewTextBoxColumn1.HeaderText = "KiD";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
@@ -148,6 +153,7 @@ namespace RealBolig
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "FuldeNavn";
             this.dataGridViewTextBoxColumn2.HeaderText = "FuldeNavn";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
@@ -155,6 +161,7 @@ namespace RealBolig
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "Tlf";
             this.dataGridViewTextBoxColumn3.HeaderText = "Tlf";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
@@ -162,6 +169,7 @@ namespace RealBolig
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "Mail";
             this.dataGridViewTextBoxColumn4.HeaderText = "Mail";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
@@ -169,6 +177,7 @@ namespace RealBolig
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "Adresse";
             this.dataGridViewTextBoxColumn5.HeaderText = "Adresse";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
@@ -194,41 +203,57 @@ namespace RealBolig
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(63, 29);
+            this.panel1.Location = new System.Drawing.Point(84, 36);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(640, 35);
+            this.panel1.Size = new System.Drawing.Size(853, 43);
             this.panel1.TabIndex = 8;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.panel2.Controls.Add(this.TelefonNummer);
-            this.panel2.Controls.Add(this.LabelKiD);
-            this.panel2.Controls.Add(this.tbKiD);
-            this.panel2.Controls.Add(this.tbNummer);
-            this.panel2.Controls.Add(this.SearchKunde);
-            this.panel2.Location = new System.Drawing.Point(63, 266);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(640, 125);
-            this.panel2.TabIndex = 9;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(251, 9);
+            this.label1.Location = new System.Drawing.Point(335, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(162, 20);
+            this.label1.Size = new System.Drawing.Size(200, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "SØG EFTER KUNDE";
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panel2.Controls.Add(this.SearchKundeRefresh);
+            this.panel2.Controls.Add(this.TelefonNummer);
+            this.panel2.Controls.Add(this.LabelKiD);
+            this.panel2.Controls.Add(this.tbKiD);
+            this.panel2.Controls.Add(this.tbNummer);
+            this.panel2.Controls.Add(this.SearchKunde);
+            this.panel2.Location = new System.Drawing.Point(84, 327);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(853, 154);
+            this.panel2.TabIndex = 9;
+            // 
+            // SearchKundeRefresh
+            // 
+            this.SearchKundeRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchKundeRefresh.Location = new System.Drawing.Point(693, 36);
+            this.SearchKundeRefresh.Margin = new System.Windows.Forms.Padding(1);
+            this.SearchKundeRefresh.Name = "SearchKundeRefresh";
+            this.SearchKundeRefresh.Size = new System.Drawing.Size(113, 85);
+            this.SearchKundeRefresh.TabIndex = 7;
+            this.SearchKundeRefresh.Text = "Refresh Søgning";
+            this.SearchKundeRefresh.UseVisualStyleBackColor = true;
+            this.SearchKundeRefresh.Click += new System.EventHandler(this.SearchKundeRefresh_Click);
+            // 
             // ReadKunde
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(30)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(1029, 572);
+            this.ClientSize = new System.Drawing.Size(1372, 704);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel2);
@@ -277,5 +302,6 @@ namespace RealBolig
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button SearchKundeRefresh;
     }
 }

@@ -66,5 +66,23 @@ namespace RealBolig
             dataGridView1.DataSource = dt;
             conn.Close();
         }
+
+        private void SearchKundeRefresh_Click(object sender, EventArgs e)
+        {
+            SqlConnection conn = new SqlConnection(ConnString.getConnStr());
+
+            conn.Open();
+            DataTable dt = new DataTable();
+            SqlDataAdapter adapt = new SqlDataAdapter("SELECT * FROM Kunde", conn);
+            adapt.Fill(dt);
+            dataGridView1.DataSource = dt;
+            dataGridView1.Refresh();
+            conn.Close();
+            tbKiD.Text = "";
+            tbNummer.Text = "";
+        }
+
+
+
     }
 }
