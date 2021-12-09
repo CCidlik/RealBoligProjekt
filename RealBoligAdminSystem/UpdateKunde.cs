@@ -56,6 +56,11 @@ namespace RealBolig
             setMail(Convert.ToInt32(KiDTextBox.Text));
             setAdresse(Convert.ToInt32(KiDTextBox.Text));
 
+            KiDTextBox.Text = "";
+            mFnavnTextBox.Text = "";
+            mTlfTextBox.Text = "";
+            mMailTextBox.Text = "";
+            mAdresseTextBox.Text = "";
 
             MessageBox.Show("success: Oplysninger rettet");
             UpdateData.updateGridView("SELECT * FROM Kunde", dataGridView1);
