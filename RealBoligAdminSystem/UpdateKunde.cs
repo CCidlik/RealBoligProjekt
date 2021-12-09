@@ -51,12 +51,56 @@ namespace RealBolig
 
         private void updateOplysninger_Click(object sender, EventArgs e)
         {
+            setNavn(Convert.ToInt32(KiDTextBox.Text));
+            setTLF(Convert.ToInt32(KiDTextBox.Text));
+            setMail(Convert.ToInt32(KiDTextBox.Text));
+            setAdresse(Convert.ToInt32(KiDTextBox.Text));
+
+
+            MessageBox.Show("success: Oplysninger rettet");
+            UpdateData.updateGridView("SELECT * FROM Kunde", dataGridView1);
+        }
+
+        public void setAdresse(int KiD)
+        {
+            SqlConnection conn = new SqlConnection(ConnString.getConnStr());
+            string sqltest = "UPDATE Kunde SET Adresse = '" + mAdresseTextBox.Text + "' WHERE KiD = '" + KiD + "'";
+            SqlCommand cmd = new SqlCommand(sqltest, conn);
+
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
 
         }
 
+        public void setMail(int KiD)
+        {
+            SqlConnection conn = new SqlConnection(ConnString.getConnStr());
+            string sqltest = "UPDATE Kunde SET Mail = '" + mMailTextBox.Text + "' WHERE KiD = '" + KiD + "'";
+            SqlCommand cmd = new SqlCommand(sqltest, conn);
+
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
+
+        }
+
+        public void setTLF(int KiD)
+        {
+            SqlConnection conn = new SqlConnection(ConnString.getConnStr());
+            string sqltest = "UPDATE Kunde SET Tlf = '" + mTlfTextBox.Text + "' WHERE KiD = '" + KiD + "'";
+            SqlCommand cmd = new SqlCommand(sqltest, conn);
+
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
+
+        }
+
+
         public void setNavn(int KiD) {
             SqlConnection conn = new SqlConnection(ConnString.getConnStr());
-            string sqltest = "UPDATE Kunde SET FuldeNavn WHERE KiD = '" + KiD + "'";
+            string sqltest = "UPDATE Kunde SET FuldeNavn = '"+ mFnavnTextBox.Text + "' WHERE KiD = '"+ KiD + "'";
             SqlCommand cmd = new SqlCommand(sqltest, conn);
 
             conn.Open();
