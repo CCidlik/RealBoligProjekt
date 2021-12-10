@@ -30,7 +30,7 @@ namespace RealBolig
             this.kundeTableAdapter.Fill(this.kaspermark_dk_db_realboligDataSet2.Kunde);
             // TODO: This line of code loads data into the 'kaspermark_dk_db_realboligDataSet.Bolig' table. You can move, or remove it, as needed.
             this.boligTableAdapter.Fill(this.kaspermark_dk_db_realboligDataSet.Bolig);
-            
+
         }
 
         private void btnOpretBolig_Click(object sender, EventArgs e)
@@ -61,7 +61,78 @@ namespace RealBolig
 
         private void btnForslåPris_Click(object sender, EventArgs e)
         {
-            //UpdateData.updateGridView("select * from Bolig order by PostNR", dataGridView1);
+            int tbPost = Convert.ToInt32(mPostNRTextbox.Text);
+            int tbKvm = Convert.ToInt32(mKvmTextbox.Text);
+
+            int avgKvm = getAvgKvm(tbPost);
+            int avgPris = getAvgPris(tbPost);
+            
+            
+
+
+            double proposePrice = (avgPris / avgKvm) * tbKvm;
+
+            int recommendPrice = Convert.ToInt32(proposePrice);
+
+            string priceToString = Convert.ToString(recommendPrice);
+
+            mSalgsPrisTextbox.Text = priceToString;
+        }
+
+        public int getAvgKvm(int post)
+        {
+            SqlConnection conn = new SqlConnection(ConnString.getConnStr());
+            string sqltest = "SELECT AVG(Kvm) FROM Bolig WHERE PostNR = '" + post + "'";
+            SqlCommand cmd = new SqlCommand(sqltest, conn);
+
+            using (conn)
+            {
+                conn.Open();
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                reader.Read();
+
+                decimal hent = reader.GetDecimal(0);
+
+                string returned = Convert.ToString(hent);
+
+                double returToDoub = Convert.ToDouble(returned);
+
+                int toInt = Convert.ToInt32(returToDoub);
+
+                return toInt;
+
+            }
+
+        }
+
+        public int getAvgPris(int post)
+        {
+            SqlConnection conn = new SqlConnection(ConnString.getConnStr());
+            string sqltest = "select AVG(SalgsPris) from Bolig where PostNR = '" + post+"'";
+            SqlCommand cmd = new SqlCommand(sqltest, conn);
+
+            using (conn)
+            {
+                conn.Open();
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                reader.Read();
+
+                decimal hent = reader.GetDecimal(0);
+
+                string returned = Convert.ToString(hent);
+
+                double returToDoub = Convert.ToDouble(returned);
+
+                int Toint = Convert.ToInt32(returToDoub);
+
+                return Toint;
+
+            }
+
         }
     }
 }

@@ -50,31 +50,38 @@ namespace RealBolig.DAL.Operations
                 string sqlCom = "INSERT INTO Bolig VALUES (@KiD, @PostNR, @Adresse, @Område, @SalgsPris, @SalgsDato, @Kvm, " + bInsert.Solgt + ");";
                 SqlCommand cmd = new SqlCommand(sqlCom, conn);
 
-                cmd.Parameters.Add("@KiD", System.Data.SqlDbType.Int);
-                cmd.Parameters["@KiD"].Value = Convert.ToInt32(bInsert.KiD);
+                try
+                {
+                    cmd.Parameters.Add("@KiD", System.Data.SqlDbType.Int);
+                    cmd.Parameters["@KiD"].Value = Convert.ToInt32(bInsert.KiD);
 
-                cmd.Parameters.Add("@PostNR", System.Data.SqlDbType.Int);
-                cmd.Parameters["@PostNR"].Value = Convert.ToInt32(bInsert.PostNR);
+                    cmd.Parameters.Add("@PostNR", System.Data.SqlDbType.Int);
+                    cmd.Parameters["@PostNR"].Value = Convert.ToInt32(bInsert.PostNR);
 
-                cmd.Parameters.Add("@Adresse", System.Data.SqlDbType.VarChar);
-                cmd.Parameters["@Adresse"].Value = Convert.ToString(bInsert.Adresse);
+                    cmd.Parameters.Add("@Adresse", System.Data.SqlDbType.VarChar);
+                    cmd.Parameters["@Adresse"].Value = Convert.ToString(bInsert.Adresse);
 
-                cmd.Parameters.Add("@Område", System.Data.SqlDbType.VarChar);
-                cmd.Parameters["@Område"].Value = Convert.ToString(bInsert.Område);
+                    cmd.Parameters.Add("@Område", System.Data.SqlDbType.VarChar);
+                    cmd.Parameters["@Område"].Value = Convert.ToString(bInsert.Område);
 
-                cmd.Parameters.Add("@SalgsPris", System.Data.SqlDbType.Decimal);
-                cmd.Parameters["@SalgsPris"].Value = Convert.ToDecimal(bInsert.SalgsPris);
+                    cmd.Parameters.Add("@SalgsPris", System.Data.SqlDbType.Decimal);
+                    cmd.Parameters["@SalgsPris"].Value = Convert.ToDecimal(bInsert.SalgsPris);
 
-                DateTime idag = DateTime.Now;
-                string Sidag = Convert.ToString(idag);
-                string S2idag = $"{Sidag.Substring(6, 4)}-{Sidag.Substring(3, 2)}-{Sidag.Substring(0, 2)}";
-                //xx/xx/xxxx
-                cmd.Parameters.Add("@SalgsDato", System.Data.SqlDbType.Date);
-                cmd.Parameters["@SalgsDato"].Value = S2idag;
 
-                cmd.Parameters.Add("@Kvm", System.Data.SqlDbType.Decimal);
-                cmd.Parameters["@Kvm"].Value = Convert.ToDecimal(bInsert.Kvm);
+                    DateTime idag = DateTime.Now;
+                    string Sidag = Convert.ToString(idag);
+                    string S2idag = $"{Sidag.Substring(6, 4)}-{Sidag.Substring(3, 2)}-{Sidag.Substring(0, 2)}";
+                    //xx/xx/xxxx
+                    cmd.Parameters.Add("@SalgsDato", System.Data.SqlDbType.Date);
+                    cmd.Parameters["@SalgsDato"].Value = S2idag;
 
+                    cmd.Parameters.Add("@Kvm", System.Data.SqlDbType.Decimal);
+                    cmd.Parameters["@Kvm"].Value = Convert.ToDecimal(bInsert.Kvm);
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("Udfyld venligst alle felter!");
+                }
                 // Attempt to execute query
                 try
                 {
@@ -100,9 +107,9 @@ namespace RealBolig.DAL.Operations
 
 
                 }
-                catch (Exception exc)
+                catch (Exception)
                 {
-                    MessageBox.Show("ERROR: \n\n" + exc.ToString());
+                    
 
                 }
             }
