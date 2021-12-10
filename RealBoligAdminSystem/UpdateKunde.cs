@@ -32,7 +32,7 @@ namespace RealBolig
 
         private void labelTlf_Click(object sender, EventArgs e)
         {
-
+           
         }
 
         private void SearcgKunde_Click(object sender, EventArgs e)
@@ -260,6 +260,21 @@ namespace RealBolig
 
         }
 
+        private void toolTip1_Popup(object sender, PopupEventArgs e)
+        {
+            
+        }
 
+        private void KiDTextBox_MouseHover(object sender, EventArgs e)
+        {
+            
+            toolTip1.Show("Indtast kundes ID. Du kan finde kundes ID i listen ovenover eller inde i indlæs menuen", labelTlf);
+            
+        }
+
+        private void KiDTextBox_MouseLeave(object sender, EventArgs e)
+        {
+            toolTip1.Show("", labelTlf);
+        }
     }
 }
