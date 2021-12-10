@@ -43,7 +43,7 @@ namespace RealBolig
 
             if (CbBoligSolgt.Checked != true)
             {
-                bool Solgt = false;
+                
 
                 // length check:
                 if (Salgspris.Length > 23) Salgspris_ok = false;
