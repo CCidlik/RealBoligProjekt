@@ -33,16 +33,37 @@ namespace RealBolig
         private void btnIndlæsBolig_Click(object sender, EventArgs e)
         {
 
-            if (tbPostnummer.Text == "")
-            {
-                DisplayDataOmråde();
-            }
-            else if (tbOmråde.Text == "")
+            if (tbPostnummer.Text != "")
             {
                 DisplayDataPostnummer();
             }
+            else if (tbOmråde.Text != "")
+            {
+                DisplayDataOmråde();
+            }
 
+        }
 
+        private void BtnRefreshBoligSøg_Click(object sender, EventArgs e)
+        {
+            SqlConnection conn = new SqlConnection(ConnString.getConnStr());
+
+            try
+            {
+                conn.Open();
+                DataTable dt = new DataTable();
+                SqlDataAdapter adapt = new SqlDataAdapter("SELECT * FROM Bolig", conn);
+                adapt.Fill(dt);
+                dataGridView1.DataSource = dt;
+                conn.Close();
+            }
+
+            catch (Exception exc)
+            {
+                MessageBox.Show("ERROR: \n\n" + exc.ToString());
+                tbOmråde.Text = "";
+                tbPostnummer.Text = "";
+            }
         }
 
         public void DisplayDataOmråde()
