@@ -19,6 +19,8 @@ namespace RealBolig
         {
             InitializeComponent();
             SubMenuStart();
+            MaxScreenSize();
+
         }
 
         private void SubMenuStart()
@@ -221,6 +223,12 @@ namespace RealBolig
 
         }
         #endregion
+
+        private void MaxScreenSize()
+        {
+            int height = Screen.PrimaryScreen.Bounds.Height;
+            int width = Screen.PrimaryScreen.Bounds.Width;
+        }
 
         #region Under Gulvtæppet
         private void button1_Click(object sender, EventArgs e)

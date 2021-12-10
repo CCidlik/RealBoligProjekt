@@ -32,28 +32,33 @@ namespace RealBolig
             this.components = new System.ComponentModel.Container();
             this.tbAiD = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.kaspermark_dk_db_realboligDataSet3 = new RealBolig.kaspermark_dk_db_realboligDataSet3();
-            this.ejendomsmæglerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ejendomsmæglerTableAdapter = new RealBolig.kaspermark_dk_db_realboligDataSet3TableAdapters.EjendomsmæglerTableAdapter();
             this.aiDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fuldeNavnDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlfDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ejendomsmæglerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.kaspermark_dk_db_realboligDataSet3 = new RealBolig.kaspermark_dk_db_realboligDataSet3();
+            this.ejendomsmæglerTableAdapter = new RealBolig.kaspermark_dk_db_realboligDataSet3TableAdapters.EjendomsmæglerTableAdapter();
             this.ejendomsmæglerBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.AiDdelete = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kaspermark_dk_db_realboligDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ejendomsmæglerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kaspermark_dk_db_realboligDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ejendomsmæglerBindingSource1)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbAiD
             // 
             this.tbAiD.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbAiD.Location = new System.Drawing.Point(178, 331);
+            this.tbAiD.Location = new System.Drawing.Point(222, 44);
             this.tbAiD.Name = "tbAiD";
-            this.tbAiD.Size = new System.Drawing.Size(205, 34);
+            this.tbAiD.Size = new System.Drawing.Size(132, 34);
             this.tbAiD.TabIndex = 3;
             // 
             // dataGridView1
@@ -68,27 +73,13 @@ namespace RealBolig
             this.tlfDataGridViewTextBoxColumn,
             this.mailDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.ejendomsmæglerBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(35, 66);
+            this.dataGridView1.Location = new System.Drawing.Point(84, 79);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(590, 216);
+            this.dataGridView1.Size = new System.Drawing.Size(853, 246);
             this.dataGridView1.TabIndex = 4;
-            // 
-            // kaspermark_dk_db_realboligDataSet3
-            // 
-            this.kaspermark_dk_db_realboligDataSet3.DataSetName = "kaspermark_dk_db_realboligDataSet3";
-            this.kaspermark_dk_db_realboligDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // ejendomsmæglerBindingSource
-            // 
-            this.ejendomsmæglerBindingSource.DataMember = "Ejendomsmægler";
-            this.ejendomsmæglerBindingSource.DataSource = this.kaspermark_dk_db_realboligDataSet3;
-            // 
-            // ejendomsmæglerTableAdapter
-            // 
-            this.ejendomsmæglerTableAdapter.ClearBeforeFill = true;
             // 
             // aiDDataGridViewTextBoxColumn
             // 
@@ -122,6 +113,20 @@ namespace RealBolig
             this.mailDataGridViewTextBoxColumn.Name = "mailDataGridViewTextBoxColumn";
             this.mailDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // ejendomsmæglerBindingSource
+            // 
+            this.ejendomsmæglerBindingSource.DataMember = "Ejendomsmægler";
+            this.ejendomsmæglerBindingSource.DataSource = this.kaspermark_dk_db_realboligDataSet3;
+            // 
+            // kaspermark_dk_db_realboligDataSet3
+            // 
+            this.kaspermark_dk_db_realboligDataSet3.DataSetName = "kaspermark_dk_db_realboligDataSet3";
+            this.kaspermark_dk_db_realboligDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // ejendomsmæglerTableAdapter
+            // 
+            this.ejendomsmæglerTableAdapter.ClearBeforeFill = true;
+            // 
             // ejendomsmæglerBindingSource1
             // 
             this.ejendomsmæglerBindingSource1.DataMember = "Ejendomsmægler";
@@ -130,8 +135,9 @@ namespace RealBolig
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.ControlDark;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(35, 331);
+            this.label1.Location = new System.Drawing.Point(55, 44);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(127, 29);
             this.label1.TabIndex = 6;
@@ -139,33 +145,68 @@ namespace RealBolig
             // 
             // AiDdelete
             // 
-            this.AiDdelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AiDdelete.Location = new System.Drawing.Point(424, 312);
+            this.AiDdelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AiDdelete.Location = new System.Drawing.Point(463, 44);
             this.AiDdelete.Name = "AiDdelete";
-            this.AiDdelete.Size = new System.Drawing.Size(201, 67);
+            this.AiDdelete.Size = new System.Drawing.Size(182, 34);
             this.AiDdelete.TabIndex = 7;
             this.AiDdelete.Text = "Slet Mægler";
             this.AiDdelete.UseVisualStyleBackColor = true;
             this.AiDdelete.Click += new System.EventHandler(this.AiDdelete_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panel1.Controls.Add(this.tbAiD);
+            this.panel1.Controls.Add(this.AiDdelete);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(84, 332);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(853, 156);
+            this.panel1.TabIndex = 8;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Location = new System.Drawing.Point(84, 36);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(853, 43);
+            this.panel2.TabIndex = 9;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label2.Location = new System.Drawing.Point(351, 11);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(158, 25);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "SLET MÆGLER";
+            // 
             // DeleteMægler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.AiDdelete);
-            this.Controls.Add(this.label1);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(30)))), ((int)(((byte)(51)))));
+            this.ClientSize = new System.Drawing.Size(1372, 704);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.tbAiD);
+            this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DeleteMægler";
             this.Text = "DeleteMægler";
             this.Load += new System.EventHandler(this.DeleteMægler_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kaspermark_dk_db_realboligDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ejendomsmæglerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kaspermark_dk_db_realboligDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ejendomsmæglerBindingSource1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -182,5 +223,8 @@ namespace RealBolig
         private System.Windows.Forms.BindingSource ejendomsmæglerBindingSource1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button AiDdelete;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label2;
     }
 }
