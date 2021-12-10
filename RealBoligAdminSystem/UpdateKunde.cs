@@ -38,31 +38,56 @@ namespace RealBolig
         private void SearcgKunde_Click(object sender, EventArgs e)
         {
             string KiD = KiDTextBox.Text;
-            int intKiD = Convert.ToInt32(KiD);
-            
+            int intKiD;
+
+            bool success = Int32.TryParse(KiD, out intKiD);
+
+            if (success == true)
+            {
+                intKiD = Convert.ToInt32(KiD);
+                
+            }
+            else if (success == false)
+            {
+                KiDTextBox.Text = "";
+                MessageBox.Show("Skriv kun tal ");
+            }
+
+
 
             mFnavnTextBox.Text = getNavn(intKiD);
             mTlfTextBox.Text = Convert.ToString(getTLF(intKiD));
             mMailTextBox.Text = getMail(intKiD);
             mAdresseTextBox.Text = getAdresse(intKiD);
-            
-            
+
+
         }
 
         private void updateOplysninger_Click(object sender, EventArgs e)
         {
-            setNavn(Convert.ToInt32(KiDTextBox.Text));
-            setTLF(Convert.ToInt32(KiDTextBox.Text));
-            setMail(Convert.ToInt32(KiDTextBox.Text));
-            setAdresse(Convert.ToInt32(KiDTextBox.Text));
+            int intTlf;
+            bool tlfsucces = Int32.TryParse(mTlfTextBox.Text, out intTlf);
 
-            KiDTextBox.Text = "";
-            mFnavnTextBox.Text = "";
-            mTlfTextBox.Text = "";
-            mMailTextBox.Text = "";
-            mAdresseTextBox.Text = "";
 
-            MessageBox.Show("success: Oplysninger rettet");
+
+            if (tlfsucces == false || mTlfTextBox.Text.Length != 8)
+            {
+                MessageBox.Show("Indtast kun 8 tal i kunden telefonnummer");
+            }
+            else {
+                setNavn(Convert.ToInt32(KiDTextBox.Text));
+                setMail(Convert.ToInt32(KiDTextBox.Text));
+                setAdresse(Convert.ToInt32(KiDTextBox.Text));
+                setTLF(Convert.ToInt32(KiDTextBox.Text), intTlf);
+                MessageBox.Show("success: Oplysninger rettet");
+
+                KiDTextBox.Text = "";
+                mFnavnTextBox.Text = "";
+                mTlfTextBox.Text = "";
+                mMailTextBox.Text = "";
+                mAdresseTextBox.Text = "";
+            }
+            
             UpdateData.updateGridView("SELECT * FROM Kunde", dataGridView1);
         }
 
@@ -90,10 +115,10 @@ namespace RealBolig
 
         }
 
-        public void setTLF(int KiD)
+        public void setTLF(int KiD, int tlf)
         {
             SqlConnection conn = new SqlConnection(ConnString.getConnStr());
-            string sqltest = "UPDATE Kunde SET Tlf = '" + mTlfTextBox.Text + "' WHERE KiD = '" + KiD + "'";
+            string sqltest = "UPDATE Kunde SET Tlf = '" + tlf + "' WHERE KiD = '" + KiD + "'";
             SqlCommand cmd = new SqlCommand(sqltest, conn);
 
             conn.Open();
@@ -103,9 +128,10 @@ namespace RealBolig
         }
 
 
-        public void setNavn(int KiD) {
+        public void setNavn(int KiD)
+        {
             SqlConnection conn = new SqlConnection(ConnString.getConnStr());
-            string sqltest = "UPDATE Kunde SET FuldeNavn = '"+ mFnavnTextBox.Text + "' WHERE KiD = '"+ KiD + "'";
+            string sqltest = "UPDATE Kunde SET FuldeNavn = '" + mFnavnTextBox.Text + "' WHERE KiD = '" + KiD + "'";
             SqlCommand cmd = new SqlCommand(sqltest, conn);
 
             conn.Open();
@@ -114,9 +140,10 @@ namespace RealBolig
 
         }
 
-        public string getNavn(int KiD) {
+        public string getNavn(int KiD)
+        {
             SqlConnection conn = new SqlConnection(ConnString.getConnStr());
-            string sqltest = "SELECT FuldeNavn FROM Kunde WHERE KiD = '"+KiD+"'";
+            string sqltest = "SELECT FuldeNavn FROM Kunde WHERE KiD = '" + KiD + "'";
             SqlCommand cmd = new SqlCommand(sqltest, conn);
 
             using (conn)
@@ -127,15 +154,23 @@ namespace RealBolig
 
 
                 reader.Read();
-                string returned = reader.GetString(0);
-                return returned;
+                try
+                {
+                    string returned = reader.GetString(0);
+                    return returned;
+                }
+                catch (InvalidOperationException)
+                {
+                }
+
+                return null;
 
 
             }
 
         }
 
-        public int getTLF(int KiD)
+        public int? getTLF(int KiD)
         {
             SqlConnection conn = new SqlConnection(ConnString.getConnStr());
             string sqltest = "SELECT Tlf FROM Kunde WHERE KiD = '" + KiD + "'";
@@ -149,8 +184,16 @@ namespace RealBolig
 
 
                 reader.Read();
-                int returned = reader.GetInt32(0);
-                return returned;
+                try
+                {
+                    int returned = reader.GetInt32(0);
+                    return returned;
+                }
+                catch (InvalidOperationException)
+                {
+                }
+
+                return null;
 
 
             }
@@ -171,8 +214,16 @@ namespace RealBolig
 
 
                 reader.Read();
-                string returned = reader.GetString(0);
-                return returned;
+                try
+                {
+                    string returned = reader.GetString(0);
+                    return returned;
+                }
+                catch (InvalidOperationException)
+                {
+                }
+
+                return null;
 
 
             }
@@ -193,14 +244,22 @@ namespace RealBolig
 
 
                 reader.Read();
-                string returned = reader.GetString(0);
-                return returned;
+                try
+                {
+                    string returned = reader.GetString(0);
+                    return returned;
+                }
+                catch (InvalidOperationException)
+                {
+                }
+
+                return null;
 
 
             }
 
         }
 
-        
+
     }
 }
