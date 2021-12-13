@@ -43,9 +43,10 @@ namespace RealBolig
             this.kundeTableAdapter = new RealBolig.kaspermark_dk_db_realboligDataSet2TableAdapters.KundeTableAdapter();
             this.kundeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.deleteKiD = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kundeBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kaspermark_dk_db_realboligDataSet2)).BeginInit();
@@ -59,18 +60,20 @@ namespace RealBolig
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.ControlDark;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(25, 34);
+            this.label1.Location = new System.Drawing.Point(58, 76);
+            this.label1.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 24);
+            this.label1.Size = new System.Drawing.Size(193, 48);
             this.label1.TabIndex = 0;
             this.label1.Text = "Kunde ID";
             // 
             // tbKiD
             // 
             this.tbKiD.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbKiD.Location = new System.Drawing.Point(161, 29);
+            this.tbKiD.Location = new System.Drawing.Point(376, 65);
+            this.tbKiD.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.tbKiD.Name = "tbKiD";
-            this.tbKiD.Size = new System.Drawing.Size(234, 29);
+            this.tbKiD.Size = new System.Drawing.Size(541, 55);
             this.tbKiD.TabIndex = 1;
             // 
             // dataGridView1
@@ -86,17 +89,20 @@ namespace RealBolig
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5});
             this.dataGridView1.DataSource = this.kundeBindingSource1;
-            this.dataGridView1.Location = new System.Drawing.Point(63, 64);
+            this.dataGridView1.Location = new System.Drawing.Point(147, 143);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidth = 92;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dataGridView1.Size = new System.Drawing.Size(640, 200);
+            this.dataGridView1.Size = new System.Drawing.Size(1493, 446);
             this.dataGridView1.TabIndex = 4;
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "KiD";
             this.dataGridViewTextBoxColumn1.HeaderText = "KiD";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 11;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
@@ -104,6 +110,7 @@ namespace RealBolig
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "FuldeNavn";
             this.dataGridViewTextBoxColumn2.HeaderText = "FuldeNavn";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 11;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
@@ -111,6 +118,7 @@ namespace RealBolig
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "Tlf";
             this.dataGridViewTextBoxColumn3.HeaderText = "Tlf";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 11;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
@@ -118,6 +126,7 @@ namespace RealBolig
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "Mail";
             this.dataGridViewTextBoxColumn4.HeaderText = "Mail";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 11;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
@@ -125,6 +134,7 @@ namespace RealBolig
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "Adresse";
             this.dataGridViewTextBoxColumn5.HeaderText = "Adresse";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 11;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
@@ -150,10 +160,23 @@ namespace RealBolig
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(63, 29);
+            this.panel1.Location = new System.Drawing.Point(147, 65);
+            this.panel1.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(640, 35);
+            this.panel1.Size = new System.Drawing.Size(1493, 78);
             this.panel1.TabIndex = 5;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label2.Location = new System.Drawing.Point(632, 20);
+            this.label2.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(243, 40);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "SLET KUNDE";
             // 
             // panel2
             // 
@@ -161,43 +184,36 @@ namespace RealBolig
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.tbKiD);
             this.panel2.Controls.Add(this.deleteKiD);
-            this.panel2.Location = new System.Drawing.Point(63, 266);
+            this.panel2.Location = new System.Drawing.Point(147, 593);
+            this.panel2.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(640, 125);
+            this.panel2.Size = new System.Drawing.Size(1493, 279);
             this.panel2.TabIndex = 6;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(271, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 20);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "SLET KUNDE";
             // 
             // deleteKiD
             // 
             this.deleteKiD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deleteKiD.Location = new System.Drawing.Point(409, 29);
+            this.deleteKiD.Location = new System.Drawing.Point(954, 65);
+            this.deleteKiD.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.deleteKiD.Name = "deleteKiD";
-            this.deleteKiD.Size = new System.Drawing.Size(120, 28);
+            this.deleteKiD.Size = new System.Drawing.Size(280, 62);
             this.deleteKiD.TabIndex = 3;
             this.deleteKiD.Text = "Slet Kunde";
             this.deleteKiD.UseVisualStyleBackColor = true;
             this.deleteKiD.Click += new System.EventHandler(this.deleteKiD_Click);
+            this.deleteKiD.MouseHover += new System.EventHandler(this.deleteKiD_MouseHover);
             // 
             // DeleteKunde
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(30)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(1029, 572);
+            this.ClientSize = new System.Drawing.Size(2401, 1276);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.Name = "DeleteKunde";
             this.Text = "DeleteKunde";
             this.Load += new System.EventHandler(this.DeleteKunde_Load);
@@ -232,5 +248,6 @@ namespace RealBolig
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button deleteKiD;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

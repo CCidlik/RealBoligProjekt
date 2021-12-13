@@ -145,5 +145,10 @@ namespace RealBolig
         {
             toolTip1.Show("Der skal være oprettet en bolig i det postnummer i forvejen", btnForslåPris);
         }
+
+        private void btnOpretBolig_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show("Alle felter skal være udfyldt", btnOpretBolig);
+        }
     }
 }

@@ -138,5 +138,10 @@ namespace RealBolig
             }
             */
         }
+
+        private void btnOpretKunde_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show("Udfyld alle felter", btnOpretKunde);
+        }
     }
 }

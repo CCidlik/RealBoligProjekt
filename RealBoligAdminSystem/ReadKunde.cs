@@ -82,7 +82,14 @@ namespace RealBolig
             tbNummer.Text = "";
         }
 
+        private void SearchKunde_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show("Udfyld en af de 2 felter", SearchKunde);
+        }
 
-
+        private void SearchKundeRefresh_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show("Nulstil forrige søgning", SearchKundeRefresh);
+        }
     }
 }

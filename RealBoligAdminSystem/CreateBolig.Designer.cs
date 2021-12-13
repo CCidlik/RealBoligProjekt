@@ -118,6 +118,7 @@ namespace RealBolig
             this.btnOpretBolig.Text = "Opret Bolig";
             this.btnOpretBolig.UseVisualStyleBackColor = true;
             this.btnOpretBolig.Click += new System.EventHandler(this.btnOpretBolig_Click);
+            this.btnOpretBolig.MouseHover += new System.EventHandler(this.btnOpretBolig_MouseHover);
             // 
             // btnForslåPris
             // 

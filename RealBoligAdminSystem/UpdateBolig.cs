@@ -210,5 +210,12 @@ namespace RealBolig
             }
             UpdateData.updateGridView("select * from Bolig" ,dataGridView1);
         }
+
+        private void btnOpdaterBolig_MouseHover(object sender, EventArgs e)
+        {
+            
+            toolTip1.Show("Indtast både både bolig ID og den nye pris hvis boligen skal på tilbud.", btnOpdaterBolig);
+            
+        }
     }
 }
