@@ -125,5 +125,10 @@ namespace RealBolig
 
             UpdateData.updateGridView("SELECT * FROM Ejendomsmægler", dataGridView1);
         }
+
+        private void AiDdelete_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show("Indtast Mægler ID på den mægler du ønsker slettet", AiDdelete);
+        }
     }
 }

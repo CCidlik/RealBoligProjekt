@@ -61,5 +61,10 @@ namespace RealBolig
             UpdateData.updateGridView("Select * FROM Ejendomsmægler", dataGridView1);
 
         }
+
+        private void btnOpretMægler_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show("Alle felter skal være udfyldt", btnOpretMægler);
+        }
     }
 }

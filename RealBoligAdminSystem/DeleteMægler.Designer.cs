@@ -45,6 +45,7 @@ namespace RealBolig
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ejendomsmæglerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kaspermark_dk_db_realboligDataSet3)).BeginInit();
@@ -56,10 +57,10 @@ namespace RealBolig
             // tbAiD
             // 
             this.tbAiD.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbAiD.Location = new System.Drawing.Point(216, 36);
-            this.tbAiD.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbAiD.Location = new System.Drawing.Point(288, 44);
+            this.tbAiD.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbAiD.Name = "tbAiD";
-            this.tbAiD.Size = new System.Drawing.Size(100, 28);
+            this.tbAiD.Size = new System.Drawing.Size(132, 34);
             this.tbAiD.TabIndex = 3;
             // 
             // dataGridView1
@@ -74,13 +75,13 @@ namespace RealBolig
             this.tlfDataGridViewTextBoxColumn,
             this.mailDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.ejendomsmæglerBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(63, 64);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Location = new System.Drawing.Point(84, 79);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(640, 200);
+            this.dataGridView1.Size = new System.Drawing.Size(853, 246);
             this.dataGridView1.TabIndex = 4;
             // 
             // aiDDataGridViewTextBoxColumn
@@ -139,24 +140,24 @@ namespace RealBolig
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.ControlDark;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(41, 36);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(55, 44);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(155, 24);
+            this.label1.Size = new System.Drawing.Size(201, 29);
             this.label1.TabIndex = 6;
             this.label1.Text = "Indtast Mægler ID";
             // 
             // AiDdelete
             // 
             this.AiDdelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AiDdelete.Location = new System.Drawing.Point(347, 36);
-            this.AiDdelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AiDdelete.Location = new System.Drawing.Point(463, 44);
+            this.AiDdelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AiDdelete.Name = "AiDdelete";
-            this.AiDdelete.Size = new System.Drawing.Size(136, 28);
+            this.AiDdelete.Size = new System.Drawing.Size(181, 34);
             this.AiDdelete.TabIndex = 7;
             this.AiDdelete.Text = "Slet Mægler";
             this.AiDdelete.UseVisualStyleBackColor = true;
             this.AiDdelete.Click += new System.EventHandler(this.AiDdelete_Click);
+            this.AiDdelete.MouseHover += new System.EventHandler(this.AiDdelete_MouseHover);
             // 
             // panel1
             // 
@@ -164,20 +165,20 @@ namespace RealBolig
             this.panel1.Controls.Add(this.tbAiD);
             this.panel1.Controls.Add(this.AiDdelete);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(63, 270);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Location = new System.Drawing.Point(84, 332);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(640, 127);
+            this.panel1.Size = new System.Drawing.Size(853, 156);
             this.panel1.TabIndex = 8;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(63, 29);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Location = new System.Drawing.Point(84, 36);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(640, 35);
+            this.panel2.Size = new System.Drawing.Size(853, 43);
             this.panel2.TabIndex = 9;
             // 
             // label2
@@ -185,24 +186,23 @@ namespace RealBolig
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(263, 9);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(351, 11);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(127, 20);
+            this.label2.Size = new System.Drawing.Size(158, 25);
             this.label2.TabIndex = 0;
             this.label2.Text = "SLET MÆGLER";
             // 
             // DeleteMægler
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(30)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(1029, 572);
+            this.ClientSize = new System.Drawing.Size(1372, 704);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "DeleteMægler";
             this.Text = "DeleteMægler";
             this.Load += new System.EventHandler(this.DeleteMægler_Load);
@@ -234,5 +234,6 @@ namespace RealBolig
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

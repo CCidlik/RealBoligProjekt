@@ -49,6 +49,7 @@ namespace RealBolig
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ejendomsmæglerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ejendomsmæglerBindingSource1)).BeginInit();
@@ -72,6 +73,7 @@ namespace RealBolig
             this.btnOpretMægler.Text = "Opret Mægler";
             this.btnOpretMægler.UseVisualStyleBackColor = true;
             this.btnOpretMægler.Click += new System.EventHandler(this.btnOpretMægler_Click_1);
+            this.btnOpretMægler.MouseHover += new System.EventHandler(this.btnOpretMægler_MouseHover);
             // 
             // labelMail
             // 
@@ -289,5 +291,6 @@ namespace RealBolig
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

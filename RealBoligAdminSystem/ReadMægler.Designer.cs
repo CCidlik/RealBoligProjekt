@@ -53,6 +53,7 @@ namespace RealBolig
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ejendomsmæglerBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kaspermark_dk_db_realboligDataSet4)).BeginInit();
@@ -60,6 +61,7 @@ namespace RealBolig
             ((System.ComponentModel.ISupportInitialize)(this.ejendomsmæglerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kaspermark_dk_db_realboligDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.boligStatusBindingSource)).BeginInit();
+            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,7 +77,7 @@ namespace RealBolig
             this.mailDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.ejendomsmæglerBindingSource1;
             this.dataGridView1.Location = new System.Drawing.Point(84, 79);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
@@ -141,14 +143,15 @@ namespace RealBolig
             // SearchMægler
             // 
             this.SearchMægler.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchMægler.Location = new System.Drawing.Point(589, 375);
-            this.SearchMægler.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SearchMægler.Location = new System.Drawing.Point(483, 43);
+            this.SearchMægler.Margin = new System.Windows.Forms.Padding(4);
             this.SearchMægler.Name = "SearchMægler";
             this.SearchMægler.Size = new System.Drawing.Size(157, 34);
             this.SearchMægler.TabIndex = 1;
             this.SearchMægler.Text = "Søg Mægler";
             this.SearchMægler.UseVisualStyleBackColor = true;
             this.SearchMægler.Click += new System.EventHandler(this.SearchMægler_Click);
+            this.SearchMægler.MouseHover += new System.EventHandler(this.SearchMægler_MouseHover);
             // 
             // kaspermark_dk_db_realboligDataSet1
             // 
@@ -171,10 +174,10 @@ namespace RealBolig
             // ResetBtn
             // 
             this.ResetBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ResetBtn.Location = new System.Drawing.Point(589, 456);
-            this.ResetBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ResetBtn.Location = new System.Drawing.Point(648, 43);
+            this.ResetBtn.Margin = new System.Windows.Forms.Padding(4);
             this.ResetBtn.Name = "ResetBtn";
-            this.ResetBtn.Size = new System.Drawing.Size(157, 34);
+            this.ResetBtn.Size = new System.Drawing.Size(186, 34);
             this.ResetBtn.TabIndex = 2;
             this.ResetBtn.Text = "Nulstil Søgning";
             this.ResetBtn.UseVisualStyleBackColor = true;
@@ -197,7 +200,7 @@ namespace RealBolig
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.ControlDark;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(141, 456);
+            this.label2.Location = new System.Drawing.Point(53, 112);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(140, 29);
@@ -208,7 +211,7 @@ namespace RealBolig
             // 
             this.tbMiD.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbMiD.Location = new System.Drawing.Point(302, 375);
-            this.tbMiD.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbMiD.Margin = new System.Windows.Forms.Padding(4);
             this.tbMiD.Name = "tbMiD";
             this.tbMiD.Size = new System.Drawing.Size(132, 34);
             this.tbMiD.TabIndex = 5;
@@ -216,8 +219,8 @@ namespace RealBolig
             // tbTlf
             // 
             this.tbTlf.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbTlf.Location = new System.Drawing.Point(303, 456);
-            this.tbTlf.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbTlf.Location = new System.Drawing.Point(218, 107);
+            this.tbTlf.Margin = new System.Windows.Forms.Padding(4);
             this.tbTlf.Name = "tbTlf";
             this.tbTlf.Size = new System.Drawing.Size(249, 34);
             this.tbTlf.TabIndex = 6;
@@ -225,6 +228,10 @@ namespace RealBolig
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panel1.Controls.Add(this.ResetBtn);
+            this.panel1.Controls.Add(this.tbTlf);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.SearchMægler);
             this.panel1.Location = new System.Drawing.Point(84, 332);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(853, 196);
@@ -257,16 +264,12 @@ namespace RealBolig
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(30)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(1372, 704);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.tbTlf);
             this.Controls.Add(this.tbMiD);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.ResetBtn);
-            this.Controls.Add(this.SearchMægler);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ReadMægler";
             this.Text = "ReadMægler";
             this.Load += new System.EventHandler(this.ReadMægler_Load);
@@ -277,6 +280,8 @@ namespace RealBolig
             ((System.ComponentModel.ISupportInitialize)(this.ejendomsmæglerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kaspermark_dk_db_realboligDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.boligStatusBindingSource)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -309,5 +314,6 @@ namespace RealBolig
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

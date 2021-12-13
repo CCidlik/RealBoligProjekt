@@ -201,7 +201,7 @@ namespace RealBolig
 
         private void btnHjælp_Click_1(object sender, EventArgs e)
         {
-            //indtast kode til den form den skal linke til
+            openFormsLoader(new Help());
 
             hideSubMenu();
         }
@@ -224,11 +224,15 @@ namespace RealBolig
         }
         #endregion
 
+        #region Start Program i fullscreenmode
+
         private void MaxScreenSize()
         {
             int height = Screen.PrimaryScreen.Bounds.Height;
             int width = Screen.PrimaryScreen.Bounds.Width;
         }
+
+        #endregion
 
         #region Under Gulvtæppet
         private void button1_Click(object sender, EventArgs e)

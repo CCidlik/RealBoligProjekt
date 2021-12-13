@@ -86,5 +86,10 @@ namespace RealBolig
             tbMiD.Text = "";
             tbTlf.Text = "";
         }
+
+        private void SearchMægler_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show("Søg enten på Mægler ID eller Tlf nr", SearchMægler);
+        }
     }
 }
