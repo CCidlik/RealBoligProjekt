@@ -134,5 +134,16 @@ namespace RealBolig
             }
 
         }
+
+        private void mKiDTextbox_MouseHover(object sender, EventArgs e)
+        {
+          
+
+        }
+
+        private void btnForslåPris_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show("Der skal være oprettet en bolig i det postnummer i forvejen", btnForslåPris);
+        }
     }
 }
