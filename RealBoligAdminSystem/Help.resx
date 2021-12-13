@@ -117,4 +117,50 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value>CRUD PÅ BOLIG
+
+OPRET BOLIG
+Når du skal oprette en ny bolig til salg, skal du indtaste sælgerens Kunde ID (Du kan se KiD under fanetaben ”Kunde Tabel”) for at knytte sælgerens oplysninger til boligsalget. Du skal også indtaste oplysningerne om boligen der er til salg: Post nr, Adresse, Område (kun hvis byen har flere byområder), og boligens kvm. Det sidste du skal gøre, er at sætte din salgsvurdering ind i feltet Salgspris. Alle felter, undtagen Område, skal udfyldes før du kan trykke på Opret Bolig. 
+Forslå Pris: Denne funktion kan automatisk generere en pris ud fra den gennemsnitlige kvm i det givende postnr. Der skal dog være oprettet boliger i forvejen med et tilsvarende postnr., for at funktionen virker.
+
+SØG BOLIG
+Her kan du søge efter en bestemt bolig, eller udprinte oplysninger til en tekstfil. Du kan vælge om husene skal være solgte, til salg, eller begge dele. Du kan vælge fra en bestemt periode og til nu, og til en bestemt pris.
+
+OPDATER BOLIG
+Du kan gøre to ting i denne funktion. Du kan enten ændre salgsprisen på en given bolig, eller ændre boligens status til at være solgt.
+For at ændre salgsprisen på boligen skal du: indtaste Bolig ID’et (BiD) på den bolig du gerne vil ændre og derefter indtaste den nye pris huset på huset.
+For at ændre boligens status til solgt skal du: indtaste Bolig ID’et (BiD) og indtaste den nuværende salgspris, derefter skal du vinge chekboksen af ved ”Er boligen solgt” og udfylde købers kunde ID (KiD) og handelsprisen, samt handelsdatoen. Alle felterne skal være udfyldt.
+
+SLET BOLIG
+Når du skal slette en bolig, så skal du bare indtaste Bolig ID (BiD) og trykke på slet knappen.
+
+CRUD PÅ KUNDE
+
+OPRET KUNDE
+For at oprette en kunde skal du udfylde følgende felter: Fulde Navn, Telefon nr., E-Mail og Adresse. Derefter trykker du på ”Opret Kunde” knappen.
+
+SØG KUNDE
+Hvis du skal søge efter en kunde, kan du søge på deres Kunde ID eller deres Telefon nummer. Du indtaster det i de respektive felter og trykker på ”søg” knappen. Ønsker at du nulstille din søgning kan du trykke på ”Nulstil Søgning” knappen.
+
+OPDATER KUNDE
+For at opdatere en kundes oplysninger skal du ind blot indtaste Kundens ID i feltet: ”Kunde ID” og tryk på knappen ”Søg Kunde”. Nu bliver alle kundens data loadet ind i de nedensteående felter og du kan nu rette i de oplysninger du ønsker. Når du har lavet de ændringer du gerne vil, skal du bare trykke på ”Ret Kunde Oplysninger”. Alle felter skal være udfyldte.
+
+SLET KUNDE
+Når du skal slette en kunde, så skal du bare indtaste Kunde ID (KiD) og trykke på slet knappen.
+
+CRUD PÅ MÆGLER
+
+OPRET MÆGLER
+For at oprette en Mægler skal du udfylde følgende felter: Fulde Navn, Telefon nr. og E-Mail Derefter trykker du på ”Opret Mægler” knappen.
+
+SØG MÆGLER
+Hvis du skal søge efter en mægler, kan du søge på deres Mægler ID (AiD) eller deres Telefon nummer. Du indtaster det i de respektive felter og trykker på ”søg” knappen. Ønsker at du nulstille din søgning kan du trykke på ”Nulstil Søgning” knappen.
+
+OPDATER MÆGLER
+For at opdatere en Mæglerens oplysninger skal du ind blot indtaste mæglerens ID i feltet: ”Mægler ID” og tryk på knappen ”Søg Mægler”. Nu bliver alle mæglerens data loadet ind i de nedenstående felter og du kan nu rette i de oplysninger du ønsker. Når du har lavet de ændringer du gerne vil, skal du bare trykke på ”Ret Kunde Oplysninger”. Alle felter skal være udfyldte.
+
+SLET MÆGLER
+Når du skal slette en Mægler, så skal du bare indtaste Mægler ID (AiD) og trykke på slet knappen.</value>
+  </data>
 </root>

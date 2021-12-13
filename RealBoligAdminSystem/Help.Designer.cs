@@ -29,7 +29,11 @@ namespace RealBolig
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Help));
             this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -43,16 +47,36 @@ namespace RealBolig
             this.label1.TabIndex = 0;
             this.label1.Text = "HJÆLP TIL FUNKTIONERNE I PROGRAMMET";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panel1.Controls.Add(this.richTextBox1);
+            this.panel1.Location = new System.Drawing.Point(192, 132);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1040, 764);
+            this.panel1.TabIndex = 1;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.richTextBox1.Location = new System.Drawing.Point(40, 36);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(957, 699);
+            this.richTextBox1.TabIndex = 0;
+            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
+            // 
             // Help
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(30)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(1617, 942);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Help";
             this.Text = "Help";
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -61,5 +85,7 @@ namespace RealBolig
         #endregion
 
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }
