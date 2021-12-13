@@ -45,17 +45,17 @@ namespace RealBolig
 
             else if (radioBtnSolgt.Checked == true)
             {
-
+                SolgtChecked();
             }
 
             else if (radioBtnSalg.Checked == true)
             {
-
+                TilSalgChecked();
             }
 
             else if (radioBtnAll.Checked == true)
             {
-
+                AllChecked();
             }
 
         }
@@ -72,6 +72,13 @@ namespace RealBolig
                 adapt.Fill(dt);
                 dataGridView1.DataSource = dt;
                 conn.Close();
+                tbOmråde.Text = "";
+                tbPostnummer.Text = "";
+                textFraDato.Text = "";
+                textFraPris.Text = "";
+                radioBtnSolgt.Checked = false;
+                radioBtnSalg.Checked = false;
+                radioBtnAll.Checked = false;
             }
 
             catch (Exception exc)
@@ -79,6 +86,11 @@ namespace RealBolig
                 MessageBox.Show("ERROR: \n\n" + exc.ToString());
                 tbOmråde.Text = "";
                 tbPostnummer.Text = "";
+                textFraDato.Text = "";
+                textFraPris.Text = "";
+                radioBtnSolgt.Checked = false;
+                radioBtnSalg.Checked = false;
+                radioBtnAll.Checked = false;
             }
         }
 
@@ -313,46 +325,51 @@ namespace RealBolig
         {
             SqlConnection conn = new SqlConnection(ConnString.getConnStr());
 
-            string FraDato = textFraDato.Text;
+            string SalgsPris = textFraPris.Text;
+
             DateTime idag = DateTime.Now;
             string Sidag = Convert.ToString(idag);
-            string S2idag = $"{Sidag.Substring(4, 4)}-{Sidag.Substring(2, 2)}-{Sidag.Substring(0, 2)}";
+            string S2idag = $"{Sidag.Substring(6, 4)}-{Sidag.Substring(3, 2)}-{Sidag.Substring(0, 2)}";
 
-            if (textFraDato.Text != null && textFraPris.Text == null)
+            if (textFraDato.Text != "" && textFraPris.Text == "")
             {
+                string SalgsDato = textFraDato.Text;
+                string SalgsDato2 = $"{SalgsDato.Substring(4, 4)}-{SalgsDato.Substring(2, 2)}-{SalgsDato.Substring(0, 2)}";
                 conn.Open();
                 DataTable dt = new DataTable();
-                SqlDataAdapter adapt = new SqlDataAdapter($"SELECT BiD, KiD FROM Bolig WHERE (SalgsDato BETWEEN '{FraDato.Substring(4, 4)}-{FraDato.Substring(2, 2)}-{FraDato.Substring(0, 2)}' AND '{S2idag}') AND Solgt = 1", conn);
+                SqlDataAdapter adapt = new SqlDataAdapter($"SELECT BiD, KiD, Adresse, SalgsPris, SalgsDato, Solgt FROM Bolig WHERE (SalgsDato BETWEEN '{SalgsDato2}' AND '{S2idag}') AND Solgt = 1", conn);
                 adapt.Fill(dt);
                 dataGridView1.DataSource = dt;
                 conn.Close();
             }
 
-            else if (textFraDato.Text == null && textFraPris.Text != null)
-            {
-                /*conn.Open();
-                DataTable dt = new DataTable();
-                SqlDataAdapter adapt = new SqlDataAdapter($"SELECT BiD, KiD FROM Bolig WHERE (SalgsDato BETWEEN '{FraDato.Substring(4, 4)}-{FraDato.Substring(2, 2)}-{FraDato.Substring(0, 2)}' AND '{S2idag}') AND Solgt = 1", conn);
-                adapt.Fill(dt);
-                dataGridView1.DataSource = dt;
-                conn.Close();*/
-            }
-
-            else if (textFraDato.Text != null && textFraPris.Text != null)
-            {
-                /*conn.Open();
-                DataTable dt = new DataTable();
-                SqlDataAdapter adapt = new SqlDataAdapter($"SELECT BiD, KiD FROM Bolig WHERE (SalgsDato BETWEEN '{FraDato.Substring(4, 4)}-{FraDato.Substring(2, 2)}-{FraDato.Substring(0, 2)}' AND '{S2idag}') AND Solgt = 1", conn);
-                adapt.Fill(dt);
-                dataGridView1.DataSource = dt;
-                conn.Close();*/
-            }
-
-            else if (textFraDato.Text == null && textFraPris.Text == null)
+            else if (textFraDato.Text == "" && textFraPris.Text != "")
             {
                 conn.Open();
                 DataTable dt = new DataTable();
-                SqlDataAdapter adapt = new SqlDataAdapter($"SELECT BiD, KiD FROM Bolig WHERE Solgt = 1", conn);
+                SqlDataAdapter adapt = new SqlDataAdapter($"SELECT BiD, KiD, Adresse, SalgsPris, SalgsDato, Solgt FROM Bolig WHERE SalgsPris >= {SalgsPris} AND Solgt = 1", conn);
+                adapt.Fill(dt);
+                dataGridView1.DataSource = dt;
+                conn.Close();
+            }
+
+            else if (textFraDato.Text != "" && textFraPris.Text != "")
+            {
+                string SalgsDato = textFraDato.Text;
+                string SalgsDato2 = $"{SalgsDato.Substring(4, 4)}-{SalgsDato.Substring(2, 2)}-{SalgsDato.Substring(0, 2)}";
+                conn.Open();
+                DataTable dt = new DataTable();
+                SqlDataAdapter adapt = new SqlDataAdapter($"SELECT BiD, KiD, Adresse, SalgsPris, SalgsDato, Solgt FROM Bolig WHERE (SalgsDato BETWEEN '{SalgsDato2}' AND '{S2idag}') AND SalgsPris >= {SalgsPris} AND Solgt = 1", conn);
+                adapt.Fill(dt);
+                dataGridView1.DataSource = dt;
+                conn.Close();
+            }
+
+            else if (textFraDato.Text == "" && textFraPris.Text == "")
+            {
+                conn.Open();
+                DataTable dt = new DataTable();
+                SqlDataAdapter adapt = new SqlDataAdapter($"SELECT BiD, KiD, Adresse, SalgsPris, SalgsDato, Solgt FROM Bolig WHERE Solgt = 1", conn);
                 adapt.Fill(dt);
                 dataGridView1.DataSource = dt;
                 conn.Close();
@@ -362,12 +379,112 @@ namespace RealBolig
 
         public void TilSalgChecked()
         {
+            SqlConnection conn = new SqlConnection(ConnString.getConnStr());
 
+            string SalgsPris = textFraPris.Text;
+
+            DateTime idag = DateTime.Now;
+            string Sidag = Convert.ToString(idag);
+            string S2idag = $"{Sidag.Substring(6, 4)}-{Sidag.Substring(3, 2)}-{Sidag.Substring(0, 2)}";
+
+            if (textFraDato.Text != "" && textFraPris.Text == "")
+            {
+                string SalgsDato = textFraDato.Text;
+                string SalgsDato2 = $"{SalgsDato.Substring(4, 4)}-{SalgsDato.Substring(2, 2)}-{SalgsDato.Substring(0, 2)}";
+                conn.Open();
+                DataTable dt = new DataTable();
+                SqlDataAdapter adapt = new SqlDataAdapter($"SELECT BiD, KiD, Adresse, SalgsPris, SalgsDato, Solgt FROM Bolig WHERE (SalgsDato BETWEEN '{SalgsDato2}' AND '{S2idag}') AND Solgt = 0", conn);
+                adapt.Fill(dt);
+                dataGridView1.DataSource = dt;
+                conn.Close();
+            }
+
+            else if (textFraDato.Text == "" && textFraPris.Text != "")
+            {
+                conn.Open();
+                DataTable dt = new DataTable();
+                SqlDataAdapter adapt = new SqlDataAdapter($"SELECT BiD, KiD, Adresse, SalgsPris, SalgsDato, Solgt FROM Bolig WHERE SalgsPris >= {SalgsPris} AND Solgt = 0", conn);
+                adapt.Fill(dt);
+                dataGridView1.DataSource = dt;
+                conn.Close();
+            }
+
+            else if (textFraDato.Text != "" && textFraPris.Text != "")
+            {
+                string SalgsDato = textFraDato.Text;
+                string SalgsDato2 = $"{SalgsDato.Substring(4, 4)}-{SalgsDato.Substring(2, 2)}-{SalgsDato.Substring(0, 2)}";
+                conn.Open();
+                DataTable dt = new DataTable();
+                SqlDataAdapter adapt = new SqlDataAdapter($"SELECT BiD, KiD, Adresse, SalgsPris, SalgsDato, Solgt FROM Bolig WHERE (SalgsDato BETWEEN '{SalgsDato2}' AND '{S2idag}') AND SalgsPris >= {SalgsPris} AND Solgt = 0", conn);
+                adapt.Fill(dt);
+                dataGridView1.DataSource = dt;
+                conn.Close();
+            }
+
+            else if (textFraDato.Text == "" && textFraPris.Text == "")
+            {
+                conn.Open();
+                DataTable dt = new DataTable();
+                SqlDataAdapter adapt = new SqlDataAdapter($"SELECT BiD, KiD, Adresse, SalgsPris, SalgsDato, Solgt FROM Bolig WHERE Solgt = 0", conn);
+                adapt.Fill(dt);
+                dataGridView1.DataSource = dt;
+                conn.Close();
+            }
         }
 
         public void AllChecked()
         {
+            SqlConnection conn = new SqlConnection(ConnString.getConnStr());
 
+            string SalgsPris = textFraPris.Text;
+
+            DateTime idag = DateTime.Now;
+            string Sidag = Convert.ToString(idag);
+            string S2idag = $"{Sidag.Substring(6, 4)}-{Sidag.Substring(3, 2)}-{Sidag.Substring(0, 2)}";
+
+            if (textFraDato.Text != "" && textFraPris.Text == "")
+            {
+                string SalgsDato = textFraDato.Text;
+                string SalgsDato2 = $"{SalgsDato.Substring(4, 4)}-{SalgsDato.Substring(2, 2)}-{SalgsDato.Substring(0, 2)}";
+                conn.Open();
+                DataTable dt = new DataTable();
+                SqlDataAdapter adapt = new SqlDataAdapter($"SELECT BiD, KiD, Adresse, SalgsPris, SalgsDato, Solgt FROM Bolig WHERE (SalgsDato BETWEEN '{SalgsDato2}' AND '{S2idag}')", conn);
+                adapt.Fill(dt);
+                dataGridView1.DataSource = dt;
+                conn.Close();
+            }
+
+            else if (textFraDato.Text == "" && textFraPris.Text != "")
+            {
+                conn.Open();
+                DataTable dt = new DataTable();
+                SqlDataAdapter adapt = new SqlDataAdapter($"SELECT BiD, KiD, Adresse, SalgsPris, SalgsDato, Solgt FROM Bolig WHERE SalgsPris >= {SalgsPris}", conn);
+                adapt.Fill(dt);
+                dataGridView1.DataSource = dt;
+                conn.Close();
+            }
+
+            else if (textFraDato.Text != "" && textFraPris.Text != "")
+            {
+                string SalgsDato = textFraDato.Text;
+                string SalgsDato2 = $"{SalgsDato.Substring(4, 4)}-{SalgsDato.Substring(2, 2)}-{SalgsDato.Substring(0, 2)}";
+                conn.Open();
+                DataTable dt = new DataTable();
+                SqlDataAdapter adapt = new SqlDataAdapter($"SELECT BiD, KiD, Adresse, SalgsPris, SalgsDato, Solgt FROM Bolig WHERE (SalgsDato BETWEEN '{SalgsDato2}' AND '{S2idag}') AND SalgsPris >= {SalgsPris}", conn);
+                adapt.Fill(dt);
+                dataGridView1.DataSource = dt;
+                conn.Close();
+            }
+
+            else if (textFraDato.Text == "" && textFraPris.Text == "")
+            {
+                conn.Open();
+                DataTable dt = new DataTable();
+                SqlDataAdapter adapt = new SqlDataAdapter($"SELECT BiD, KiD, Adresse, SalgsPris, SalgsDato, Solgt FROM Bolig", conn);
+                adapt.Fill(dt);
+                dataGridView1.DataSource = dt;
+                conn.Close();
+            }
         }
 
         private void btnIndlæsBolig_MouseHover(object sender, EventArgs e)
