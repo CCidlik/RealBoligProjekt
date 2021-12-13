@@ -96,7 +96,7 @@ namespace RealBolig
             // 
             this.btnIndlæsBolig.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIndlæsBolig.Location = new System.Drawing.Point(712, 41);
-            this.btnIndlæsBolig.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnIndlæsBolig.Margin = new System.Windows.Forms.Padding(4);
             this.btnIndlæsBolig.Name = "btnIndlæsBolig";
             this.btnIndlæsBolig.Size = new System.Drawing.Size(163, 78);
             this.btnIndlæsBolig.TabIndex = 54;
@@ -109,7 +109,7 @@ namespace RealBolig
             // 
             this.tbOmråde.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbOmråde.Location = new System.Drawing.Point(237, 42);
-            this.tbOmråde.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbOmråde.Margin = new System.Windows.Forms.Padding(4);
             this.tbOmråde.Name = "tbOmråde";
             this.tbOmråde.Size = new System.Drawing.Size(445, 34);
             this.tbOmråde.TabIndex = 39;
@@ -143,7 +143,7 @@ namespace RealBolig
             // 
             this.tbPostnummer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbPostnummer.Location = new System.Drawing.Point(237, 84);
-            this.tbPostnummer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbPostnummer.Margin = new System.Windows.Forms.Padding(4);
             this.tbPostnummer.Name = "tbPostnummer";
             this.tbPostnummer.Size = new System.Drawing.Size(148, 34);
             this.tbPostnummer.TabIndex = 57;
@@ -167,7 +167,7 @@ namespace RealBolig
             this.solgtDataGridViewCheckBoxColumn});
             this.dataGridView1.DataSource = this.boligBindingSource2;
             this.dataGridView1.Location = new System.Drawing.Point(84, 36);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(936, 290);
@@ -305,7 +305,7 @@ namespace RealBolig
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(237, 252);
+            this.label6.Location = new System.Drawing.Point(233, 252);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(121, 20);
             this.label6.TabIndex = 69;
@@ -323,10 +323,10 @@ namespace RealBolig
             // textFraPris
             // 
             this.textFraPris.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textFraPris.Location = new System.Drawing.Point(178, 223);
+            this.textFraPris.Location = new System.Drawing.Point(237, 274);
             this.textFraPris.Margin = new System.Windows.Forms.Padding(2);
             this.textFraPris.Name = "textFraPris";
-            this.textFraPris.Size = new System.Drawing.Size(152, 28);
+            this.textFraPris.Size = new System.Drawing.Size(152, 34);
             this.textFraPris.TabIndex = 67;
             // 
             // label7
@@ -353,7 +353,7 @@ namespace RealBolig
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(237, 180);
+            this.label3.Location = new System.Drawing.Point(233, 180);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 20);
             this.label3.TabIndex = 64;
@@ -371,10 +371,10 @@ namespace RealBolig
             // textFraDato
             // 
             this.textFraDato.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textFraDato.Location = new System.Drawing.Point(178, 165);
+            this.textFraDato.Location = new System.Drawing.Point(237, 203);
             this.textFraDato.Margin = new System.Windows.Forms.Padding(2);
             this.textFraDato.Name = "textFraDato";
-            this.textFraDato.Size = new System.Drawing.Size(152, 28);
+            this.textFraDato.Size = new System.Drawing.Size(152, 34);
             this.textFraDato.TabIndex = 62;
             // 
             // label2
@@ -391,10 +391,10 @@ namespace RealBolig
             // 
             this.radioBtnAll.AutoSize = true;
             this.radioBtnAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioBtnAll.Location = new System.Drawing.Point(421, 106);
+            this.radioBtnAll.Location = new System.Drawing.Point(537, 140);
             this.radioBtnAll.Margin = new System.Windows.Forms.Padding(2);
             this.radioBtnAll.Name = "radioBtnAll";
-            this.radioBtnAll.Size = new System.Drawing.Size(99, 24);
+            this.radioBtnAll.Size = new System.Drawing.Size(121, 29);
             this.radioBtnAll.TabIndex = 60;
             this.radioBtnAll.TabStop = true;
             this.radioBtnAll.Text = "Al aktivitet";
@@ -404,10 +404,10 @@ namespace RealBolig
             // 
             this.radioBtnSalg.AutoSize = true;
             this.radioBtnSalg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioBtnSalg.Location = new System.Drawing.Point(297, 106);
+            this.radioBtnSalg.Location = new System.Drawing.Point(344, 140);
             this.radioBtnSalg.Margin = new System.Windows.Forms.Padding(2);
             this.radioBtnSalg.Name = "radioBtnSalg";
-            this.radioBtnSalg.Size = new System.Drawing.Size(127, 24);
+            this.radioBtnSalg.Size = new System.Drawing.Size(156, 29);
             this.radioBtnSalg.TabIndex = 59;
             this.radioBtnSalg.TabStop = true;
             this.radioBtnSalg.Text = "Boliger til Salg";
@@ -417,10 +417,10 @@ namespace RealBolig
             // 
             this.radioBtnSolgt.AutoSize = true;
             this.radioBtnSolgt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioBtnSolgt.Location = new System.Drawing.Point(177, 106);
+            this.radioBtnSolgt.Location = new System.Drawing.Point(154, 140);
             this.radioBtnSolgt.Margin = new System.Windows.Forms.Padding(2);
             this.radioBtnSolgt.Name = "radioBtnSolgt";
-            this.radioBtnSolgt.Size = new System.Drawing.Size(126, 24);
+            this.radioBtnSolgt.Size = new System.Drawing.Size(154, 29);
             this.radioBtnSolgt.TabIndex = 58;
             this.radioBtnSolgt.TabStop = true;
             this.radioBtnSolgt.Text = "Solgte Boliger";
@@ -508,14 +508,14 @@ namespace RealBolig
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(30)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(1110, 608);
+            this.ClientSize = new System.Drawing.Size(1110, 910);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ReadBolig";
             this.Text = "ReadBolig";
             this.Load += new System.EventHandler(this.ReadBolig_Load);
