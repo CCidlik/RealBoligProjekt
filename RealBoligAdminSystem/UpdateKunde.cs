@@ -268,13 +268,23 @@ namespace RealBolig
         private void KiDTextBox_MouseHover(object sender, EventArgs e)
         {
             
-            toolTip1.Show("Indtast kundes ID. Du kan finde kundes ID i listen ovenover eller inde i indlæs menuen", labelTlf);
+            //toolTip1.Show("Indtast kundes ID. Du kan finde kundes ID i listen ovenover eller inde i indlæs menuen", labelTlf);
             
         }
 
         private void KiDTextBox_MouseLeave(object sender, EventArgs e)
         {
-            toolTip1.Show("", labelTlf);
+            //toolTip1.Show("", labelTlf);
+        }
+
+        private void SearcgKunde_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show("Indtast kun kunde ID", SearcgKunde);
+        }
+
+        private void updateOplysninger_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show("Alle felte skal være udfyldt", updateOplysninger);
         }
     }
 }

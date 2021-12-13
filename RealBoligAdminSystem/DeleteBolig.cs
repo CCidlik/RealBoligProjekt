@@ -76,7 +76,10 @@ namespace RealBolig
 
         }
 
-        
+        private void btnSletBolig_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show("Indtast ID på den bolig som du ønsker at slette", btnSletBolig);
+        }
     }
 
 

@@ -74,6 +74,7 @@ namespace RealBolig
             this.panel3 = new System.Windows.Forms.Panel();
             this.boligTableAdapter = new RealBolig.kaspermark_dk_db_realboligDataSetTableAdapters.BoligTableAdapter();
             this.bolig_StatusTableAdapter = new RealBolig.kaspermark_dk_db_realboligDataSet1TableAdapters.Bolig_StatusTableAdapter();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tabPageBoliger.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.boligBindingSource)).BeginInit();
@@ -94,11 +95,11 @@ namespace RealBolig
             this.tabPageBoliger.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.tabPageBoliger.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tabPageBoliger.Controls.Add(this.dataGridView1);
-            this.tabPageBoliger.Location = new System.Drawing.Point(4, 25);
-            this.tabPageBoliger.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPageBoliger.Location = new System.Drawing.Point(10, 47);
+            this.tabPageBoliger.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.tabPageBoliger.Name = "tabPageBoliger";
-            this.tabPageBoliger.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPageBoliger.Size = new System.Drawing.Size(928, 261);
+            this.tabPageBoliger.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.tabPageBoliger.Size = new System.Drawing.Size(1618, 469);
             this.tabPageBoliger.TabIndex = 0;
             this.tabPageBoliger.Text = "Boliger";
             // 
@@ -120,12 +121,12 @@ namespace RealBolig
             this.solgtDataGridViewCheckBoxColumn});
             this.dataGridView1.DataSource = this.boligBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(4, 4);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView1.Location = new System.Drawing.Point(7, 7);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(918, 251);
+            this.dataGridView1.Size = new System.Drawing.Size(1602, 453);
             this.dataGridView1.TabIndex = 0;
             // 
             // biDDataGridViewTextBoxColumn
@@ -214,21 +215,21 @@ namespace RealBolig
             // 
             this.tabControl1.Controls.Add(this.tabPageBoliger);
             this.tabControl1.Controls.Add(this.tabPageKøber);
-            this.tabControl1.Location = new System.Drawing.Point(84, 36);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.tabControl1.Location = new System.Drawing.Point(147, 65);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(936, 290);
+            this.tabControl1.Size = new System.Drawing.Size(1638, 526);
             this.tabControl1.TabIndex = 72;
             // 
             // tabPageKøber
             // 
             this.tabPageKøber.Controls.Add(this.dataGridView2);
-            this.tabPageKøber.Location = new System.Drawing.Point(4, 25);
-            this.tabPageKøber.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPageKøber.Location = new System.Drawing.Point(10, 47);
+            this.tabPageKøber.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.tabPageKøber.Name = "tabPageKøber";
-            this.tabPageKøber.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPageKøber.Size = new System.Drawing.Size(928, 261);
+            this.tabPageKøber.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.tabPageKøber.Size = new System.Drawing.Size(1618, 469);
             this.tabPageKøber.TabIndex = 1;
             this.tabPageKøber.Text = "Køber";
             this.tabPageKøber.UseVisualStyleBackColor = true;
@@ -246,12 +247,12 @@ namespace RealBolig
             this.handelsDatoDataGridViewTextBoxColumn});
             this.dataGridView2.DataSource = this.boligStatusBindingSource;
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(4, 4);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView2.Location = new System.Drawing.Point(7, 7);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.Size = new System.Drawing.Size(920, 253);
+            this.dataGridView2.Size = new System.Drawing.Size(1604, 455);
             this.dataGridView2.TabIndex = 0;
             // 
             // biDDataGridViewTextBoxColumn1
@@ -299,22 +300,23 @@ namespace RealBolig
             // btnOpdaterBolig
             // 
             this.btnOpdaterBolig.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOpdaterBolig.Location = new System.Drawing.Point(557, 412);
-            this.btnOpdaterBolig.Margin = new System.Windows.Forms.Padding(4);
+            this.btnOpdaterBolig.Location = new System.Drawing.Point(975, 747);
+            this.btnOpdaterBolig.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.btnOpdaterBolig.Name = "btnOpdaterBolig";
-            this.btnOpdaterBolig.Size = new System.Drawing.Size(260, 96);
+            this.btnOpdaterBolig.Size = new System.Drawing.Size(455, 174);
             this.btnOpdaterBolig.TabIndex = 71;
             this.btnOpdaterBolig.Text = "Opdater Bolig";
             this.btnOpdaterBolig.UseVisualStyleBackColor = true;
             this.btnOpdaterBolig.Click += new System.EventHandler(this.btnOpdaterBolig_Click);
+            this.btnOpdaterBolig.MouseHover += new System.EventHandler(this.btnOpdaterBolig_MouseHover);
             // 
             // mSalgsPrisTextBox
             // 
             this.mSalgsPrisTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mSalgsPrisTextBox.Location = new System.Drawing.Point(283, 474);
-            this.mSalgsPrisTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.mSalgsPrisTextBox.Location = new System.Drawing.Point(495, 859);
+            this.mSalgsPrisTextBox.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.mSalgsPrisTextBox.Name = "mSalgsPrisTextBox";
-            this.mSalgsPrisTextBox.Size = new System.Drawing.Size(183, 34);
+            this.mSalgsPrisTextBox.Size = new System.Drawing.Size(317, 55);
             this.mSalgsPrisTextBox.TabIndex = 58;
             // 
             // label2
@@ -322,10 +324,10 @@ namespace RealBolig
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(100, 479);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(175, 868);
+            this.label2.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(114, 29);
+            this.label2.Size = new System.Drawing.Size(193, 48);
             this.label2.TabIndex = 57;
             this.label2.Text = "Salgspris";
             // 
@@ -333,10 +335,10 @@ namespace RealBolig
             // 
             this.mBiDTextBox.BackColor = System.Drawing.Color.White;
             this.mBiDTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mBiDTextBox.Location = new System.Drawing.Point(283, 412);
-            this.mBiDTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.mBiDTextBox.Location = new System.Drawing.Point(495, 747);
+            this.mBiDTextBox.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.mBiDTextBox.Name = "mBiDTextBox";
-            this.mBiDTextBox.Size = new System.Drawing.Size(183, 34);
+            this.mBiDTextBox.Size = new System.Drawing.Size(317, 55);
             this.mBiDTextBox.TabIndex = 56;
             // 
             // label1
@@ -344,10 +346,10 @@ namespace RealBolig
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(100, 416);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(175, 754);
+            this.label1.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(174, 29);
+            this.label1.Size = new System.Drawing.Size(304, 48);
             this.label1.TabIndex = 55;
             this.label1.Text = "Indtast Bolig ID";
             // 
@@ -356,10 +358,10 @@ namespace RealBolig
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label9.Location = new System.Drawing.Point(473, 474);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(828, 859);
+            this.label9.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(37, 29);
+            this.label9.Size = new System.Drawing.Size(62, 48);
             this.label9.TabIndex = 73;
             this.label9.Text = "Kr";
             // 
@@ -375,20 +377,20 @@ namespace RealBolig
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Location = new System.Drawing.Point(84, 592);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Location = new System.Drawing.Point(147, 1073);
+            this.panel1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(936, 258);
+            this.panel1.Size = new System.Drawing.Size(1638, 468);
             this.panel1.TabIndex = 74;
             // 
             // CbBoligSolgt
             // 
             this.CbBoligSolgt.AutoSize = true;
             this.CbBoligSolgt.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CbBoligSolgt.Location = new System.Drawing.Point(187, 26);
-            this.CbBoligSolgt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.CbBoligSolgt.Location = new System.Drawing.Point(327, 47);
+            this.CbBoligSolgt.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.CbBoligSolgt.Name = "CbBoligSolgt";
-            this.CbBoligSolgt.Size = new System.Drawing.Size(222, 33);
+            this.CbBoligSolgt.Size = new System.Drawing.Size(375, 52);
             this.CbBoligSolgt.TabIndex = 80;
             this.CbBoligSolgt.Text = "Er Boligen Solgt?";
             this.CbBoligSolgt.UseVisualStyleBackColor = true;
@@ -397,10 +399,10 @@ namespace RealBolig
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(379, 139);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(663, 252);
+            this.label8.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(37, 29);
+            this.label8.Size = new System.Drawing.Size(62, 48);
             this.label8.TabIndex = 81;
             this.label8.Text = "Kr";
             // 
@@ -408,10 +410,10 @@ namespace RealBolig
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(379, 190);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(663, 344);
+            this.label7.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(147, 29);
+            this.label7.Size = new System.Drawing.Size(262, 48);
             this.label7.TabIndex = 84;
             this.label7.Text = "DDMMÅÅÅÅ";
             // 
@@ -419,40 +421,40 @@ namespace RealBolig
             // 
             this.mKøbsDatoTextBox.BackColor = System.Drawing.Color.White;
             this.mKøbsDatoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mKøbsDatoTextBox.Location = new System.Drawing.Point(187, 185);
-            this.mKøbsDatoTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.mKøbsDatoTextBox.Location = new System.Drawing.Point(327, 335);
+            this.mKøbsDatoTextBox.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.mKøbsDatoTextBox.Name = "mKøbsDatoTextBox";
-            this.mKøbsDatoTextBox.Size = new System.Drawing.Size(183, 34);
+            this.mKøbsDatoTextBox.Size = new System.Drawing.Size(317, 55);
             this.mKøbsDatoTextBox.TabIndex = 83;
             // 
             // mKøbsPrisTextBox
             // 
             this.mKøbsPrisTextBox.BackColor = System.Drawing.Color.White;
             this.mKøbsPrisTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mKøbsPrisTextBox.Location = new System.Drawing.Point(187, 134);
-            this.mKøbsPrisTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.mKøbsPrisTextBox.Location = new System.Drawing.Point(327, 243);
+            this.mKøbsPrisTextBox.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.mKøbsPrisTextBox.Name = "mKøbsPrisTextBox";
-            this.mKøbsPrisTextBox.Size = new System.Drawing.Size(183, 34);
+            this.mKøbsPrisTextBox.Size = new System.Drawing.Size(317, 55);
             this.mKøbsPrisTextBox.TabIndex = 82;
             // 
             // mKøberIDTextBox
             // 
             this.mKøberIDTextBox.BackColor = System.Drawing.Color.White;
             this.mKøberIDTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mKøberIDTextBox.Location = new System.Drawing.Point(187, 78);
-            this.mKøberIDTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.mKøberIDTextBox.Location = new System.Drawing.Point(327, 141);
+            this.mKøberIDTextBox.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.mKøberIDTextBox.Name = "mKøberIDTextBox";
-            this.mKøberIDTextBox.Size = new System.Drawing.Size(183, 34);
+            this.mKøberIDTextBox.Size = new System.Drawing.Size(317, 55);
             this.mKøberIDTextBox.TabIndex = 81;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(21, 190);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(37, 344);
+            this.label6.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(116, 29);
+            this.label6.Size = new System.Drawing.Size(196, 48);
             this.label6.TabIndex = 78;
             this.label6.Text = "Købsdato";
             // 
@@ -460,10 +462,10 @@ namespace RealBolig
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(21, 139);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(37, 252);
+            this.label5.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(109, 29);
+            this.label5.Size = new System.Drawing.Size(183, 48);
             this.label5.TabIndex = 77;
             this.label5.Text = "Købspris";
             // 
@@ -471,10 +473,10 @@ namespace RealBolig
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(21, 82);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(37, 149);
+            this.label4.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(152, 29);
+            this.label4.Size = new System.Drawing.Size(260, 48);
             this.label4.TabIndex = 76;
             this.label4.Text = "Købers ID Nr";
             // 
@@ -482,10 +484,10 @@ namespace RealBolig
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.panel2.Controls.Add(this.label10);
-            this.panel2.Location = new System.Drawing.Point(84, 545);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Location = new System.Drawing.Point(147, 988);
+            this.panel2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(936, 50);
+            this.panel2.Size = new System.Drawing.Size(1638, 91);
             this.panel2.TabIndex = 85;
             // 
             // label10
@@ -493,10 +495,10 @@ namespace RealBolig
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label10.Location = new System.Drawing.Point(311, 15);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Location = new System.Drawing.Point(544, 27);
+            this.label10.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(302, 29);
+            this.label10.Size = new System.Drawing.Size(529, 48);
             this.label10.TabIndex = 86;
             this.label10.Text = "NÅR BOLIGEN ER SOLGT";
             // 
@@ -505,10 +507,10 @@ namespace RealBolig
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(311, 15);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(544, 27);
+            this.label3.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(306, 29);
+            this.label3.Size = new System.Drawing.Size(541, 48);
             this.label3.TabIndex = 86;
             this.label3.Text = "ÆNDRING AF SALGSPRIS";
             // 
@@ -516,10 +518,10 @@ namespace RealBolig
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.panel3.Controls.Add(this.label3);
-            this.panel3.Location = new System.Drawing.Point(84, 332);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel3.Location = new System.Drawing.Point(147, 602);
+            this.panel3.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(936, 50);
+            this.panel3.Size = new System.Drawing.Size(1638, 91);
             this.panel3.TabIndex = 87;
             // 
             // boligTableAdapter
@@ -532,10 +534,10 @@ namespace RealBolig
             // 
             // UpdateBolig
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(30)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(1168, 916);
+            this.ClientSize = new System.Drawing.Size(2044, 1660);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -547,7 +549,7 @@ namespace RealBolig
             this.Controls.Add(this.mBiDTextBox);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.Name = "UpdateBolig";
             this.Text = "UpdateBolig";
             this.Load += new System.EventHandler(this.UpdateBolig_Load);
@@ -616,5 +618,6 @@ namespace RealBolig
         private System.Windows.Forms.DataGridViewTextBoxColumn kiDDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn handelsPrisDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn handelsDatoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

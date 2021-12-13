@@ -81,5 +81,10 @@ namespace RealBolig
             UpdateData.updateGridView("SELECT * FROM Kunde", dataGridView1);
 
         }
+
+        private void deleteKiD_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show("Indtast kunde ID på den kunde der ønskes slettet", deleteKiD);
+        }
     }
 }

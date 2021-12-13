@@ -369,5 +369,10 @@ namespace RealBolig
         {
 
         }
+
+        private void btnIndlæsBolig_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show("Indtast et postnummer", btnIndlæsBolig);
+        }
     }
 }

@@ -46,6 +46,9 @@ namespace RealBolig
             mTlfTextBox.Text = "";
             mMailTextBox.Text = "";
             mAdresseTextBox.Text = "";
+
+            UpdateData.updateGridView("SELECT * FROM Kunde", dataGridView1);
+
             //this.kundeTableAdapter.Fill(this.kaspermark_dk_db_realboligDataSet.Kunde);
             /*
             // assumption:
@@ -134,6 +137,11 @@ namespace RealBolig
                 mAdresseTextBox.Text = "";
             }
             */
+        }
+
+        private void btnOpretKunde_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show("Udfyld alle felter", btnOpretKunde);
         }
     }
 }
