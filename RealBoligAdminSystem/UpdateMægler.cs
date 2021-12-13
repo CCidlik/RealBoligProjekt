@@ -166,5 +166,10 @@ namespace RealBolig
         {
 
         }
+
+        private void UpdateInfo_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show("Alle felter skal være udfyldt",UpdateInfo);
+        }
     }
 }
