@@ -55,16 +55,16 @@ namespace RealBolig
             this.BtnRefreshBoligSøg = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textFraPris = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textFraDato = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioBtnAll = new System.Windows.Forms.RadioButton();
+            this.radioBtnSalg = new System.Windows.Forms.RadioButton();
+            this.radioBtnSolgt = new System.Windows.Forms.RadioButton();
             this.BtnUdskrivData = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
@@ -258,16 +258,16 @@ namespace RealBolig
             this.panel1.Controls.Add(this.BtnRefreshBoligSøg);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.textFraPris);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.textFraDato);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.radioButton3);
-            this.panel1.Controls.Add(this.radioButton2);
-            this.panel1.Controls.Add(this.radioButton1);
+            this.panel1.Controls.Add(this.radioBtnAll);
+            this.panel1.Controls.Add(this.radioBtnSalg);
+            this.panel1.Controls.Add(this.radioBtnSolgt);
             this.panel1.Controls.Add(this.btnIndlæsBolig);
             this.panel1.Controls.Add(this.tbPostnummer);
             this.panel1.Controls.Add(this.label1);
@@ -320,14 +320,14 @@ namespace RealBolig
             this.textBox3.Size = new System.Drawing.Size(201, 34);
             this.textBox3.TabIndex = 68;
             // 
-            // textBox4
+            // textFraPris
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(237, 274);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(201, 34);
-            this.textBox4.TabIndex = 67;
+            this.textFraPris.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textFraPris.Location = new System.Drawing.Point(178, 223);
+            this.textFraPris.Margin = new System.Windows.Forms.Padding(2);
+            this.textFraPris.Name = "textFraPris";
+            this.textFraPris.Size = new System.Drawing.Size(152, 28);
+            this.textFraPris.TabIndex = 67;
             // 
             // label7
             // 
@@ -368,14 +368,14 @@ namespace RealBolig
             this.textBox2.Size = new System.Drawing.Size(201, 34);
             this.textBox2.TabIndex = 63;
             // 
-            // textBox1
+            // textFraDato
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(237, 203);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(201, 34);
-            this.textBox1.TabIndex = 62;
+            this.textFraDato.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textFraDato.Location = new System.Drawing.Point(178, 165);
+            this.textFraDato.Margin = new System.Windows.Forms.Padding(2);
+            this.textFraDato.Name = "textFraDato";
+            this.textFraDato.Size = new System.Drawing.Size(152, 28);
+            this.textFraDato.TabIndex = 62;
             // 
             // label2
             // 
@@ -387,44 +387,44 @@ namespace RealBolig
             this.label2.TabIndex = 61;
             this.label2.Text = "Søg i Periode";
             // 
-            // radioButton3
+            // radioBtnAll
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton3.Location = new System.Drawing.Point(561, 130);
-            this.radioButton3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(121, 29);
-            this.radioButton3.TabIndex = 60;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Al aktivitet";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioBtnAll.AutoSize = true;
+            this.radioBtnAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioBtnAll.Location = new System.Drawing.Point(421, 106);
+            this.radioBtnAll.Margin = new System.Windows.Forms.Padding(2);
+            this.radioBtnAll.Name = "radioBtnAll";
+            this.radioBtnAll.Size = new System.Drawing.Size(99, 24);
+            this.radioBtnAll.TabIndex = 60;
+            this.radioBtnAll.TabStop = true;
+            this.radioBtnAll.Text = "Al aktivitet";
+            this.radioBtnAll.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // radioBtnSalg
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(396, 130);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(156, 29);
-            this.radioButton2.TabIndex = 59;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Boliger til Salg";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioBtnSalg.AutoSize = true;
+            this.radioBtnSalg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioBtnSalg.Location = new System.Drawing.Point(297, 106);
+            this.radioBtnSalg.Margin = new System.Windows.Forms.Padding(2);
+            this.radioBtnSalg.Name = "radioBtnSalg";
+            this.radioBtnSalg.Size = new System.Drawing.Size(127, 24);
+            this.radioBtnSalg.TabIndex = 59;
+            this.radioBtnSalg.TabStop = true;
+            this.radioBtnSalg.Text = "Boliger til Salg";
+            this.radioBtnSalg.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // radioBtnSolgt
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(236, 130);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(154, 29);
-            this.radioButton1.TabIndex = 58;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Solgte Boliger";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioBtnSolgt.AutoSize = true;
+            this.radioBtnSolgt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioBtnSolgt.Location = new System.Drawing.Point(177, 106);
+            this.radioBtnSolgt.Margin = new System.Windows.Forms.Padding(2);
+            this.radioBtnSolgt.Name = "radioBtnSolgt";
+            this.radioBtnSolgt.Size = new System.Drawing.Size(126, 24);
+            this.radioBtnSolgt.TabIndex = 58;
+            this.radioBtnSolgt.TabStop = true;
+            this.radioBtnSolgt.Text = "Solgte Boliger";
+            this.radioBtnSolgt.UseVisualStyleBackColor = true;
             // 
             // BtnUdskrivData
             // 
@@ -568,19 +568,19 @@ namespace RealBolig
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewCheckBoxColumn solgtDataGridViewCheckBoxColumn;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioBtnAll;
+        private System.Windows.Forms.RadioButton radioBtnSalg;
+        private System.Windows.Forms.RadioButton radioBtnSolgt;
         private System.Windows.Forms.Button BtnUdskrivData;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textFraPris;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textFraDato;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label8;
