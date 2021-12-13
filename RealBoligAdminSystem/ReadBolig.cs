@@ -94,398 +94,414 @@ namespace RealBolig
             }
         }
 
-        public void DisplayDataOmråde()
-        {
-
-
-            SqlConnection conn = new SqlConnection(ConnString.getConnStr());
-
-
-            conn.Open();
-            DataTable dt = new DataTable();
-            SqlDataAdapter adapt = new SqlDataAdapter("SELECT * FROM Bolig where Område = '" + tbOmråde.Text + "'", conn);
-            adapt.Fill(dt);
-            dataGridView1.DataSource = dt;
-            conn.Close();
-        }
-
-        public void DisplayDataPostnummer()
-        {
-
-
-            SqlConnection conn = new SqlConnection(ConnString.getConnStr());
-
-
-            conn.Open();
-            DataTable dt = new DataTable();
-            SqlDataAdapter adapt = new SqlDataAdapter("SELECT * FROM Bolig where PostNR = '" + tbPostnummer.Text + "'", conn);
-            adapt.Fill(dt);
-            dataGridView1.DataSource = dt;
-            conn.Close();
-        }
-
-        private void BtnUdprintHuseTilSalg_Click(object sender, EventArgs e)
-        {
-            SqlConnection conn = new SqlConnection(ConnString.getConnStr());
-
-            try
+        #region Søg bolig metoder baseret på område eller postnummer
+            public void DisplayDataOmråde()
             {
+                SqlConnection conn = new SqlConnection(ConnString.getConnStr());
+
+                try
+                {
+                    conn.Open();
+                    DataTable dt = new DataTable();
+                    SqlDataAdapter adapt = new SqlDataAdapter("SELECT * FROM Bolig WHERE Område LIKE '%" + tbOmråde.Text + "%'", conn);
+                    adapt.Fill(dt);
+                    dataGridView1.DataSource = dt;
+                    conn.Close();
+                }
+
+                catch (Exception exc)
+                {
+                    MessageBox.Show("ERROR: \n\n" + exc.ToString());
+                    tbOmråde.Text = "";
+                }
+            }
+
+            public void DisplayDataPostnummer()
+            {
+                SqlConnection conn = new SqlConnection(ConnString.getConnStr());
+
                 conn.Open();
                 DataTable dt = new DataTable();
-                SqlDataAdapter adapt = new SqlDataAdapter("SELECT * FROM Bolig WHERE Solgt = 0", conn);
+                SqlDataAdapter adapt = new SqlDataAdapter("SELECT * FROM Bolig where PostNR = '" + tbPostnummer.Text + "'", conn);
                 adapt.Fill(dt);
                 dataGridView1.DataSource = dt;
                 conn.Close();
             }
+        #endregion
 
-            catch (Exception exc)
+        #region Metoder som opfylder opgave 3.2.
+            private void BtnUdprintHuseTilSalg_Click(object sender, EventArgs e)
             {
-                MessageBox.Show("ERROR: \n\n" + exc.ToString());
+                SqlConnection conn = new SqlConnection(ConnString.getConnStr());
 
-            }
-
-            string userName = Environment.UserName;
-            string path = $@"C:\Users\{userName}\Documents\BoligData";
-
-            try
-            {
-                if(Directory.Exists(path))
+                try
                 {
-                    using (TextWriter tw = new StreamWriter(path + "\\AlleHuseTilSalg.txt"))
+                    conn.Open();
+                    DataTable dt = new DataTable();
+                    SqlDataAdapter adapt = new SqlDataAdapter("SELECT * FROM Bolig WHERE Solgt = 0", conn);
+                    adapt.Fill(dt);
+                    dataGridView1.DataSource = dt;
+                    conn.Close();
+                }
+
+                catch (Exception exc)
+                {
+                    MessageBox.Show("ERROR: \n\n" + exc.ToString());
+
+                }
+
+                string userName = Environment.UserName;
+                string path = $@"C:\Users\{userName}\Documents\BoligData";
+
+                try
+                {
+                    if (Directory.Exists(path))
                     {
-                        for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+                        using (TextWriter tw = new StreamWriter(path + "\\AlleHuseTilSalg.txt"))
                         {
-                            for (int j = 0; j < dataGridView1.Columns.Count; j++)
+                            for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
                             {
-                                tw.Write($"{dataGridView1.Rows[i].Cells[j].Value.ToString()}");
-
-                                if (j != dataGridView1.Columns.Count - 1)
+                                for (int j = 0; j < dataGridView1.Columns.Count; j++)
                                 {
-                                    tw.Write("  :  ");
+                                    tw.Write($"{dataGridView1.Rows[i].Cells[j].Value.ToString()}");
+
+                                    if (j != dataGridView1.Columns.Count - 1)
+                                    {
+                                        tw.Write("  :  ");
+                                    }
                                 }
+                                tw.WriteLine();
                             }
-                            tw.WriteLine();
                         }
                     }
+
+                    DirectoryInfo di = Directory.CreateDirectory(path);
                 }
 
-                DirectoryInfo di = Directory.CreateDirectory(path);
-            }
-
-            catch(Exception exc)
-            {
-                MessageBox.Show("ERROR: \n\n" + exc.ToString());
-            }
-
-            using (TextWriter tw = new StreamWriter(path+"\\AlleHuseTilSalg.txt"))
-            {
-                for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+                catch (Exception exc)
                 {
-                    for (int j = 0; j < dataGridView1.Columns.Count; j++)
-                    {
-                        tw.Write($"{dataGridView1.Rows[i].Cells[j].Value.ToString()}");
-
-                        if (j != dataGridView1.Columns.Count - 1)
-                        {
-                            tw.Write("  :  ");
-                        }
-                    }
-                    tw.WriteLine();
+                    MessageBox.Show("ERROR: \n\n" + exc.ToString());
                 }
-            }
-        }
 
-        private void BtnUdskrivData_Click(object sender, EventArgs e)
-        {
-            SqlConnection conn = new SqlConnection(ConnString.getConnStr());
-
-            try
-            {
-                conn.Open();
-                DataTable dt = new DataTable();
-                SqlDataAdapter adapt = new SqlDataAdapter("SELECT * FROM Bolig WHERE Område LIKE '%" + tbOmråde.Text + "%'", conn);
-                adapt.Fill(dt);
-                dataGridView1.DataSource = dt;
-                conn.Close();
-            }
-
-            catch (Exception exc)
-            {
-                MessageBox.Show("ERROR: \n\n" + exc.ToString());
-
-            }
-
-            string userName = Environment.UserName;
-            string path = $@"C:\Users\{userName}\Documents\BoligData";
-
-            try
-            {
-                if (Directory.Exists(path))
+                using (TextWriter tw = new StreamWriter(path + "\\AlleHuseTilSalg.txt"))
                 {
-                    using (TextWriter tw = new StreamWriter(path + "\\AlleHuseIOmråde.txt"))
+                    for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
                     {
-                        for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+                        for (int j = 0; j < dataGridView1.Columns.Count; j++)
                         {
-                            for (int j = 0; j < dataGridView1.Columns.Count; j++)
+                            tw.Write($"{dataGridView1.Rows[i].Cells[j].Value.ToString()}");
+
+                            if (j != dataGridView1.Columns.Count - 1)
                             {
-                                tw.Write($"{dataGridView1.Rows[i].Cells[j].Value.ToString()}");
-
-                                if (j != dataGridView1.Columns.Count - 1)
-                                {
-                                    tw.Write("  :  ");
-                                }
+                                tw.Write("  :  ");
                             }
-                            tw.WriteLine();
                         }
+                        tw.WriteLine();
                     }
                 }
-
-                DirectoryInfo di = Directory.CreateDirectory(path);
             }
 
-            catch (Exception exc)
+            private void BtnUdskrivData_Click(object sender, EventArgs e)
             {
-                MessageBox.Show("ERROR: \n\n" + exc.ToString());
-            }
+                SqlConnection conn = new SqlConnection(ConnString.getConnStr());
 
-            using (TextWriter tw = new StreamWriter(path + "\\AlleHuseIOmråde.txt"))
-            {
-                for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+                try
                 {
-                    for (int j = 0; j < dataGridView1.Columns.Count; j++)
-                    {
-                        tw.Write($"{dataGridView1.Rows[i].Cells[j].Value.ToString()}");
+                    conn.Open();
+                    DataTable dt = new DataTable();
+                    SqlDataAdapter adapt = new SqlDataAdapter("SELECT * FROM Bolig WHERE Område LIKE '%" + tbOmråde.Text + "%'", conn);
+                    adapt.Fill(dt);
+                    dataGridView1.DataSource = dt;
+                    conn.Close();
+                }
 
-                        if (j != dataGridView1.Columns.Count - 1)
+                catch (Exception exc)
+                {
+                    MessageBox.Show("ERROR: \n\n" + exc.ToString());
+
+                }
+
+                string userName = Environment.UserName;
+                string path = $@"C:\Users\{userName}\Documents\BoligData";
+
+                try
+                {
+                    if (Directory.Exists(path))
+                    {
+                        using (TextWriter tw = new StreamWriter(path + "\\AlleHuseIOmråde.txt"))
                         {
-                            tw.Write("  :  ");
+                            for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+                            {
+                                for (int j = 0; j < dataGridView1.Columns.Count; j++)
+                                {
+                                    tw.Write($"{dataGridView1.Rows[i].Cells[j].Value.ToString()}");
+
+                                    if (j != dataGridView1.Columns.Count - 1)
+                                    {
+                                        tw.Write("  :  ");
+                                    }
+                                }
+                                tw.WriteLine();
+                            }
                         }
                     }
-                    tw.WriteLine();
+
+                    DirectoryInfo di = Directory.CreateDirectory(path);
+                }
+
+                catch (Exception exc)
+                {
+                    MessageBox.Show("ERROR: \n\n" + exc.ToString());
+                }
+
+                using (TextWriter tw = new StreamWriter(path + "\\AlleHuseIOmråde.txt"))
+                {
+                    for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+                    {
+                        for (int j = 0; j < dataGridView1.Columns.Count; j++)
+                        {
+                            tw.Write($"{dataGridView1.Rows[i].Cells[j].Value.ToString()}");
+
+                            if (j != dataGridView1.Columns.Count - 1)
+                            {
+                                tw.Write("  :  ");
+                            }
+                        }
+                        tw.WriteLine();
+                    }
                 }
             }
-        }
+        #endregion
 
-        private void tbOmråde_TextChanged(object sender, EventArgs e)
-        {
-            if (tbOmråde.Text != "")
+        #region Metoder der er med til at opfylde anden del af opgave 3.2.
+        //Metoderne autofiltrer dataGridView mens der skrives og refresher den, når "Område" tekstboksen er tom
+            private void tbOmråde_TextChanged(object sender, EventArgs e)
             {
-                DisplayOmråde();
+                if (tbOmråde.Text != "")
+                {
+                    DisplayDataOmråde();
+                }
+
+                else
+                {
+                    RefreshDGV();
+                }
             }
 
-            else
+            public void RefreshDGV()
             {
-                RefreshDGV();
+                SqlConnection conn = new SqlConnection(ConnString.getConnStr());
+
+                try
+                {
+                    conn.Open();
+                    DataTable dt = new DataTable();
+                    SqlDataAdapter adapt = new SqlDataAdapter("SELECT * FROM Bolig", conn);
+                    adapt.Fill(dt);
+                    dataGridView1.DataSource = dt;
+                    conn.Close();
+                }
+
+                catch (Exception exc)
+                {
+                    MessageBox.Show("ERROR: \n\n" + exc.ToString());
+                    tbOmråde.Text = "";
+                }
             }
-        }
+        #endregion
 
-        public void DisplayOmråde()
-        {
-            SqlConnection conn = new SqlConnection(ConnString.getConnStr());
-
-            try
+        #region Metoder der som minimum opfylder opgave 3.3
+            
+        //Metode der tager højde for de forskellige kombinationer med solgte boliger + startdato og/eller minimumspris
+            public void SolgtChecked()
             {
-                conn.Open();
-                DataTable dt = new DataTable();
-                SqlDataAdapter adapt = new SqlDataAdapter("SELECT * FROM Bolig WHERE Område LIKE '%" + tbOmråde.Text + "%'", conn);
-                adapt.Fill(dt);
-                dataGridView1.DataSource = dt;
-                conn.Close();
-            }
+                //
+                SqlConnection conn = new SqlConnection(ConnString.getConnStr());
+                
+                //
+                string SalgsPris = textFraPris.Text;
+                
+                //
+                DateTime idag = DateTime.Now;
+                string Sidag = Convert.ToString(idag);
+                string S2idag = $"{Sidag.Substring(6, 4)}-{Sidag.Substring(3, 2)}-{Sidag.Substring(0, 2)}";
+                
+                //
+                if (textFraDato.Text != "" && textFraPris.Text == "")
+                {
+                    string SalgsDato = textFraDato.Text;
+                    string SalgsDato2 = $"{SalgsDato.Substring(4, 4)}-{SalgsDato.Substring(2, 2)}-{SalgsDato.Substring(0, 2)}";
+                    conn.Open();
+                    DataTable dt = new DataTable();
+                    SqlDataAdapter adapt = new SqlDataAdapter($"SELECT BiD, KiD, Adresse, SalgsPris, SalgsDato, Solgt FROM Bolig WHERE (SalgsDato BETWEEN '{SalgsDato2}' AND '{S2idag}') AND Solgt = 1", conn);
+                    adapt.Fill(dt);
+                    dataGridView1.DataSource = dt;
+                    conn.Close();
+                }
 
-            catch (Exception exc)
-            {
-                MessageBox.Show("ERROR: \n\n" + exc.ToString());
-                tbOmråde.Text = "";
-            }
-        }
+                //
+                else if (textFraDato.Text == "" && textFraPris.Text != "")
+                {
+                    conn.Open();
+                    DataTable dt = new DataTable();
+                    SqlDataAdapter adapt = new SqlDataAdapter($"SELECT BiD, KiD, Adresse, SalgsPris, SalgsDato, Solgt FROM Bolig WHERE SalgsPris >= {SalgsPris} AND Solgt = 1", conn);
+                    adapt.Fill(dt);
+                    dataGridView1.DataSource = dt;
+                    conn.Close();
+                }
 
-        public void RefreshDGV()
-        {
-            SqlConnection conn = new SqlConnection(ConnString.getConnStr());
+                //
+                else if (textFraDato.Text != "" && textFraPris.Text != "")
+                {
+                    string SalgsDato = textFraDato.Text;
+                    string SalgsDato2 = $"{SalgsDato.Substring(4, 4)}-{SalgsDato.Substring(2, 2)}-{SalgsDato.Substring(0, 2)}";
+                    conn.Open();
+                    DataTable dt = new DataTable();
+                    SqlDataAdapter adapt = new SqlDataAdapter($"SELECT BiD, KiD, Adresse, SalgsPris, SalgsDato, Solgt FROM Bolig WHERE (SalgsDato BETWEEN '{SalgsDato2}' AND '{S2idag}') AND SalgsPris >= {SalgsPris} AND Solgt = 1", conn);
+                    adapt.Fill(dt);
+                    dataGridView1.DataSource = dt;
+                    conn.Close();
+                }
 
-            try
-            {
-                conn.Open();
-                DataTable dt = new DataTable();
-                SqlDataAdapter adapt = new SqlDataAdapter("SELECT * FROM Bolig", conn);
-                adapt.Fill(dt);
-                dataGridView1.DataSource = dt;
-                conn.Close();
-            }
+                //
+                else if (textFraDato.Text == "" && textFraPris.Text == "")
+                {
+                    conn.Open();
+                    DataTable dt = new DataTable();
+                    SqlDataAdapter adapt = new SqlDataAdapter($"SELECT BiD, KiD, Adresse, SalgsPris, SalgsDato, Solgt FROM Bolig WHERE Solgt = 1", conn);
+                    adapt.Fill(dt);
+                    dataGridView1.DataSource = dt;
+                    conn.Close();
+                }
 
-            catch (Exception exc)
-            {
-                MessageBox.Show("ERROR: \n\n" + exc.ToString());
-                tbOmråde.Text = "";
-            }
-        }
-
-        public void SolgtChecked()
-        {
-            SqlConnection conn = new SqlConnection(ConnString.getConnStr());
-
-            string SalgsPris = textFraPris.Text;
-
-            DateTime idag = DateTime.Now;
-            string Sidag = Convert.ToString(idag);
-            string S2idag = $"{Sidag.Substring(6, 4)}-{Sidag.Substring(3, 2)}-{Sidag.Substring(0, 2)}";
-
-            if (textFraDato.Text != "" && textFraPris.Text == "")
-            {
-                string SalgsDato = textFraDato.Text;
-                string SalgsDato2 = $"{SalgsDato.Substring(4, 4)}-{SalgsDato.Substring(2, 2)}-{SalgsDato.Substring(0, 2)}";
-                conn.Open();
-                DataTable dt = new DataTable();
-                SqlDataAdapter adapt = new SqlDataAdapter($"SELECT BiD, KiD, Adresse, SalgsPris, SalgsDato, Solgt FROM Bolig WHERE (SalgsDato BETWEEN '{SalgsDato2}' AND '{S2idag}') AND Solgt = 1", conn);
-                adapt.Fill(dt);
-                dataGridView1.DataSource = dt;
-                conn.Close();
-            }
-
-            else if (textFraDato.Text == "" && textFraPris.Text != "")
-            {
-                conn.Open();
-                DataTable dt = new DataTable();
-                SqlDataAdapter adapt = new SqlDataAdapter($"SELECT BiD, KiD, Adresse, SalgsPris, SalgsDato, Solgt FROM Bolig WHERE SalgsPris >= {SalgsPris} AND Solgt = 1", conn);
-                adapt.Fill(dt);
-                dataGridView1.DataSource = dt;
-                conn.Close();
-            }
-
-            else if (textFraDato.Text != "" && textFraPris.Text != "")
-            {
-                string SalgsDato = textFraDato.Text;
-                string SalgsDato2 = $"{SalgsDato.Substring(4, 4)}-{SalgsDato.Substring(2, 2)}-{SalgsDato.Substring(0, 2)}";
-                conn.Open();
-                DataTable dt = new DataTable();
-                SqlDataAdapter adapt = new SqlDataAdapter($"SELECT BiD, KiD, Adresse, SalgsPris, SalgsDato, Solgt FROM Bolig WHERE (SalgsDato BETWEEN '{SalgsDato2}' AND '{S2idag}') AND SalgsPris >= {SalgsPris} AND Solgt = 1", conn);
-                adapt.Fill(dt);
-                dataGridView1.DataSource = dt;
-                conn.Close();
             }
 
-            else if (textFraDato.Text == "" && textFraPris.Text == "")
+        //Metode der tager højde for de forskellige kombinationer med til salg boliger + startdato og/eller minimumspris
+            public void TilSalgChecked()
             {
-                conn.Open();
-                DataTable dt = new DataTable();
-                SqlDataAdapter adapt = new SqlDataAdapter($"SELECT BiD, KiD, Adresse, SalgsPris, SalgsDato, Solgt FROM Bolig WHERE Solgt = 1", conn);
-                adapt.Fill(dt);
-                dataGridView1.DataSource = dt;
-                conn.Close();
+                //
+                SqlConnection conn = new SqlConnection(ConnString.getConnStr());
+
+                //
+                string SalgsPris = textFraPris.Text;
+                
+                //
+                DateTime idag = DateTime.Now;
+                string Sidag = Convert.ToString(idag);
+                string S2idag = $"{Sidag.Substring(6, 4)}-{Sidag.Substring(3, 2)}-{Sidag.Substring(0, 2)}";
+
+                //
+                if (textFraDato.Text != "" && textFraPris.Text == "")
+                {
+                    string SalgsDato = textFraDato.Text;
+                    string SalgsDato2 = $"{SalgsDato.Substring(4, 4)}-{SalgsDato.Substring(2, 2)}-{SalgsDato.Substring(0, 2)}";
+                    conn.Open();
+                    DataTable dt = new DataTable();
+                    SqlDataAdapter adapt = new SqlDataAdapter($"SELECT BiD, KiD, Adresse, SalgsPris, SalgsDato, Solgt FROM Bolig WHERE (SalgsDato BETWEEN '{SalgsDato2}' AND '{S2idag}') AND Solgt = 0", conn);
+                    adapt.Fill(dt);
+                    dataGridView1.DataSource = dt;
+                    conn.Close();
+                }
+
+                //
+                else if (textFraDato.Text == "" && textFraPris.Text != "")
+                {
+                    conn.Open();
+                    DataTable dt = new DataTable();
+                    SqlDataAdapter adapt = new SqlDataAdapter($"SELECT BiD, KiD, Adresse, SalgsPris, SalgsDato, Solgt FROM Bolig WHERE SalgsPris >= {SalgsPris} AND Solgt = 0", conn);
+                    adapt.Fill(dt);
+                    dataGridView1.DataSource = dt;
+                    conn.Close();
+                }
+
+                //
+                else if (textFraDato.Text != "" && textFraPris.Text != "")
+                {
+                    string SalgsDato = textFraDato.Text;
+                    string SalgsDato2 = $"{SalgsDato.Substring(4, 4)}-{SalgsDato.Substring(2, 2)}-{SalgsDato.Substring(0, 2)}";
+                    conn.Open();
+                    DataTable dt = new DataTable();
+                    SqlDataAdapter adapt = new SqlDataAdapter($"SELECT BiD, KiD, Adresse, SalgsPris, SalgsDato, Solgt FROM Bolig WHERE (SalgsDato BETWEEN '{SalgsDato2}' AND '{S2idag}') AND SalgsPris >= {SalgsPris} AND Solgt = 0", conn);
+                    adapt.Fill(dt);
+                    dataGridView1.DataSource = dt;
+                    conn.Close();
+                }
+
+                //
+                else if (textFraDato.Text == "" && textFraPris.Text == "")
+                {
+                    conn.Open();
+                    DataTable dt = new DataTable();
+                    SqlDataAdapter adapt = new SqlDataAdapter($"SELECT BiD, KiD, Adresse, SalgsPris, SalgsDato, Solgt FROM Bolig WHERE Solgt = 0", conn);
+                    adapt.Fill(dt);
+                    dataGridView1.DataSource = dt;
+                    conn.Close();
+                }
             }
 
-        }
-
-        public void TilSalgChecked()
-        {
-            SqlConnection conn = new SqlConnection(ConnString.getConnStr());
-
-            string SalgsPris = textFraPris.Text;
-
-            DateTime idag = DateTime.Now;
-            string Sidag = Convert.ToString(idag);
-            string S2idag = $"{Sidag.Substring(6, 4)}-{Sidag.Substring(3, 2)}-{Sidag.Substring(0, 2)}";
-
-            if (textFraDato.Text != "" && textFraPris.Text == "")
+        //Metode der tager højde for de forskellige kombinationer med alle boliger +  startdato og/eller minimumspris
+            public void AllChecked()
             {
-                string SalgsDato = textFraDato.Text;
-                string SalgsDato2 = $"{SalgsDato.Substring(4, 4)}-{SalgsDato.Substring(2, 2)}-{SalgsDato.Substring(0, 2)}";
-                conn.Open();
-                DataTable dt = new DataTable();
-                SqlDataAdapter adapt = new SqlDataAdapter($"SELECT BiD, KiD, Adresse, SalgsPris, SalgsDato, Solgt FROM Bolig WHERE (SalgsDato BETWEEN '{SalgsDato2}' AND '{S2idag}') AND Solgt = 0", conn);
-                adapt.Fill(dt);
-                dataGridView1.DataSource = dt;
-                conn.Close();
+                //
+                SqlConnection conn = new SqlConnection(ConnString.getConnStr());
+
+                //
+                string SalgsPris = textFraPris.Text;
+
+                //
+                DateTime idag = DateTime.Now;
+                string Sidag = Convert.ToString(idag);
+                string S2idag = $"{Sidag.Substring(6, 4)}-{Sidag.Substring(3, 2)}-{Sidag.Substring(0, 2)}";
+
+                //
+                if (textFraDato.Text != "" && textFraPris.Text == "")
+                {
+                    string SalgsDato = textFraDato.Text;
+                    string SalgsDato2 = $"{SalgsDato.Substring(4, 4)}-{SalgsDato.Substring(2, 2)}-{SalgsDato.Substring(0, 2)}";
+                    conn.Open();
+                    DataTable dt = new DataTable();
+                    SqlDataAdapter adapt = new SqlDataAdapter($"SELECT BiD, KiD, Adresse, SalgsPris, SalgsDato, Solgt FROM Bolig WHERE (SalgsDato BETWEEN '{SalgsDato2}' AND '{S2idag}')", conn);
+                    adapt.Fill(dt);
+                    dataGridView1.DataSource = dt;
+                    conn.Close();
+                }
+
+                //
+                else if (textFraDato.Text == "" && textFraPris.Text != "")
+                {
+                    conn.Open();
+                    DataTable dt = new DataTable();
+                    SqlDataAdapter adapt = new SqlDataAdapter($"SELECT BiD, KiD, Adresse, SalgsPris, SalgsDato, Solgt FROM Bolig WHERE SalgsPris >= {SalgsPris}", conn);
+                    adapt.Fill(dt);
+                    dataGridView1.DataSource = dt;
+                    conn.Close();
+                }
+
+                //
+                else if (textFraDato.Text != "" && textFraPris.Text != "")
+                {
+                    string SalgsDato = textFraDato.Text;
+                    string SalgsDato2 = $"{SalgsDato.Substring(4, 4)}-{SalgsDato.Substring(2, 2)}-{SalgsDato.Substring(0, 2)}";
+                    conn.Open();
+                    DataTable dt = new DataTable();
+                    SqlDataAdapter adapt = new SqlDataAdapter($"SELECT BiD, KiD, Adresse, SalgsPris, SalgsDato, Solgt FROM Bolig WHERE (SalgsDato BETWEEN '{SalgsDato2}' AND '{S2idag}') AND SalgsPris >= {SalgsPris}", conn);
+                    adapt.Fill(dt);
+                    dataGridView1.DataSource = dt;
+                    conn.Close();
+                }
+
+                //
+                else if (textFraDato.Text == "" && textFraPris.Text == "")
+                {
+                    conn.Open();
+                    DataTable dt = new DataTable();
+                    SqlDataAdapter adapt = new SqlDataAdapter($"SELECT BiD, KiD, Adresse, SalgsPris, SalgsDato, Solgt FROM Bolig", conn);
+                    adapt.Fill(dt);
+                    dataGridView1.DataSource = dt;
+                    conn.Close();
+                }
             }
-
-            else if (textFraDato.Text == "" && textFraPris.Text != "")
-            {
-                conn.Open();
-                DataTable dt = new DataTable();
-                SqlDataAdapter adapt = new SqlDataAdapter($"SELECT BiD, KiD, Adresse, SalgsPris, SalgsDato, Solgt FROM Bolig WHERE SalgsPris >= {SalgsPris} AND Solgt = 0", conn);
-                adapt.Fill(dt);
-                dataGridView1.DataSource = dt;
-                conn.Close();
-            }
-
-            else if (textFraDato.Text != "" && textFraPris.Text != "")
-            {
-                string SalgsDato = textFraDato.Text;
-                string SalgsDato2 = $"{SalgsDato.Substring(4, 4)}-{SalgsDato.Substring(2, 2)}-{SalgsDato.Substring(0, 2)}";
-                conn.Open();
-                DataTable dt = new DataTable();
-                SqlDataAdapter adapt = new SqlDataAdapter($"SELECT BiD, KiD, Adresse, SalgsPris, SalgsDato, Solgt FROM Bolig WHERE (SalgsDato BETWEEN '{SalgsDato2}' AND '{S2idag}') AND SalgsPris >= {SalgsPris} AND Solgt = 0", conn);
-                adapt.Fill(dt);
-                dataGridView1.DataSource = dt;
-                conn.Close();
-            }
-
-            else if (textFraDato.Text == "" && textFraPris.Text == "")
-            {
-                conn.Open();
-                DataTable dt = new DataTable();
-                SqlDataAdapter adapt = new SqlDataAdapter($"SELECT BiD, KiD, Adresse, SalgsPris, SalgsDato, Solgt FROM Bolig WHERE Solgt = 0", conn);
-                adapt.Fill(dt);
-                dataGridView1.DataSource = dt;
-                conn.Close();
-            }
-        }
-
-        public void AllChecked()
-        {
-            SqlConnection conn = new SqlConnection(ConnString.getConnStr());
-
-            string SalgsPris = textFraPris.Text;
-
-            DateTime idag = DateTime.Now;
-            string Sidag = Convert.ToString(idag);
-            string S2idag = $"{Sidag.Substring(6, 4)}-{Sidag.Substring(3, 2)}-{Sidag.Substring(0, 2)}";
-
-            if (textFraDato.Text != "" && textFraPris.Text == "")
-            {
-                string SalgsDato = textFraDato.Text;
-                string SalgsDato2 = $"{SalgsDato.Substring(4, 4)}-{SalgsDato.Substring(2, 2)}-{SalgsDato.Substring(0, 2)}";
-                conn.Open();
-                DataTable dt = new DataTable();
-                SqlDataAdapter adapt = new SqlDataAdapter($"SELECT BiD, KiD, Adresse, SalgsPris, SalgsDato, Solgt FROM Bolig WHERE (SalgsDato BETWEEN '{SalgsDato2}' AND '{S2idag}')", conn);
-                adapt.Fill(dt);
-                dataGridView1.DataSource = dt;
-                conn.Close();
-            }
-
-            else if (textFraDato.Text == "" && textFraPris.Text != "")
-            {
-                conn.Open();
-                DataTable dt = new DataTable();
-                SqlDataAdapter adapt = new SqlDataAdapter($"SELECT BiD, KiD, Adresse, SalgsPris, SalgsDato, Solgt FROM Bolig WHERE SalgsPris >= {SalgsPris}", conn);
-                adapt.Fill(dt);
-                dataGridView1.DataSource = dt;
-                conn.Close();
-            }
-
-            else if (textFraDato.Text != "" && textFraPris.Text != "")
-            {
-                string SalgsDato = textFraDato.Text;
-                string SalgsDato2 = $"{SalgsDato.Substring(4, 4)}-{SalgsDato.Substring(2, 2)}-{SalgsDato.Substring(0, 2)}";
-                conn.Open();
-                DataTable dt = new DataTable();
-                SqlDataAdapter adapt = new SqlDataAdapter($"SELECT BiD, KiD, Adresse, SalgsPris, SalgsDato, Solgt FROM Bolig WHERE (SalgsDato BETWEEN '{SalgsDato2}' AND '{S2idag}') AND SalgsPris >= {SalgsPris}", conn);
-                adapt.Fill(dt);
-                dataGridView1.DataSource = dt;
-                conn.Close();
-            }
-
-            else if (textFraDato.Text == "" && textFraPris.Text == "")
-            {
-                conn.Open();
-                DataTable dt = new DataTable();
-                SqlDataAdapter adapt = new SqlDataAdapter($"SELECT BiD, KiD, Adresse, SalgsPris, SalgsDato, Solgt FROM Bolig", conn);
-                adapt.Fill(dt);
-                dataGridView1.DataSource = dt;
-                conn.Close();
-            }
-        }
+        #endregion
 
         private void btnIndlæsBolig_MouseHover(object sender, EventArgs e)
         {
