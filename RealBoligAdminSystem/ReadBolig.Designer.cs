@@ -260,7 +260,7 @@ namespace RealBolig
             this.panel1.Controls.Add(this.Postnummer);
             this.panel1.Controls.Add(this.tbOmråde);
             this.panel1.Location = new System.Drawing.Point(63, 311);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(702, 280);
             this.panel1.TabIndex = 59;
@@ -269,7 +269,7 @@ namespace RealBolig
             // 
             this.BtnRefreshBoligSøg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnRefreshBoligSøg.Location = new System.Drawing.Point(534, 106);
-            this.BtnRefreshBoligSøg.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnRefreshBoligSøg.Margin = new System.Windows.Forms.Padding(2);
             this.BtnRefreshBoligSøg.Name = "BtnRefreshBoligSøg";
             this.BtnRefreshBoligSøg.Size = new System.Drawing.Size(122, 63);
             this.BtnRefreshBoligSøg.TabIndex = 1;
@@ -315,9 +315,9 @@ namespace RealBolig
             this.label3.Location = new System.Drawing.Point(175, 146);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 17);
+            this.label3.Size = new System.Drawing.Size(155, 17);
             this.label3.TabIndex = 64;
-            this.label3.Text = "Fra Dato";
+            this.label3.Text = "Fra Dato (DDMMÅÅÅÅ)";
             // 
             // textFraDato
             // 
@@ -382,7 +382,7 @@ namespace RealBolig
             // 
             this.BtnUdskrivData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnUdskrivData.Location = new System.Drawing.Point(362, 16);
-            this.BtnUdskrivData.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnUdskrivData.Margin = new System.Windows.Forms.Padding(2);
             this.BtnUdskrivData.Name = "BtnUdskrivData";
             this.BtnUdskrivData.Size = new System.Drawing.Size(122, 63);
             this.BtnUdskrivData.TabIndex = 71;
@@ -395,7 +395,7 @@ namespace RealBolig
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.panel2.Controls.Add(this.label8);
             this.panel2.Location = new System.Drawing.Point(63, 271);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(702, 41);
             this.panel2.TabIndex = 60;
@@ -418,7 +418,7 @@ namespace RealBolig
             this.panel3.Controls.Add(this.BtnUdskrivData);
             this.panel3.Controls.Add(this.BtnUdprintHuseTilSalg);
             this.panel3.Location = new System.Drawing.Point(63, 624);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(702, 99);
             this.panel3.TabIndex = 61;
@@ -427,7 +427,7 @@ namespace RealBolig
             // 
             this.BtnUdprintHuseTilSalg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnUdprintHuseTilSalg.Location = new System.Drawing.Point(178, 16);
-            this.BtnUdprintHuseTilSalg.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnUdprintHuseTilSalg.Margin = new System.Windows.Forms.Padding(2);
             this.BtnUdprintHuseTilSalg.Name = "BtnUdprintHuseTilSalg";
             this.BtnUdprintHuseTilSalg.Size = new System.Drawing.Size(122, 63);
             this.BtnUdprintHuseTilSalg.TabIndex = 0;
@@ -452,7 +452,7 @@ namespace RealBolig
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.panel4.Controls.Add(this.label9);
             this.panel4.Location = new System.Drawing.Point(62, 591);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(702, 41);
             this.panel4.TabIndex = 62;
