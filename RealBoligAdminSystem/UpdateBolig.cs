@@ -22,6 +22,8 @@ namespace RealBolig
 
         private void UpdateBolig_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'kaspermark_dk_db_realboligDataSet2.Kunde' table. You can move, or remove it, as needed.
+            this.kundeTableAdapter.Fill(this.kaspermark_dk_db_realboligDataSet2.Kunde);
             // TODO: This line of code loads data into the 'kaspermark_dk_db_realboligDataSet1.Bolig_Status' table. You can move, or remove it, as needed.
             this.bolig_StatusTableAdapter.Fill(this.kaspermark_dk_db_realboligDataSet1.Bolig_Status);
             // TODO: This line of code loads data into the 'kaspermark_dk_db_realboligDataSet.Bolig' table. You can move, or remove it, as needed.
