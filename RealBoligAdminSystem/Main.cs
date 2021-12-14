@@ -12,9 +12,6 @@ namespace RealBolig
 {
     public partial class Main : Form
     {
-
-
-
         public Main()
         {
             InitializeComponent();
@@ -50,9 +47,6 @@ namespace RealBolig
             else
                 subMenu.Visible = false;
         }
-
-
-
 
         private void btnHome_Click_1(object sender, EventArgs e)
         {
