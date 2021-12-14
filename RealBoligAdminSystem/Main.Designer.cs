@@ -57,6 +57,7 @@ namespace RealBolig
             this.btnBolig = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.panelFormsLoader = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogoBillede)).BeginInit();
             this.panelBoligSubMenu.SuspendLayout();
@@ -65,6 +66,8 @@ namespace RealBolig
             this.panelKunderSubMenu.SuspendLayout();
             this.panelMæglerSubMenu.SuspendLayout();
             this.panelMenu.SuspendLayout();
+            this.panelFormsLoader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -537,12 +540,24 @@ namespace RealBolig
             // panelFormsLoader
             // 
             this.panelFormsLoader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(30)))), ((int)(((byte)(51)))));
+            this.panelFormsLoader.Controls.Add(this.pictureBox1);
             this.panelFormsLoader.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelFormsLoader.Location = new System.Drawing.Point(307, 98);
             this.panelFormsLoader.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelFormsLoader.Name = "panelFormsLoader";
             this.panelFormsLoader.Size = new System.Drawing.Size(1617, 942);
             this.panelFormsLoader.TabIndex = 5;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.Image = global::RealBolig.Properties.Resources.Logo_1x;
+            this.pictureBox1.Location = new System.Drawing.Point(394, 258);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(697, 229);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // Main
             // 
@@ -555,7 +570,7 @@ namespace RealBolig
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Main";
+            this.Text = "Home Finder";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogoBillede)).EndInit();
@@ -566,6 +581,9 @@ namespace RealBolig
             this.panelKunderSubMenu.ResumeLayout(false);
             this.panelMæglerSubMenu.ResumeLayout(false);
             this.panelMenu.ResumeLayout(false);
+            this.panelFormsLoader.ResumeLayout(false);
+            this.panelFormsLoader.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -599,6 +617,7 @@ namespace RealBolig
         private System.Windows.Forms.Panel panelFormsLoader;
         private System.Windows.Forms.PictureBox pictureLogoBillede;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
