@@ -207,13 +207,13 @@ namespace RealBolig
             if (activeForm != null)
                 activeForm.Close();
             activeForm = loadedForm;
-            loadedForm.TopLevel = false;
-            loadedForm.FormBorderStyle = FormBorderStyle.None;
-            loadedForm.Dock = DockStyle.Fill;
-            panelFormsLoader.Controls.Add(loadedForm);
-            panelFormsLoader.Tag = loadedForm;
-            loadedForm.BringToFront();
-            loadedForm.Show();
+            loadedForm.TopLevel = false; // Lav Forms om til en Controle
+            loadedForm.FormBorderStyle = FormBorderStyle.None; // Ingen kant på forms, når den loades ind
+            loadedForm.Dock = DockStyle.Fill; // Docker fuldt ud i FormLoader
+            panelFormsLoader.Controls.Add(loadedForm); //Tilføjer den til Controle Panelet i Panelet
+            panelFormsLoader.Tag = loadedForm; // Vi forbinder Formen til Formloader Panelet
+            loadedForm.BringToFront(); // Bringes til front så den ikke kommer i konflikt med logo
+            loadedForm.Show(); // Formens vises.
 
         }
         #endregion
